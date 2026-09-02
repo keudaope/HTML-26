@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog-testisivu | opiskelijoille</title>
+</head>
+<body>
+    <!-- DOM esimerkit-->
+    <button id="save">Tallenna</button>
+    <script>
+    const btn = document.querySelector('#save');
+    console.log(btn.textContent);
+    </script>
+    <!-- Toinen esimerkki -->
+     <input id="name" value="Aino">
+    <script>
+    const input = document.querySelector('#name');
+    console.log(input.value);
+    </script>
+    <!-- Kolmas esimerkki -->
+     <button id="painike"data-product-id="42"
+        data-action="add">
+        Lisää koriin
+    </button>
+    <script>
+        const button = document.querySelector('#painike');
+        console.log(button.dataset.productId); // 42
+        console.log(button.dataset.action); // add
+    </script>
+    <!-- Muita HTML 5 esimerkkejä -->
+    <details>
+        <summary>Mikä on HTML?</summary>
+        <p>HTML kuvaa sivun rakenteen.</p>
+    </details>
+
+    <details id="faq" open>
+        <summary>
+            Usein kysytty
+        </summary>
+        <p>HTML on hypertext markup language, joka on perusta verkkosivujen luomiseen.</p>
+    </details>
+        <script>
+        faq.addEventListener('toggle', () => {
+            console.log(faq.open);
+        });
+        </script>
+
+
+
+
+    <!-- Ensimmäinen esimerkki -->
+    <button command="show-modal" commandfor="my-dialog">Avaa modal-dialogi</button>
+        <dialog id="my-dialog">
+            <p>Tämä dialogi avattiin käyttämällä invoker-komentoa.</p>
+            <button commandfor="my-dialog" command="close">Sulje</button>
+        </dialog>
+    <!-- Toinen esimerkki -->
+    <button popovertarget="my-popover">Avaa popover-dialogi</button>
+        <dialog id="my-popover" popover>
+            <p>Tämä popover-dialogi avattiin käyttämällä popovertarget-attribuuttia.</p>
+            <button popovertarget="my-popover" popovertargetaction="hide">Sulje</button>
+        </dialog>
+    <!-- Kolmas esimerkki -->
+    <dialog open>
+        <p>Tämä dialogi avattiin automaattisesti.</p>
+        <form method="dialog">
+            <button>OK</button>
+        </form>
+    </dialog>
+    <h1>Dialog-testisivu</h1>
+    <p>Dialog-elementti on HTML-elementti, joka mahdollistaa modaalisten ja popover-tyyppisten dialogien luomisen verkkosivuille. Dialogit voivat sisältää tekstiä, lomakkeita ja muita elementtejä, ja ne voidaan avata ja sulkea käyttäjän toimesta.</p>
+    <p>Dialog-elementti on hyödyllinen, kun halutaan esittää käyttäjälle lisätietoja, varmistaa toimintoja tai kerätä syötettä ilman, että käyttäjä poistuu nykyiseltä sivulta. Dialogit voivat parantaa käyttäjäkokemusta tarjoamalla selkeän ja keskittyneen tavan vuorovaikuttaa verkkosivun kanssa.</p> 
+    <dialog open>
+        <form method="dialog">
+            <button value="cancel">Peruuta</button>
+            <button value="ok">OK</button>
+        </form>
+    </dialog>
+
+</body>
+</html>
