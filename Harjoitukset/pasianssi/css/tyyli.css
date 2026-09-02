@@ -1,0 +1,77 @@
+/* Tämä koskee aivan koko sivua */
+*{
+    margin:0;
+    padding: 0;
+    font-size: 24px;
+    max-width:1400px;
+    margin: 0 auto;
+}
+/* HTML:ssä kääritty header, main ja footer yhdeksi kokonaisuudeksi */
+.content{
+    background-color: burlywood; /* Minusta tämä on kiva väri */
+}
+main{
+    padding: 1em;
+    padding-bottom: 3em;
+}
+h1{
+    font-size: 3em;
+    color:firebrick;
+    margin: 1em 1.75em;
+}
+h2{
+    font-size: 2.25em;
+    margin: 0.5em 0;
+}
+h3{
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+main ul{
+    margin: 0 2em;
+}
+main a{
+    color: brown;
+    font-weight: 900;
+}
+figcaption{
+    margin: 0.5em 2em;
+}
+nav, footer{
+    background-color: black;
+}
+footer{
+    padding: 1.5em 0;
+}
+footer address{
+    color: white;
+}
+footer a{
+    color:white;
+}
+/* Käännetty navigaatiokokonaisuus vaakasuoraan */
+nav ul{
+    display:flex;
+    list-style-type: none;  /* Poistettu pallot edestä */
+}
+nav ul li{
+    padding: 2em;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+}
+/* :hover tarkoittaa hiiren osoittamista */
+nav ul li a:hover{
+    color:brown;
+}
+/* :visited tarkoittaa, että olemme jo käyneet ko. sivulla */
+nav ul li a:visited{
+    color:gold;
+}
+.Yhteystiedot{
+    text-align: center;
+    color: white;
+}
