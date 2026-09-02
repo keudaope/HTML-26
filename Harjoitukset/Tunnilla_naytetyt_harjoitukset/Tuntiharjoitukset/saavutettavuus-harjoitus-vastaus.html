@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opettajan vastaus – Saavutettavuusharjoitus</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;background:#f5f5f7;color:#222}
+main{width:min(1100px,90%);margin:32px auto}
+h1,h2,h3{color:#392060}
+.card{background:white;padding:20px 24px;margin:18px 0;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+code,pre{font-family:Consolas,monospace}
+pre{background:#1e1e1e;color:#f5f5f5;padding:18px;border-radius:8px;overflow:auto}
+.bad{border-left:6px solid #b3261e}
+.good{border-left:6px solid #2e7d32}
+.num{font-weight:bold;color:#6d35b3}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{border:1px solid #ccc;padding:10px;vertical-align:top;text-align:left}
+th{background:#eee8f6}
+</style>
+</head>
+<body>
+<main>
+<h1>Opettajan vastausversio: saavutettavuusauditointi</h1>
+<p>Tämä vastausversio perustuu opiskelijoille jaettuun <strong>saavutettavuus-harjoitus.html</strong>-sivuun. Alla on 15 tarkoituksellista ongelmaa, niiden vaikutus ja suositeltu korjaus.</p>
+
+<div class="card bad">
+<h2>1. <code>lang="fi"</code> puuttuu html-elementistä</h2>
+<p><span class="num">Ongelma:</span> Dokumentin pääkieltä ei ole määritelty.</p>
+<p><span class="num">Kenelle haittaa:</span> Erityisesti ruudunlukijan käyttäjille, koska puhesynteesi voi käyttää väärää ääntämistä.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;html lang="fi"&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>2. Navigaation linkkitekstit ovat epäselviä</h2>
+<p>Linkit kuten <code>Klikkaa tästä</code>, <code>Lue lisää</code> ja <code>Siirry</code> eivät kerro kohdetta ilman ympäröivää kontekstia.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille ja käyttäjille, jotka selaavat linkkilistaa.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;a href="#ohjelma"&gt;Päivän ohjelma&lt;/a&gt;
+&lt;a href="#kouluttajat"&gt;Kouluttajat&lt;/a&gt;
+&lt;a href="#ilmoittautuminen"&gt;Ilmoittautuminen&lt;/a&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>3. Otsikkohierarkia hyppää tasolta h2 tasolle h4</h2>
+<p>Ohjelmakorteissa käytetään suoraan <code>h4</code>-otsikoita <code>h2</code>-otsikon alla.</p>
+<p><span class="num">Kenelle haittaa:</span> Käyttäjille, jotka navigoivat otsikoiden avulla.</p>
+<p><span class="num">Korjaus:</span> Käytä esimerkiksi <code>h3</code>-otsikoita.</p>
+</div>
+
+<div class="card bad">
+<h2>4. Div-elementti toimii painikkeena</h2>
+<p><code>&lt;div class="fake-button" onclick="..."&gt;</code> näyttää painikkeelta, mutta ei ole näppäimistöllä luonnostaan käytettävä eikä sillä ole oikeaa roolia.</p>
+<p><span class="num">Kenelle haittaa:</span> Näppäimistö- ja ruudunlukijakäyttäjille.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;button type="button" onclick="..."&gt;Ilmoittaudu&lt;/button&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>5. Fokusindikaattorit on poistettu CSS:llä</h2>
+<p>CSS sisältää <code>outline: none</code> linkeille, painikkeille ja lomakekentille.</p>
+<p><span class="num">Kenelle haittaa:</span> Näppäimistökäyttäjille, koska aktiivista kohdetta ei näe.</p>
+<p><span class="num">Korjaus:</span> Älä poista fokusta ilman selkeää korvaavaa tyyliä.</p>
+<pre><code>:focus-visible {
+  outline: 3px solid #7a3fc1;
+  outline-offset: 3px;
+}</code></pre>
+</div>
+
+<div class="card bad">
+<h2>6. Tekstin kontrasti on liian heikko</h2>
+<p><code>.muted { color: #b9b9b9; }</code> vaalealla taustalla tekee tekstistä vaikealukuisen.</p>
+<p><span class="num">Kenelle haittaa:</span> Heikkonäköisille ja käyttäjille huonoissa näyttöolosuhteissa.</p>
+<p><span class="num">Korjaus:</span> Käytä tummempaa tekstiväriä.</p>
+</div>
+
+<div class="card bad">
+<h2>7. Ensimmäiseltä kuvalta puuttuu alt-teksti</h2>
+<p><code>img</code>-elementillä ei ole lainkaan <code>alt</code>-attribuuttia.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille.</p>
+<p><span class="num">Korjaus:</span> Jos kuva välittää sisältöä, kirjoita kuvaava alt-teksti.</p>
+<pre><code>&lt;img src="..." alt="Anna Aalto, HTML-kouluttaja"&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>8. Toisen kuvan alt-teksti on tiedostonimi</h2>
+<p><code>alt="kuva2.jpg"</code> ei kuvaa kuvan sisältöä.</p>
+<p><span class="num">Korjaus:</span> Kuvaa olennainen sisältö, esimerkiksi henkilön nimi tai rooli.</p>
+</div>
+
+<div class="card bad">
+<h2>9. Koristekuvalla on tarpeettoman pitkä alt-teksti</h2>
+<p>Kolmas kuva on selvästi koristeellinen, mutta sille annetaan kuvaileva alt-teksti.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille turhana informaationa.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;img src="..." alt=""&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>10. “Miksi osallistua?” on div, ei otsikko</h2>
+<p>Visuaalisesti otsikon näköinen teksti on tehty <code>div</code>-elementillä.</p>
+<p><span class="num">Kenelle haittaa:</span> Käyttäjille, jotka navigoivat otsikoiden avulla.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;h2&gt;Miksi osallistua?&lt;/h2&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>11. Taulukon ensimmäinen rivi ei käytä th-elementtejä</h2>
+<p>Taulukon otsikot <em>Aika, Aihe, Tila</em> on merkitty tavallisina <code>td</code>-soluina.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille, koska sarakkeiden suhteet eivät välity yhtä hyvin.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;tr&gt;
+  &lt;th scope="col"&gt;Aika&lt;/th&gt;
+  &lt;th scope="col"&gt;Aihe&lt;/th&gt;
+  &lt;th scope="col"&gt;Tila&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>12. Lomakekentiltä puuttuvat kunnolliset label-elementit</h2>
+<p>Nimi on tavallista tekstiä, sähköpostikenttä luottaa placeholderiin ja textarea käyttää erillistä p-elementtiä.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille ja kaikille, kun placeholder katoaa kirjoitettaessa.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;label for="nimi"&gt;Nimi&lt;/label&gt;
+&lt;input id="nimi" name="nimi" type="text"&gt;
+
+&lt;label for="email"&gt;Sähköpostiosoite&lt;/label&gt;
+&lt;input id="email" name="email" type="email"&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>13. Checkboxin teksti ei ole label-elementti</h2>
+<p>Checkboxilla on <code>id="ehdot"</code>, mutta näkyvä teksti ei ole siihen sidottu label.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;input type="checkbox" id="ehdot" name="ehdot"&gt;
+&lt;label for="ehdot"&gt;Hyväksyn tapahtuman ehdot&lt;/label&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>14. Iframelta puuttuu title</h2>
+<p><code>iframe</code>-elementtiä ei ole nimetty saavutettavasti.</p>
+<p><span class="num">Kenelle haittaa:</span> Ruudunlukijan käyttäjille, jotka eivät muuten tiedä mitä upotus sisältää.</p>
+<p><span class="num">Korjaus:</span></p>
+<pre><code>&lt;iframe title="Koodikoulun opiskelijapäivän esittelyvideo" ...&gt;</code></pre>
+</div>
+
+<div class="card bad">
+<h2>15. Sama id-arvo esiintyy kahdesti</h2>
+<p>Sekä otsikolla että kappaleella on <code>id="lisatiedot"</code>.</p>
+<p><span class="num">Ongelma:</span> id:n pitäisi olla yksilöllinen dokumentissa.</p>
+<p><span class="num">Vaikutus:</span> Ankkurilinkit, ARIA-viittaukset, CSS ja JavaScript voivat kohdistua väärin tai epäselvästi.</p>
+<p><span class="num">Korjaus:</span> Käytä yksilöllisiä id-arvoja tai poista tarpeeton id.</p>
+</div>
+
+<div class="card good">
+<h2>Korjattu mallikoodi: keskeiset rakenteet</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Koodikoulun opiskelijapäivä&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+  &lt;h1&gt;Koodikoulun opiskelijapäivä&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav aria-label="Päänavigaatio"&gt;
+  &lt;a href="#ohjelma"&gt;Päivän ohjelma&lt;/a&gt;
+  &lt;a href="#kouluttajat"&gt;Kouluttajat&lt;/a&gt;
+  &lt;a href="#ilmoittautuminen"&gt;Ilmoittautuminen&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section id="ohjelma"&gt;
+    &lt;h2&gt;Päivän ohjelma&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;HTML käytännössä&lt;/h3&gt;
+      &lt;p&gt;...&lt;/p&gt;
+      &lt;button type="button"&gt;Ilmoittaudu&lt;/button&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Kurssiaikataulu&lt;/h2&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Aika&lt;/th&gt;
+        &lt;th scope="col"&gt;Aihe&lt;/th&gt;
+        &lt;th scope="col"&gt;Tila&lt;/th&gt;
+      &lt;/tr&gt;
+      ...
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;section id="ilmoittautuminen"&gt;
+    &lt;h2&gt;Ilmoittaudu tapahtumaan&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for="nimi"&gt;Nimi&lt;/label&gt;
+      &lt;input id="nimi" name="nimi" type="text"&gt;
+
+      &lt;label for="email"&gt;Sähköpostiosoite&lt;/label&gt;
+      &lt;input id="email" name="email" type="email"&gt;
+
+      &lt;input type="checkbox" id="ehdot" name="ehdot"&gt;
+      &lt;label for="ehdot"&gt;Hyväksyn tapahtuman ehdot&lt;/label&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;iframe
+    title="Koodikoulun opiskelijapäivän esittelyvideo"
+    ...&gt;
+  &lt;/iframe&gt;
+&lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<div class="card">
+<h2>Opettajan arviointivinkki</h2>
+<table>
+<tr><th>Taso</th><th>Osaaminen</th></tr>
+<tr><td>Perustaso</td><td>Löytää 5–7 ongelmaa ja osaa korjata tärkeimmät rakenteelliset puutteet.</td></tr>
+<tr><td>Hyvä</td><td>Löytää vähintään 10 ongelmaa ja perustelee vaikutuksen käyttäjälle.</td></tr>
+<tr><td>Erinomainen</td><td>Löytää lähes kaikki ongelmat, testaa näppäimistöllä ja DevToolsilla sekä perustelee korjaukset saavutettavuuden näkökulmasta.</td></tr>
+</table>
+</div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harjoitus 1 - lomakkeet</title>
+  </head>
+  <body>
+    <style>
+      label,
+      button {
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      textarea {
+        width: 50%;
+        padding: 5px;
+        margin-top: 5px;
+      }
+    </style>
+    <h1>Lomakkeet</h1>
+    <form>
+      <label for="nimi">Nimi:</label>
+      <input id="nimi" name="nimi" type="text" />
+      <label for="sahkoposti">Sähköposti:</label>
+      <input
+        id="sahkoposti"
+        name="sahkoposti"
+        type="email"
+        placeholder="nimi@esimerkki.fi"
+      />
+      <label for="aihe">Aihe:</label>
+      <input id="aihe" name="aihe" type="text" />
+      <label for="viesti">Viesti:</label>
+      <textarea id="viesti" name="viesti"></textarea>
+      <button type="submit">Lähetä</button>
+    </form>
+  </body>
+</html>
