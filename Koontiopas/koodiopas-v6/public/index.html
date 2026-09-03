@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koodiopas v6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header>
+    <small>KOODIOPAS • V6</small>
+    <h1>Vihje kerrallaan<br>kohti ratkaisua.</h1>
+    <p>Koodiopas noudattaa opettajan määrittelemiä avustussääntöjä.</p>
+    <nav>
+      <button id="studentTab" class="tab active">Opiskelijan näkymä</button>
+      <button id="teacherTab" class="tab">Opettajan asetukset</button>
+    </nav>
+  </header>
+
+  <section id="studentView">
+    <section id="teacherNotice" class="teacherNotice" hidden></section>
+
+    <section class="card">
+      <label>1. GitHub repository</label>
+      <div class="row">
+        <input id="repo" value="https://github.com/ahmedmamdo38-cmd/Staattinen-verkkosivusto-projekti">
+        <button id="load">Hae tehtävät</button>
+      </div>
+
+      <div id="projectArea" hidden>
+        <label>2. Valitse tehtävä</label>
+        <div id="projects"></div>
+      </div>
+
+      <div id="help" hidden>
+        <div class="between">
+          <label>3. Mikä ei toimi?</label>
+          <b id="level">Vihjetaso 1</b>
+        </div>
+
+        <div id="policy" class="policy"></div>
+        <div id="progress"></div>
+
+        <textarea id="msg" rows="4" placeholder="Kerro mitä olet yrittänyt ja mitä odotit tapahtuvan..."></textarea>
+
+        <div class="row">
+          <button id="ask">Pyydä vihje</button>
+          <button id="reset" class="secondary">Aloita alusta</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="status" hidden></div>
+
+    <section id="chat" class="card" hidden>
+      <h2 id="title"></h2>
+      <div id="messages"></div>
+    </section>
+  </section>
+
+  <section id="teacherView" hidden>
+    <section class="card">
+      <h2>Opettajan oletusasetukset</h2>
+
+      <label for="teacherMessage">Opiskelijalle näytettävä viesti</label>
+      <textarea id="teacherMessage" rows="3"></textarea>
+
+      <div class="grid2">
+        <div>
+          <label for="defaultMaxHintLevel">Maksimivihjetaso</label>
+          <select id="defaultMaxHintLevel">
+            <option value="1">1 – pieni vihje</option>
+            <option value="2">2 – tarkempi vihje</option>
+            <option value="3">3 – rinnakkainen esimerkki</option>
+            <option value="4">4 – malliratkaisu mahdollinen</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="minAttempts">Yrityksiä ennen malliratkaisua</label>
+          <input id="minAttempts" type="number" min="1" value="4">
+        </div>
+      </div>
+
+      <label class="check">
+        <input id="allowFullSolution" type="checkbox">
+        Salli malliratkaisu oletuksena
+      </label>
+    </section>
+
+    <section class="card">
+      <div class="between">
+        <h2>Tehtäväkohtaiset säännöt</h2>
+        <button id="addRule" type="button">+ Lisää sääntö</button>
+      </div>
+
+      <div id="rules"></div>
+    </section>
+
+    <section class="card">
+      <button id="saveConfig" type="button">Tallenna opettajan asetukset</button>
+      <span id="saveStatus"></span>
+    </section>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

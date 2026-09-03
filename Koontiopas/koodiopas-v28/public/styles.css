@@ -1,0 +1,113 @@
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 12% 6%,rgba(105,70,220,.25),transparent 32rem),#090a0f;color:#f4f4f8;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{width:min(1180px,calc(100% - 32px));margin:auto;padding:56px 0}
+header small{color:#baaaff;font-weight:900;letter-spacing:.16em}
+h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:.96;margin:12px 0 20px;letter-spacing:-.05em}
+header p,.muted{color:#969aaa;line-height:1.6}
+nav,.teacherNav,.row,.between{display:flex;gap:10px;flex-wrap:wrap}.between{justify-content:space-between;align-items:center}
+.tab,.subtab{background:#181a23;border:1px solid #343746}.tab.active,.subtab.active{background:linear-gradient(135deg,#744cff,#2f6df6)}
+.card{margin-top:20px;padding:24px;border:1px solid #2d303c;border-radius:20px;background:#11131b}
+.narrow{max-width:520px}.heroCard{max-width:650px}
+.notice{margin:16px 0;padding:14px;border-radius:14px;background:#20183b;color:#d8d1ff}.warning{border-color:#6d5223}
+label{display:block;margin:14px 0 8px;font-weight:800}.grow{flex:1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.assignmentGrid{display:grid;grid-template-columns:1.2fr 2fr 1.2fr 1.5fr;gap:10px}
+.studentRow{display:grid;grid-template-columns:1fr 1.4fr 1.4fr auto;gap:8px;margin:8px 0}
+input,textarea,select{width:100%;padding:12px;border:1px solid #343746;border-radius:12px;background:#0d0f16;color:white;font:inherit}
+button,.buttonLink{display:inline-block;padding:12px 16px;border:0;border-radius:12px;background:linear-gradient(135deg,#744cff,#2f6df6);color:white;font-weight:800;text-decoration:none;cursor:pointer;font:inherit}
+.secondary,.secondaryLink{background:#20222d}.danger{background:#4a1f28}
+.check{display:inline-flex;align-items:center;gap:7px;margin-right:12px}.check input{width:auto}
+.box,.assignment{margin:14px 0;padding:18px;border:1px solid #303341;border-radius:16px;background:#10121a}.assignment{background:#141621}
+.profileCard{display:flex;align-items:center;gap:16px}.profileCard img{width:58px;height:58px;border-radius:50%}.profileCard button{margin-left:auto}
+#hintProgress{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;margin:10px 0 14px}
+#hintProgress i{height:6px;border-radius:999px;background:#292c36}#hintProgress i.on{background:linear-gradient(90deg,#744cff,#2f6df6)}
+article{max-width:86%;margin:18px 0;padding:16px;border-radius:16px;line-height:1.65;white-space:pre-wrap}.student{margin-left:auto;background:#142143}.assistant{background:#181a23}article small{display:block;margin-bottom:8px;color:#888d9b;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.stat{padding:18px;border:1px solid #292c38;border-radius:18px;background:#11131b}.stat span{display:block;color:#8f93a3;font-size:.85rem}.stat strong{display:block;margin-top:8px;font-size:2rem}
+table{width:100%;border-collapse:collapse;margin-top:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #2b2e38;font-size:.9rem;vertical-align:top}th{color:#baaaff}code{font-size:.82rem}a{color:#baaaff}
+#studentStatus,#teacherLoginStatus,#groupsStatus,#coursesStatus,#settingsStatus,#githubStatus{margin-top:12px;color:#b9aaff;font-weight:700}
+@media(max-width:900px){.assignmentGrid,.studentRow{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid2,.grid3,.assignmentGrid,.studentRow,.stats{grid-template-columns:1fr}.profileCard,.between{align-items:stretch;flex-direction:column}.profileCard button{margin-left:0}table{display:block;overflow-x:auto}}
+
+.repoStatus{margin:18px 0;padding:18px;border:1px solid #35394a;border-radius:16px;background:#0e1119}
+.repoStatus h3{margin:6px 0 2px}.repoStatus small{color:#baaaff;font-weight:900;letter-spacing:.1em}
+.repoMeta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.repoMeta>div{padding:12px;border-radius:12px;background:#151824;border:1px solid #292d3a}
+.copyRow{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #343746;border-radius:12px;background:#0a0d14}
+.copyRow code{flex:1;overflow:auto;white-space:nowrap}
+@media(max-width:700px){.repoMeta{grid-template-columns:1fr}.copyRow{align-items:stretch;flex-direction:column}}
+
+.submissionCard{margin:18px 0;padding:18px;border:1px solid #35394a;border-radius:16px;background:#10121a}
+.submissionCard small{color:#baaaff;font-weight:900;letter-spacing:.1em}
+.feedbackBox{margin:14px 0;padding:14px;border-radius:12px;background:#1c1830;border:1px solid #3d3561}
+.feedbackBox p,.studentNote p{margin-bottom:0;white-space:pre-wrap}
+.submissionItem{margin:18px 0;padding:20px;border:1px solid #303341;border-radius:18px;background:#10121a}
+.submissionItem h3{margin:0 0 4px}
+.submissionMeta{display:grid;grid-template-columns:1fr 1fr 2fr;gap:10px;margin:15px 0}
+.submissionMeta>div{padding:12px;border:1px solid #292d3a;border-radius:12px;background:#151824}
+.submissionMeta span{display:block;color:#8f93a3;font-size:.8rem;margin-bottom:6px}
+.studentNote{margin:14px 0;padding:14px;border-left:3px solid #744cff;background:#141621}
+@media(max-width:760px){.submissionMeta{grid-template-columns:1fr}}
+
+.gitWorkflowCard{margin:18px 0;padding:18px;border:1px solid #35394a;border-radius:16px;background:#0f121b}
+.gitWorkflowCard small{color:#baaaff;font-weight:900;letter-spacing:.1em}
+.workflowSteps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0}
+.workflowStep{display:flex;gap:10px;padding:12px;border:1px solid #2c3040;border-radius:12px;background:#151824}
+.workflowStep>span{display:grid;place-items:center;min-width:28px;height:28px;border-radius:50%;background:#282d3e;font-weight:900}
+.workflowStep p{margin:4px 0 0;color:#969aaa;font-size:.85rem}
+.commandList{display:grid;gap:8px;margin-top:12px}
+.commandRow{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #343746;border-radius:12px;background:#0a0d14}
+.commandRow code{flex:1;overflow:auto;white-space:nowrap}
+.workflowWarning{margin-top:14px;padding:14px;border-radius:12px;border:1px solid #72581f;background:#2a2111}
+.workflowWarning p{margin-bottom:0}
+.submissionMeta{grid-template-columns:1fr 1fr 2fr 1fr}
+@media(max-width:900px){.workflowSteps{grid-template-columns:1fr 1fr}.submissionMeta{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.workflowSteps,.submissionMeta{grid-template-columns:1fr}.commandRow{flex-direction:column;align-items:stretch}}
+
+.assessmentBox{margin:14px 0;padding:14px;border-radius:12px;background:#10251b;border:1px solid #28543d}
+.scoreRows{display:grid;gap:6px;margin-top:10px}.scoreRows>div{display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid #294235}
+.rubricArea{margin:16px 0;padding:15px;border:1px solid #34384a;border-radius:14px;background:#12151f}
+.rubricRows{display:grid;gap:8px;margin-top:12px}.rubricRow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px;border-radius:10px;background:#181b27}
+.rubricRow input{width:70px;padding:8px}.rubricTotal{font-weight:900;color:#baaaff}
+.criterionRow{display:grid;grid-template-columns:1fr 120px auto;gap:8px;margin:8px 0}.gradeRow{display:grid;grid-template-columns:160px 100px auto;gap:8px;align-items:center;margin:8px 0}#rubricStatus{margin-left:10px;color:#b9aaff;font-weight:700}@media(max-width:650px){.criterionRow,.gradeRow{grid-template-columns:1fr}}
+
+.studentProgressCard{margin:18px 0;padding:18px;border:1px solid #34384a;border-radius:16px;background:#10131c}
+.studentProgressCard small{display:block;color:#9ea3b4}
+.progressSummary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.progressSummary>div{padding:12px;border-radius:12px;background:#171a25;text-align:center}
+.progressSummary strong{display:block;font-size:1.35rem}.progressSummary span{font-size:.82rem;color:#9ea3b4}
+.progressList{display:grid;gap:8px}.progressItem{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px;border-top:1px solid #292d3b}
+.progressRight{text-align:right}.statusPill{display:inline-block;padding:4px 8px;border-radius:999px;background:#292d3b;font-size:.78rem;margin-bottom:4px}
+.statusPill.approved{background:#153524}.statusPill.submitted{background:#272e52}.statusPill.changes_requested{background:#3c2d16}
+@media(max-width:700px){.progressSummary{grid-template-columns:1fr 1fr}.progressItem{align-items:flex-start}.progressRight{max-width:45%}}
+
+.attentionRow{background:#211813}
+.attentionBadge{display:inline-block;padding:4px 8px;border-radius:999px;background:#4a2d18;font-size:.8rem;font-weight:800}
+#dashboardGroupFilter,#dashboardAttentionFilter{width:auto;min-width:160px}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+
+.systemCard{border-color:#37334f}
+.systemCard small{color:#baaaff;font-weight:900;letter-spacing:.1em}
+.migrationList{display:grid;gap:7px;margin-top:10px}
+.migrationList>div{display:flex;justify-content:space-between;gap:14px;padding:8px 10px;border-radius:10px;background:#151824}
+.migrationList span{color:#aeb2c2}
+
+.dataLocation{display:grid;gap:5px;margin:12px 0;padding:12px;border-radius:12px;background:#11151f;border:1px solid #303545}
+.dataLocation code{overflow:auto;white-space:nowrap;color:#d8d1ff}
+.dataLocation small{color:#969aaa}
+
+.importExportCard{border-color:#3c3a56}
+#importCourseFile{margin-bottom:10px}
+#courseTransferStatus{margin-left:10px;color:#b9aaff;font-weight:700}
+
+.restorePreview{margin:14px 0;padding:16px;border:1px solid #3a4052;border-radius:14px;background:#121620}
+.backupSummary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.backupSummary>div{padding:12px;border-radius:12px;background:#181c28;text-align:center}
+.backupSummary strong{display:block;font-size:1.3rem}.backupSummary span{color:#9da2b2;font-size:.82rem}
+#restoreStatus{margin-top:12px;color:#b9aaff;font-weight:700}
+@media(max-width:700px){.backupSummary{grid-template-columns:1fr 1fr}}
+
+.deadlineBox{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:14px 0;padding:12px 14px;border-radius:12px;border:1px solid #514827;background:#251f10}
+.deadlineBox.overdue{border-color:#63333a;background:#2a1519}
+.deadlineBox span{color:#b9bdc9;font-size:.88rem}
+.lateBadge{display:inline-block;margin-top:6px;padding:5px 9px;border-radius:999px;background:#4a1f28;font-size:.8rem;font-weight:800}
+.lateText{color:#e4b4b9!important;font-weight:800}

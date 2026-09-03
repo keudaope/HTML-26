@@ -1,0 +1,8 @@
+<!doctype html><html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Koodiopas v5</title><link rel="stylesheet" href="styles.css"></head><body><main>
+<header><small>KOODIOPAS • V5</small><h1>Vihje kerrallaan<br>kohti ratkaisua.</h1><p>Koodiopas lukee GitHub-projektisi nykyisen version, muistaa yrityksesi ja noudattaa opettajan määrittelemää avustustasoa.</p></header>
+<section id="teacherNotice" class="teacherNotice" hidden></section>
+<section class="card"><label>1. GitHub repository</label><div class="row"><input id="repo" value="https://github.com/ahmedmamdo38-cmd/Staattinen-verkkosivusto-projekti"><button id="load">Hae tehtävät</button></div>
+<div id="projectArea" hidden><label>2. Valitse tehtävä</label><div id="projects"></div></div>
+<div id="help" hidden><div class="between"><label>3. Mikä ei toimi?</label><b id="level">Vihjetaso 1</b></div><div id="policy" class="policy"></div><div id="progress"></div><textarea id="msg" rows="4" placeholder="Kerro mitä olet yrittänyt ja mitä odotit tapahtuvan..."></textarea><div class="row"><button id="ask">Pyydä vihje</button><button id="reset" class="secondary">Aloita alusta</button></div></div></section>
+<div id="status" hidden></div><section id="chat" class="card" hidden><h2 id="title"></h2><div id="messages"></div></section>
+<script src="app.js"></script></body></html>

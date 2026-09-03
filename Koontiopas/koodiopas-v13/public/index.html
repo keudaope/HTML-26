@@ -1,0 +1,14 @@
+<!doctype html><html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Koodiopas v13</title><link rel="stylesheet" href="styles.css"></head>
+<body><main>
+<header><small>KOODIOPAS • V13</small><h1>Jaa tehtävä<br>koko ryhmälle.</h1><p>Template-repositorysta opiskelijakohtaiset repositoryt yhdellä toiminnolla.</p></header>
+
+<section id="loginCard" class="card narrow"><h2>Opettajan kirjautuminen</h2><label>Salasana</label><input id="password" type="password"><button id="login">Kirjaudu</button><div id="loginStatus"></div></section>
+
+<section id="admin" hidden>
+<div class="topbar"><div><strong id="teacherState"></strong><span id="orgState" class="muted"></span></div><button id="logout" class="secondary">Kirjaudu ulos</button></div>
+<section class="card"><div class="between"><div><h2>1. GitHub-yhteys</h2><p class="muted">Tarvitaan repositoryjen luomiseen ja opiskelijoiden lisäämiseen.</p></div><div id="githubActions"></div></div><div id="githubStatus"></div></section>
+<section class="card"><h2>2. Valitse jaettava tehtävä</h2><div class="grid3"><div><label>Kurssi</label><select id="course"></select></div><div><label>Tehtävä</label><select id="assignment"></select></div><div><label>Ryhmä</label><select id="group"></select></div></div><button id="preview">Esikatsele jako</button></section>
+<section id="previewCard" class="card" hidden><div class="between"><div><h2>3. Esikatselu</h2><p id="previewInfo" class="muted"></p></div><button id="distribute">Jaa tehtävä ryhmälle</button></div><div id="previewTable"></div></section>
+<section id="resultCard" class="card" hidden><h2>Jakotulos</h2><div id="results"></div></section>
+</section>
+</main><script src="app.js"></script></body></html>

@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": "7a85e462-c8ef-41d3-93f0-86cf151c3aa2",
+      "timestamp": "2026-08-21T10:36:48.923Z",
+      "githubUsername": "keudaopettaja",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "level": 1,
+      "message": "kuvan liittäminen"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "teacherMessage": "Kirjaudu GitHubilla. Koodiopas näyttää vain sinulle kuuluvat kurssit ja tehtävät.",
+  "defaultMaxHintLevel": 3,
+  "allowFullSolution": false,
+  "minAttemptsBeforeFullSolution": 4
+}

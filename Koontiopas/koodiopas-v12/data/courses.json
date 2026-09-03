@@ -1,0 +1,22 @@
+{
+  "courses": [
+    {
+      "id": "html-perusteet",
+      "name": "HTML perusteet",
+      "groupIds": [
+        "demo-ryhma"
+      ],
+      "assignments": [
+        {
+          "id": "html-tehtava-1",
+          "name": "HTML tehtävä 1",
+          "repoPrefix": "html-tehtava-1",
+          "instructions": "Tee ensimmäinen HTML-sivusi annetun tehtävänannon mukaan.",
+          "maxHintLevel": 3,
+          "allowFullSolution": false,
+          "minAttemptsBeforeFullSolution": 4
+        }
+      ]
+    }
+  ]
+}

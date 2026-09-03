@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {
+      "id": "19732bc4-f2b3-48e1-805e-99d054bca81e",
+      "name": "Ohjelmistokehittäjä 2026",
+      "students": [
+        {
+          "id": "keudaope",
+          "name": "Jyri Lindroos",
+          "githubUsername": "keudaope"
+        }
+      ]
+    }
+  ]
+}

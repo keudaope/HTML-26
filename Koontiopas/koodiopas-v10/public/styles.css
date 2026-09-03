@@ -1,0 +1,31 @@
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 12% 8%,rgba(110,65,220,.28),transparent 30rem),radial-gradient(circle at 88% 12%,rgba(40,90,220,.20),transparent 32rem),#090a0f;color:#f4f4f8;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{width:min(1180px,calc(100% - 32px));margin:auto;padding:56px 0}
+header{margin-bottom:28px}header small{color:#baaaff;font-weight:900;letter-spacing:.16em}
+h1{margin:12px 0 20px;font-size:clamp(2.5rem,7vw,5.2rem);line-height:.96;letter-spacing:-.05em}
+header p,.muted{color:#9498a8;line-height:1.6}
+nav,.teacherNav{display:flex;gap:8px;flex-wrap:wrap}
+.tab,.subtab{background:#181a23;border:1px solid #343746}.tab.active,.subtab.active{background:linear-gradient(135deg,#744cff,#2f6df6)}
+.card{margin-top:20px;padding:25px;border:1px solid #292c38;border-radius:22px;background:rgba(17,18,27,.92)}
+.narrow{max-width:520px}.teacherNotice{margin-bottom:18px;padding:14px 16px;border:1px solid rgba(140,115,255,.28);border-radius:14px;background:rgba(116,76,255,.12);color:#d8d1ff}
+label{display:block;margin:16px 0 8px;font-weight:800}.row,.between{display:flex;gap:10px}.between{justify-content:space-between;align-items:end}.grow{flex:1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid2cards{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.filters{display:grid;grid-template-columns:repeat(5,1fr) 1.3fr;gap:10px;align-items:end}.filterActions{display:flex;gap:8px}
+input,textarea,select{width:100%;padding:13px;border:1px solid #343746;border-radius:12px;background:#0d0f16;color:white;font:inherit}
+button{padding:12px 16px;border:0;border-radius:12px;background:linear-gradient(135deg,#744cff,#2f6df6);color:white;font:inherit;font-weight:800;cursor:pointer}
+.secondary{background:#1b1d27}.danger{background:#4a1f28}.project{margin:5px;border:1px solid #333644;background:#151721}.project.selected{outline:2px solid #8f75ff}
+.policy{margin-bottom:12px;color:#9498a8;font-size:.9rem}#progress{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;margin-bottom:12px}
+#progress i{height:5px;border-radius:999px;background:#292c36}#progress i.on{background:linear-gradient(90deg,#744cff,#2f6df6)}
+#status{margin-top:18px;padding:15px;border-radius:12px;background:#211b3d}.error,.inlineStatus{color:#ffb7b7!important}
+article{max-width:85%;margin:18px 0;padding:16px;border-radius:16px;line-height:1.65;white-space:pre-wrap}.student{margin-left:auto;background:#142143}.assistant{background:#181a23}
+article small{display:block;margin-bottom:8px;color:#888d9b;font-weight:800}.check{display:flex;align-items:center;gap:10px;font-weight:700}.check input{width:auto}
+.ruleRow{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr auto;gap:10px;align-items:end;padding:14px 0;border-bottom:1px solid #292c38}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.stat{padding:18px;border:1px solid #292c38;border-radius:18px;background:#11131b}.stat span{display:block;color:#8f93a3;font-size:.85rem}.stat strong{display:block;margin-top:8px;font-size:2rem}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:10px;border-bottom:1px solid #292c38;font-size:.92rem}th{color:#b7a8ff}
+.barRow{margin:15px 0}.barRow>div:first-child{display:flex;justify-content:space-between;gap:12px}.bar{height:8px;margin-top:6px;border-radius:999px;background:#292c36;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#744cff,#2f6df6)}
+.groupCard{margin:16px 0;padding:18px;border:1px solid #303341;border-radius:16px;background:#10121a}.studentRow{display:grid;grid-template-columns:1fr 1.4fr 2.5fr auto;gap:8px;margin:8px 0}
+#groupsSaveStatus,#saveStatus{margin-left:12px;color:#b9aaff;font-weight:700}
+@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}.grid2cards,.stats,.ruleRow,.studentRow{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.row,.between{flex-direction:column;align-items:stretch}.grid2,.grid2cards,.stats,.filters,.ruleRow,.studentRow{grid-template-columns:1fr}.filterActions{flex-direction:column}table{display:block;overflow-x:auto}}
+
+.csvBox{margin:16px 0;padding:18px;border:1px solid #303341;border-radius:16px;background:#10121a}.csvBox h3{margin-top:0}#csvStatus{margin-top:10px;color:#b9aaff;font-weight:700}

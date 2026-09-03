@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "id": "demo-ryhma",
+      "name": "Demo-ryhmä",
+      "students": [
+        {
+          "id": "jyri.lindroos",
+          "name": "Koti tunnukset",
+          "githubUsername": "jpl225"
+        },
+        {
+          "id": "keudaope",
+          "name": "Jyri Lindroos",
+          "githubUsername": "keudaope"
+        }
+      ]
+    }
+  ]
+}
