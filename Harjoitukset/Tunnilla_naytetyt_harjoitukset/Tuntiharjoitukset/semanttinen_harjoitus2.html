@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harjoitus 2</title>
+</head>
+<style>
+    ul{
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* Left content takes remaining space, right side is 300px */
+  gap: 20px; /* Adds spacing between elements */
+}
+
+.sectionit {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds spacing between header and sections */
+}
+img{
+    height: 150px;
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <h1>Harjoitus 2</h1>
+            <ul>
+                <li><a href="#">Koti</a></li>
+                <li><a href="#">Tietoa</a></li>
+                <li><a href="#">Ota yhteyttä</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <div class="sectionit">
+            <header>
+                <h2>Suositummat lemmikit</h2>
+            </header>
+                <section>
+                <h2>Koirat</h2>
+                <h3>Ihmisen paras ystävä</h3>
+                <p>Koirat ovat seurallisia, älykkäitä ja uteliaita eläimiä. Eri koirarodut voivat olla hyvin erilaisia niin kooltaan, ulkonäöltään kuin luonteeltaankin.</p>
+                <p>Jotkut koirat rakastavat pitkiä lenkkejä ja vauhdikkaita leikkejä, kun taas toiset viihtyvät parhaiten omistajansa vieressä sohvalla.</p>
+                <h3>Koiragalleria</h3>
+                <p><strong>Iloinen koira</strong></p>
+                <img src="kuvat/iloinen.jpg" alt="iloinen koira">
+                <p>Tämä koira nauttii ulkoilusta ja uusien paikkojen tutkimisesta.</p>
+                <p><strong>Leikkisä pentu</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTUGdob7pxD2XuSIVqALOi4XfzhQ9YdJ46dDrOK8gVlQ&s=10" alt="leikkisä pentu">
+                <p>Pennut ovat uteliaita ja haluavat tutkia kaikkea ympärillään.</p>
+                <p><strong>Koira luonnossa</strong></p>
+                <img src="https://media.easy-peasy.ai/59edf0e4-b487-4bb0-b461-7ad27815919a/23ae2101-30a7-4934-a25d-e16a2c86ce76.png" alt="Koira luonnossa">
+                <p>Metsät, puistot ja rannat tarjoavat koirille paljon uusia hajuja ja kiinnostavaa tutkittavaa.</p>
+                <p><strong>Lepäävä koira</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDw8EeklSbTviVYCZrc4dej9MGjOSHXm_Ep8ZWLa7Gfw&s=10" alt="lepäävä koira" >
+                <p>Vauhdikkaan päivän jälkeen myös koira tarvitsee rauhallisen paikan lepäämiseen.</p>
+            </section>        
+            <section>
+                <h2>Kissat</h2>
+                <p>Uteliaita ja itsenäisiä seuralaisia</p>
+                <p>Kissat tunnetaan uteliaisuudestaan, ketteryydestään ja itsenäisestä luonteestaan. Ne voivat viettää suuren osan päivästä nukkuen, mutta innostuvat nopeasti kiinnostavasta lelusta tai liikkuvasta kohteesta.</p>
+                <p>Monet kissat pitävät korkeista paikoista, joista ne voivat tarkkailla ympäristöään rauhassa.</p>
+                <h3>Kissagalleria</h3>
+                <p><strong>Utelias kissa</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv_58c3iO-6qbQrs6qaKbykSzLmxyRzNob5V7AGmrhgA&s=10" alt="utelias kissa">
+                <p>Kissat haluavat usein tutkia uusia esineitä ja paikkoja.</p>
+                <p><strong>Leikkivä kissa</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn9JbYE_58_d3IZN1OVcVvA4VX7HhOcw3zpoxthwd7aw&s=10" alt="leikkisä kissa">
+                <p>Pallot, narut ja erilaiset lelut voivat tarjota kissalle paljon tekemistä.</p>
+                <p><strong>Nukkuva kissa</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-1yq8hx5Xue1vpvHDV4Z9i71YcHjgghVGMXV05wX1Q&s=10" alt="nukkuva kissa">
+                <p>Kissat ovat mestareita löytämään kodin mukavimmat nukkumapaikat.</p>
+                <p><strong>Kissa ulkona</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-iexNoBFFbk102NuXffAD9VV0nCWVvj8JBKtHSCxfpQ&s=10" alt="kissa ulkona">
+                <p>Ulkona kissa voi seurata lintuja, hyönteisiä ja ympäristön tapahtumia.</p>
+            </section>
+            </div>
+            
+            <aside>
+                <h3>Tiesitkö?</h3>
+                <p>Koirilla on erittäin hyvä hajuaisti. Ne pystyvät haistamaan asioita, joita ihminen ei huomaa lainkaan. Koiria koulutetaankin esimerkiksi etsintä-, pelastus- ja avustustehtäviin.</p>
+                <hr>
+                <p>Kissa voi nukkua jopa suuren osan vuorokaudesta. Nukkuminen auttaa sitä säästämään energiaa leikkimiseen, tutkimiseen ja saalistamiseen.</p>
+            </aside>
+        </article>
+            <footer>
+                <p>Tarkempia tietoja löydät täältä: <a href="#">koirat</a> ja täältä <a href="#">kissat</a></p>
+            </footer>
+
+
+
+        </article>
+    </main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saavutettavuusharjoitus – Koodikoulu</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f5f7;color:#222;line-height:1.5}
+header{background:#392060;color:white;padding:28px 8%}header h1{margin:0 0 6px;font-size:2.1rem}
+nav{background:#24133d;padding:12px 8%}nav a{color:white;text-decoration:none;margin-right:22px}nav a:hover{text-decoration:underline}
+main{width:min(1100px,88%);margin:30px auto}.task{background:white;border-left:6px solid #7a3fc1;padding:22px;margin-bottom:28px;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:white;padding:20px;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.card img{width:100%;height:190px;object-fit:cover;border-radius:8px;background:#ddd}.muted{color:#b9b9b9}
+.fake-button{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:7px;background:#6d35b3;color:white;cursor:pointer;user-select:none}
+.cta{margin:32px 0;padding:24px;background:#eee8f6;border-radius:10px}
+input,select,textarea{width:100%;padding:10px;margin:6px 0 14px;border:1px solid #aaa;border-radius:6px;font:inherit}
+button{background:#6d35b3;color:white;border:0;border-radius:7px;padding:11px 18px;font:inherit;cursor:pointer}
+a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:none}
+table{width:100%;border-collapse:collapse;background:white;margin-top:18px}td,th{border:1px solid #d7d7d7;padding:10px;text-align:left}
+footer{margin-top:45px;padding:24px 8%;background:#24133d;color:white;text-align:center}.small{font-size:.82rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Koodikoulun opiskelijapäivä</h1>
+<p>Tutustu päivän ohjelmaan, kouluttajiin ja ilmoittautumiseen.</p>
+</header>
+
+<nav>
+<a href="#ohjelma">Klikkaa tästä</a>
+<a href="#kouluttajat">Lue lisää</a>
+<a href="#ilmoittautuminen">Siirry</a>
+</nav>
+
+<main>
+<section class="task">
+<h2>Saavutettavuusauditointi</h2>
+<p>Tämä sivu sisältää tarkoituksella useita saavutettavuusongelmia. Tutki sekä selaimessa näkyvää sivua että HTML-koodia.</p>
+<p><strong>Tehtävä:</strong> Etsi vähintään 10 ongelmaa. Kirjaa jokaisesta:</p>
+<ol><li>Mikä ongelma on?</li><li>Kenelle siitä voi olla haittaa?</li><li>Miten korjaisit sen?</li></ol>
+<p>Testaa sivua myös pelkällä näppäimistöllä ja tutki tarvittaessa selaimen DevTools-työkaluja.</p>
+</section>
+
+<section id="ohjelma">
+<h2>Päivän ohjelma</h2>
+<div class="grid">
+<div class="card">
+<h4>HTML käytännössä</h4>
+<p>Rakennamme yhdessä pienen verkkosivun semanttisilla HTML-elementeillä.</p>
+<div class="fake-button" onclick="alert('Ilmoittautuminen avattu')">Ilmoittaudu</div>
+</div>
+<div class="card">
+<h4>CSS ja saavutettavuus</h4>
+<p class="muted">Tutkimme kontrastia, fokusta ja tekstin luettavuutta.</p>
+<a href="https://example.com">Klikkaa tästä</a>
+</div>
+<div class="card">
+<h4>JavaScriptin perusteet</h4>
+<p>Opit tekemään käyttöliittymästä interaktiivisen.</p>
+<a href="#ilmoittautuminen">Lue lisää</a>
+</div>
+</div>
+</section>
+
+<section id="kouluttajat">
+<h2>Kouluttajat</h2>
+<div class="grid">
+<article class="card">
+<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%23c7b5dc'/><circle cx='300' cy='130' r='72' fill='%236d35b3'/><rect x='205' y='215' width='190' height='100' rx='40' fill='%236d35b3'/></svg>">
+<h3>Anna Aalto</h3><p>HTML ja saavutettavuus</p>
+</article>
+<article class="card">
+<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%23d8c9e8'/><circle cx='300' cy='130' r='72' fill='%23543287'/><rect x='205' y='215' width='190' height='100' rx='40' fill='%23543287'/></svg>" alt="kuva2.jpg">
+<h3>Mikko Mallikas</h3><p>CSS ja käyttöliittymät</p>
+</article>
+<article class="card">
+<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%23eee8f6'/><path d='M0,330 L600,330 L600,210 L470,140 L350,260 L220,170 L0,300 Z' fill='%237a3fc1'/></svg>" alt="Purppuran sävyinen koristeellinen taustakuva, jossa on geometrisia muotoja">
+<h3>Kurssitiimi</h3><p>Auttaa käytännön harjoituksissa.</p>
+</article>
+</div>
+</section>
+
+<section class="cta">
+<div style="font-size:1.6rem;font-weight:bold;">Miksi osallistua?</div>
+<p>Saat käytännön kokemusta verkkosivujen rakentamisesta ja opit tarkastelemaan sivuja myös saavutettavuuden näkökulmasta.</p>
+</section>
+
+<section>
+<h2>Kurssiaikataulu</h2>
+<table>
+<tr><td>Aika</td><td>Aihe</td><td>Tila</td></tr>
+<tr><td>09.00</td><td>HTML</td><td>A201</td></tr>
+<tr><td>11.00</td><td>CSS</td><td>A201</td></tr>
+<tr><td>13.00</td><td>JavaScript</td><td>B105</td></tr>
+</table>
+</section>
+
+<section id="ilmoittautuminen">
+<h2>Ilmoittaudu tapahtumaan</h2>
+<form>
+Nimi
+<input type="text" name="nimi">
+<input type="email" name="email" placeholder="Sähköpostiosoite">
+<p>Valitse kokemustaso:</p>
+<select name="taso"><option>Aloittelija</option><option>Jonkin verran kokemusta</option><option>Kokenut</option></select>
+<p>Lisätietoja</p>
+<textarea name="lisatiedot" rows="5"></textarea>
+<input type="checkbox" id="ehdot"> Hyväksyn tapahtuman ehdot
+<br><br>
+<button type="submit">Lähetä</button>
+</form>
+</section>
+
+<section>
+<h2>Esittelyvideo</h2>
+<iframe width="560" height="315" srcdoc="<html><body style='font-family:Arial;text-align:center;padding-top:80px;background:#eee8f6'><h2>Esittelyvideo</h2><p>Kuvitteellinen videoupotus harjoitusta varten.</p></body></html>"></iframe>
+</section>
+
+<section>
+<h2 id="lisatiedot">Lisätietoja</h2>
+<p id="lisatiedot">Jos sinulla on kysyttävää, ota yhteyttä koulutuksen järjestäjään.</p>
+</section>
+</main>
+
+<footer><p>Koodikoulu 2026</p><p class="small">Harjoitussivu saavutettavuuden opiskeluun</p></footer>
+</body>
+</html>
