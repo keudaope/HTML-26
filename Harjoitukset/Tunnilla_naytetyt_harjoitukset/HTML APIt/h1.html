@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HTML API + JavaScript harjoitus 1</title>
+  </head>
+  <body>
+    <h1>HTML API + JavaScript harjoitus 1</h1>
+    <h2>Harjoitus 1: Dataset-tuotekortti</h2>
+    <script>
+      function naytaTuotekortti() {
+        const button = document.querySelector("#tuotekortti");
+        console.log("Tuotteen nimi: " + button.dataset.tuotteenNimi);
+        console.log("Hinta: " + button.dataset.hinta);
+        console.log("Varastossa: " + button.dataset.varastossa);
+      }
+    </script>
+    <button
+      id="tuotekortti"
+      data-tuotteen-nimi="Kahvinkeitin"
+      data-hinta="49.99"
+      data-varastossa="true"
+      onclick="naytaTuotekortti()"
+    >
+      Näytä tuotekortti
+    </button>
+    <h2>Harjoitus 2: Details-elementti</h2>
+    <!-- Painike, jolla dialogi avataan -->
+    <button id="openDialog">Poista tiedosto</button>
+
+    <!-- Itse dialogi -->
+    <dialog id="confirmDialog">
+      <h2>Vahvista poistaminen</h2>
+
+      <p>Haluatko varmasti poistaa tiedoston?</p>
+
+      <!--
+            method="dialog" tarkoittaa, että lomakkeen
+            painikkeet voivat sulkea dialogin.
+        -->
+      <form method="dialog">
+        <button value="cancel">Peruuta</button>
+
+        <button value="delete">Poista</button>
+      </form>
+    </dialog>
+
+    <p id="result"></p>
+
+    <script>
+      // 1. Haetaan HTML-elementit JavaScriptiin
+
+      const openButton = document.querySelector("#openDialog");
+
+      const dialog = document.querySelector("#confirmDialog");
+
+      const result = document.querySelector("#result");
+
+      // 2. Kun avauspainiketta painetaan, avataan dialogi modaalisena
+
+      openButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      // 3. Kun dialogi sulkeutuu, luetaan dialog.returnValue.
+
+      dialog.addEventListener("close", () => {
+        console.log(dialog.returnValue);
+
+        // 4. Tarkistetaan, mitä painiketta käyttäjä painoi.
+
+        if (dialog.returnValue === "delete") {
+          result.textContent = "Tiedosto poistettiin.";
+        } else {
+          result.textContent = "Poistaminen peruutettiin.";
+        }
+      });
+    </script>
+    <h2>Harjoitus 3: Popover + Details</h2>
+    <!-- POPoverin avaava painike -->
+    <button popovertarget="ohje">Näytä ohje</button>
+
+    <!-- Varsinainen popover -->
+
+    <dialog id="ohje" popover>
+      <h2>Ohje</h2>
+      <p>
+        Tällä sivulla harjoitellaan HTML:n natiiveja popover- ja
+        details/summary-ominaisuuksia.
+      </p>
+      <p>Avaa alla olevia kysymyksiä nähdäksesi vastaukset.</p>
+    </dialog>
+
+    <h2>Usein kysytyt kysymykset</h2>
+
+    <!-- FAQ-kysymys 1 -->
+    <details class="faq-item">
+      <summary>Mikä on HTML?</summary>
+      <p>
+        HTML tarkoittaa HyperText Markup Language. Sillä määritellään
+        verkkosivun rakenne ja sisältö.
+      </p>
+    </details>
+
+    <!-- FAQ-kysymys 2 -->
+    <details class="faq-item">
+      <summary>Mihin CSS:ää käytetään?</summary>
+      <p>
+        CSS:llä määritellään verkkosivun ulkoasu, kuten värit, fontit, välit ja
+        asettelu.
+      </p>
+    </details>
+    <!-- FAQ-kysymys 3 -->
+    <details class="faq-item">
+      <summary>Mihin JavaScriptiä käytetään?</summary>
+      <p>
+        JavaScriptillä verkkosivulle voidaan lisätä ohjelmallista toimintaa ja
+        interaktiivisuutta.
+      </p>
+    </details>
+    <script>
+      // Haetaan kaikki FAQ-kohdat.
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      // Käydään jokainen FAQ-kohta läpi.
+      faqItems.forEach((faq) => {
+        // Kuunnellaan details-elementin
+        // avautumista ja sulkeutumista.
+        faq.addEventListener("toggle", () => {
+          // Haetaan tämän FAQ-kohdan summary.
+          const summary = faq.querySelector("summary");
+
+          // Tarkistetaan details-elementin open-property.
+          if (faq.open) {
+            console.log("FAQ avattiin:", summary.textContent.trim());
+          } else {
+            console.log("FAQ suljettiin:", summary.textContent.trim());
+          }
+        });
+      });
+    </script>
+    <h2>Harjoitus 4: Api</h2>
+    <button id="openButton2" data-id="123">Avaa</button>
+
+    <!-- Dialogi -->
+    <dialog id="infoDialog">
+      <p>Info</p>
+
+      <!-- 5. Dialogilla on selkeä sulkemistapa -->
+      <form method="dialog">
+        <button value="close">Sulje</button>
+      </form>
+    </dialog>
+
+    <script>
+      // 3. Haetaan elementit selkeisiin muuttujanimiiin
+      const openButton2 = document.querySelector("#openButton2");
+
+      const infoDialog = document.querySelector("#infoDialog");
+
+      // 2. showModal() kutsutaan vasta click-tapahtumassa
+      openButton.addEventListener("click", () => {
+        // 4. data-id on nyt olemassa
+        console.log("Painikkeen data-id:", openButton.dataset.id);
+
+        infoDialog.showModal();
+      });
+    </script>
+  </body>
+</html>
