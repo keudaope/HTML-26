@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "id": "demo-ryhma",
+      "name": "Ohjelmistokehittäjä 2026",
+      "students": [
+        {
+          "id": "demo-opiskelija",
+          "name": "Demo-opiskelija",
+          "repoUrl": "https://github.com/ahmedmamdo38-cmd/Staattinen-verkkosivusto-projekti"
+        },
+        {
+          "id": "ahmed-m",
+          "name": "Ahmed Mamdo",
+          "repoUrl": "ttps://github.com/ahmedmamdo38-cmd/Staattinen-verkkosivusto-projekti"
+        }
+      ]
+    }
+  ]
+}

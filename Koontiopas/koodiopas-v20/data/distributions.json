@@ -1,0 +1,140 @@
+{
+  "distributions": [
+    {
+      "id": "872737c1-99e3-499d-9288-55191e26b977",
+      "timestamp": "2026-08-21T02:50:35.669Z",
+      "teacherGithub": "keudaope",
+      "organization": "keuda-ohjelmointi",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "results": [
+        {
+          "student": "Oma tunnua",
+          "repoName": "html-tehtavat-jpl225",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-jpl225",
+          "status": "failed",
+          "error": "Invalid owner"
+        },
+        {
+          "student": "Jyri Lindroos",
+          "repoName": "html-tehtavat-keudaope",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaope",
+          "status": "failed",
+          "error": "Invalid owner"
+        }
+      ]
+    },
+    {
+      "id": "3daf9146-99e7-4a35-9986-682b831134d0",
+      "timestamp": "2026-08-21T03:02:17.595Z",
+      "teacherGithub": "keudaope",
+      "organization": "keuda-ohjelmointi",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "results": [
+        {
+          "student": "Oma tunnua",
+          "repoName": "html-tehtavat-jpl225",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-jpl225",
+          "status": "failed",
+          "error": "The OAuth application is not authorized for access to keuda-ohjelmointi."
+        },
+        {
+          "student": "Jyri Lindroos",
+          "repoName": "html-tehtavat-keudaope",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaope",
+          "status": "failed",
+          "error": "The OAuth application is not authorized for access to keuda-ohjelmointi."
+        }
+      ]
+    },
+    {
+      "id": "3a8fa2a3-6d50-42be-b16b-8ce3ecca3655",
+      "timestamp": "2026-08-21T03:11:25.075Z",
+      "teacherGithub": "keudaope",
+      "organization": "keuda-ohjelmointi",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "results": [
+        {
+          "student": "Oma tunnua",
+          "repoName": "html-tehtavat-jpl225",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-jpl225",
+          "status": "created"
+        },
+        {
+          "student": "Jyri Lindroos",
+          "repoName": "html-tehtavat-keudaope",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaope",
+          "status": "created"
+        }
+      ]
+    },
+    {
+      "id": "3848ac27-93a4-4b6f-8aed-44b8b73c21d3",
+      "timestamp": "2026-08-21T03:11:47.897Z",
+      "teacherGithub": "keudaope",
+      "organization": "keuda-ohjelmointi",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "results": [
+        {
+          "student": "Oma tunnua",
+          "repoName": "html-tehtavat-jpl225",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-jpl225",
+          "status": "exists"
+        },
+        {
+          "student": "Jyri Lindroos",
+          "repoName": "html-tehtavat-keudaope",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaope",
+          "status": "exists"
+        }
+      ]
+    },
+    {
+      "id": "0b33ad38-9dcf-400d-91c2-ca241b11a2e2",
+      "timestamp": "2026-08-21T04:06:26.618Z",
+      "teacherGithub": "keudaope",
+      "organization": "keuda-ohjelmointi",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "results": [
+        {
+          "student": "Oma tunnua",
+          "githubUsername": "jpl225",
+          "repoName": "html-tehtavat-jpl225",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-jpl225",
+          "status": "exists"
+        },
+        {
+          "student": "Oma tunnus",
+          "githubUsername": "keudaopettaja",
+          "repoName": "html-tehtavat-keudaopettaja",
+          "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+          "status": "created"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1769 @@
+WEBVTT
+
+1
+00:00:03.019 --> 00:00:13.840
+(Transkription tehnyt TurboScribe. Päivitä Rajoittamattomaan poistaaksesi tämän viestin.) Okei, eli eilenhän käyntiin
+
+2
+00:00:13.840 --> 00:00:17.700
+läpi sitä, että kun meillä on tämä kirjautumisikkuna,
+
+3
+00:00:19.600 --> 00:00:24.320
+niin jos tähän antaa oikeat arvot, niin silloin
+
+4
+00:00:24.320 --> 00:00:26.180
+se tulee tähän meidän pääikkunaan.
+
+5
+00:00:27.120 --> 00:00:32.400
+Ja sitten tässä pääikkunassa oli nämä kolme valintaa,
+
+6
+00:00:32.740 --> 00:00:37.280
+joilla sitten pääsee hallitsemaan joko asiakkaita varauksia tai
+
+7
+00:00:37.280 --> 00:00:37.880
+huoneita.
+
+8
+00:00:38.820 --> 00:00:42.820
+Ja tänään todella käydään tämä asiakkaiden hallinta tässä
+
+9
+00:00:42.820 --> 00:00:43.220
+läpi.
+
+10
+00:00:44.760 --> 00:00:50.560
+Eli tänne voisi hyöttää, nyt minulla on näkyvähän
+
+11
+00:00:50.560 --> 00:01:00.820
+koodin jäänyt päivittämättä, mutta tämä
+
+12
+00:01:00.820 --> 00:01:06.220
+käyttäjätunnus ja salasanakenttä, niin olisi hyvä olla piilossa
+
+13
+00:01:06.220 --> 00:01:11.860
+tai sitten tehdä sen jollain muulla tavalla, mutta
+
+14
+00:01:11.860 --> 00:01:21.880
+minähän määrittelin todella eilen sen, että minun
+
+15
+00:01:21.880 --> 00:01:25.720
+käyttäjätunnus tulee automaattisesti.
+
+16
+00:01:25.720 --> 00:01:30.520
+Eli kolme kirjaintaa etunimestä ja viisi sukunimestä, kohta
+
+17
+00:01:30.520 --> 00:01:32.180
+voidaan katsoa sitä koodia.
+
+18
+00:01:32.720 --> 00:01:36.020
+Ja sitten olen määritellyt sen, että kaikkien salasana
+
+19
+00:01:36.020 --> 00:01:40.040
+on aivan sama tässä näin.
+
+20
+00:01:40.780 --> 00:01:44.160
+Ja nyt minä ihmettelen, että miksi tuo Properties
+
+21
+00:01:44.160 --> 00:01:45.840
+-ikkuna ei toimi.
+
+22
+00:01:49.480 --> 00:01:51.660
+Ihan pieni hetki, kun tämä ei ole edes
+
+23
+00:01:51.660 --> 00:01:52.600
+päällä.
+
+24
+00:01:59.480 --> 00:02:03.660
+Eli tästä kun kirjaututaan sisään, niin sitten päästiin
+
+25
+00:02:03.660 --> 00:02:05.460
+tähän meidän pääikkunaan.
+
+26
+00:02:05.580 --> 00:02:09.139
+Minulla näkyy tästä pääikkunasta nyt minulla koululla oleva
+
+27
+00:02:09.139 --> 00:02:11.480
+versio, niin siinä oli se valokuva.
+
+28
+00:02:12.440 --> 00:02:16.460
+Ja sitten täältä päästiin hallitsemaan todella näitä asiakkaita.
+
+29
+00:02:17.680 --> 00:02:21.360
+No, mutta katsotaan sitten, että miten tämä on
+
+30
+00:02:21.360 --> 00:02:21.820
+tehty.
+
+31
+00:02:27.460 --> 00:02:30.680
+Jotain vikaa minulla nyt tässä on, koska myöskään
+
+32
+00:02:30.680 --> 00:02:31.920
+toolboxi ei toimi.
+
+33
+00:02:33.320 --> 00:02:35.860
+Mutta siinä ei ole sinänsä väliä, koska me
+
+34
+00:02:35.860 --> 00:02:37.420
+katsotaan lähinnä sitä koodia.
+
+35
+00:02:38.540 --> 00:02:43.340
+Ja se, mikä nyt tässä on uutta, niin
+
+36
+00:02:43.340 --> 00:02:44.020
+on tämä.
+
+37
+00:02:44.440 --> 00:02:48.260
+Eli tämä on datagrid nimeltään tämä ikkuna.
+
+38
+00:02:48.560 --> 00:02:52.600
+Ja ideanahan siinä on se, että minulla näkyy
+
+39
+00:02:52.600 --> 00:02:57.820
+tässä sitten ne kaikki asiakkaat, joita minulla mahdollisesti
+
+40
+00:02:57.820 --> 00:03:00.180
+tänne syötetään.
+
+41
+00:03:01.280 --> 00:03:05.160
+Ja asiakkaillehan ei välttämättä tarvitse tätä käyttäjätunnusta ja
+
+42
+00:03:05.160 --> 00:03:05.820
+salasanaa.
+
+43
+00:03:05.900 --> 00:03:08.680
+Mutta nyt tämä on semmoinen järjestelmä, että sitten
+
+44
+00:03:08.680 --> 00:03:13.900
+tämä muistaa asiakkaan tiedot, kun asiakas kirjautuu tänne
+
+45
+00:03:13.900 --> 00:03:14.660
+myöhemmin.
+
+46
+00:03:19.420 --> 00:03:26.140
+Tässä on sitten keitä, eli lisää uusi asiakaspainike,
+
+47
+00:03:26.340 --> 00:03:29.000
+jolla me voidaan lisätä sinne asiakkaan.
+
+48
+00:03:29.560 --> 00:03:32.780
+Sitten, jos meidän pitää muokata asiakkaan tietoja, niin
+
+49
+00:03:32.780 --> 00:03:34.900
+me käytetään tätä muokkapainiketta.
+
+50
+00:03:35.240 --> 00:03:38.180
+Ja sitten minulla on tämä poistapainike, jolla sitten
+
+51
+00:03:38.180 --> 00:03:39.800
+voidaan poistaa asiakas.
+
+52
+00:03:39.800 --> 00:03:42.700
+Ja sitten on vielä tämä tyhjennä kentät, eli
+
+53
+00:03:42.700 --> 00:03:46.420
+saadaan tyhjennettyä nämä kentät tarvittaessa.
+
+54
+00:03:47.680 --> 00:03:55.200
+Ja sen verran voin näyttää tuolta, jos tämä
+
+55
+00:03:55.200 --> 00:03:58.200
+nyt edes suostuu menemään tuonne pinjaan.
+
+56
+00:04:02.390 --> 00:04:08.890
+Että minä laitoin sinne teille esimerkkikoodit, eli mitkä
+
+57
+00:04:08.890 --> 00:04:11.710
+minulla nyt on siellä koodeina.
+
+58
+00:04:12.750 --> 00:04:15.209
+Niin laitoin ne sinne.
+
+59
+00:04:17.899 --> 00:04:26.350
+Eli, jaha, minulla on näköjään muokkaus päällä.
+
+60
+00:04:28.970 --> 00:04:32.190
+Noin, niin päästään tänne katsomaan sitä.
+
+61
+00:04:33.130 --> 00:04:39.330
+Tässä, kun meillä on tämä meidän hotellitrojekti, niin
+
+62
+00:04:39.330 --> 00:04:41.690
+eilinen luento löytyy tuosta.
+
+63
+00:04:42.510 --> 00:04:45.490
+Ja sitten minä laitoin nämä sql-komennot tänne
+
+64
+00:04:45.490 --> 00:04:46.990
+näin mallina.
+
+65
+00:04:47.870 --> 00:04:54.410
+Eli kun me otetaan tuota yhteys, niin siihen
+
+66
+00:04:54.410 --> 00:04:56.990
+tarvittiin viisi tietoa.
+
+67
+00:04:56.990 --> 00:05:01.130
+Eli se, missä meidän tietokanta sijaitsee, mikä on
+
+68
+00:05:01.130 --> 00:05:04.830
+sitten portti, jota me käytetään, tietokannan käyttäjänimi ja
+
+69
+00:05:04.830 --> 00:05:05.950
+tietokannan salasana.
+
+70
+00:05:06.210 --> 00:05:08.770
+Ja todella nyt meillä, jos me ollaan asennettu
+
+71
+00:05:08.770 --> 00:05:12.290
+se XAMPPI, niin käyttäjätunnus on root ja salasana
+
+72
+00:05:12.290 --> 00:05:13.410
+on tyhjä.
+
+73
+00:05:13.630 --> 00:05:16.110
+Ja sitten se tietokannan nimi, joka minulla nyt
+
+74
+00:05:16.110 --> 00:05:18.010
+tässä tapauksessa on hotelli.
+
+75
+00:05:18.850 --> 00:05:21.270
+Ja sitten, kun me haetaan sieltä tietokannasta, niin
+
+76
+00:05:21.270 --> 00:05:23.590
+me käytetään tätä select-komentoa.
+
+77
+00:05:23.590 --> 00:05:26.850
+Ja sitten me sanotaan, että mitkä kentät me
+
+78
+00:05:26.850 --> 00:05:27.230
+haetaan.
+
+79
+00:05:27.450 --> 00:05:30.130
+Ja koska me nyt tässä kirjautuessa ei tarvita
+
+80
+00:05:30.130 --> 00:05:33.850
+muuta kuin tuo käyttäjänimi ja salasana, niin haetaan
+
+81
+00:05:33.850 --> 00:05:34.810
+vaan ne kentät.
+
+82
+00:05:35.270 --> 00:05:38.910
+Ja sitten sanotaan from, eli mistä haetaan.
+
+83
+00:05:39.290 --> 00:05:42.290
+Ja sitten kerrotaan se taulu, mistä haetaan.
+
+84
+00:05:42.610 --> 00:05:46.470
+Ja sitten me sanotaan, että jossa käyttäjänimen pitää
+
+85
+00:05:46.470 --> 00:05:49.090
+olla se, joka me syötetään lomakkeelta.
+
+86
+00:05:49.310 --> 00:05:51.970
+Ja salasana se, joka me syötetään lomakkeelta.
+
+87
+00:05:51.970 --> 00:05:56.310
+Ja jotta me saadaan sitten tuonne nuo arvot
+
+88
+00:05:56.310 --> 00:06:00.150
+syötettyä, niin meidän pitää antaa tämmöinen komento, kun
+
+89
+00:06:00.150 --> 00:06:04.650
+komento.parameters.add ja sitten toi muuttuja.
+
+90
+00:06:04.890 --> 00:06:06.890
+Ja sitten kerrotaan, että se on MySQL-tyyppi
+
+91
+00:06:06.890 --> 00:06:07.470
+varchar.
+
+92
+00:06:07.710 --> 00:06:13.090
+Ja sitten sen arvo haetaan sieltä lomakkeelta.
+
+93
+00:06:13.590 --> 00:06:17.990
+No vastaavasti sitten, kun me halutaan lisätä tänne
+
+94
+00:06:17.990 --> 00:06:21.450
+näin, niin silloin me käytetään semmoista komentoa kuin
+
+95
+00:06:21.450 --> 00:06:22.650
+insert into.
+
+96
+00:06:23.250 --> 00:06:26.830
+Eli kerrotaan se, että mihin taulukkoon lisätään ja
+
+97
+00:06:26.830 --> 00:06:28.770
+mitä kenttiä lisätään.
+
+98
+00:06:28.910 --> 00:06:33.290
+Eli jos me ei lisätä kaikkia kenttiä, esimerkkinä
+
+99
+00:06:33.290 --> 00:06:37.110
+nyt jos teillä on automaattisesti juokseva numerointi siellä,
+
+100
+00:06:37.430 --> 00:06:39.710
+niin silloinhan te ette sitä lisää.
+
+101
+00:06:39.710 --> 00:06:43.170
+Niin silloin teidän tarvitsee kertoa tämä, että mihin
+
+102
+00:06:43.170 --> 00:06:44.570
+kenttiin lisätään.
+
+103
+00:06:45.930 --> 00:06:49.470
+Ja tota, mutta jos te lisäätte kaikkien kenttiin
+
+104
+00:06:49.470 --> 00:06:54.530
+niin, että teillä ei ole sitä automaattinumerointia tai
+
+105
+00:06:54.530 --> 00:06:57.430
+muuta siellä, niin silloin te voitte jättää tämän
+
+106
+00:06:57.430 --> 00:06:58.870
+kohdan tästä pois.
+
+107
+00:07:01.880 --> 00:07:05.300
+Mutta tietysti ehkä hyvä opetella käyttämään aina se,
+
+108
+00:07:05.500 --> 00:07:07.520
+että laittaa tänne näin, mitä lisätään.
+
+109
+00:07:07.520 --> 00:07:12.240
+Ja sitten semmoinen tärkeä asia on tässä, että
+
+110
+00:07:12.240 --> 00:07:15.060
+kun tämä valuus tulee, eli tämähän oli, että
+
+111
+00:07:15.060 --> 00:07:18.740
+mihin kenttiin lisätään tuossa noin, niin sitten tämä
+
+112
+00:07:18.740 --> 00:07:21.300
+valuus on se, että mitä me lisätään.
+
+113
+00:07:21.480 --> 00:07:23.520
+Ja taas me tehdään ihan samalla tavalla, että
+
+114
+00:07:23.520 --> 00:07:27.860
+me käytetään tuota komentoparamettaaksi ja haetaan sieltä lomakkeelta
+
+115
+00:07:27.860 --> 00:07:29.900
+sitten ne, mitä me lisätään.
+
+116
+00:07:29.900 --> 00:07:37.950
+Nyt semmoinen hyvin tärkeä asia tässä lisäyksessä on
+
+117
+00:07:37.950 --> 00:07:43.750
+se, että kun mulla on tässä yksi, kaksi,
+
+118
+00:07:43.970 --> 00:07:49.170
+kolme, neljä, viisi, kuusi ja seitsemän kenttää, niin
+
+119
+00:07:49.170 --> 00:07:52.430
+täällä pitää olla myös seitsemän arvoa, eli yksi,
+
+120
+00:07:52.570 --> 00:07:54.810
+kaksi, kolme, neljä, viisi, kuusi ja seitsemän.
+
+121
+00:07:54.810 --> 00:07:59.510
+Jos nämä arvot ja kentät ei vastaa toisiaan,
+
+122
+00:07:59.610 --> 00:08:01.630
+eli jos mulla on seitsemän kenttää ja kuusi
+
+123
+00:08:01.630 --> 00:08:06.470
+arvoa, niin silloin tuo ei SQL tiedä, että
+
+124
+00:08:06.470 --> 00:08:08.790
+mikä arvo menee mihinkin kenttään.
+
+125
+00:08:09.430 --> 00:08:12.210
+Eli todella kun mä laitan käyttäjänimen sinne, niin
+
+126
+00:08:12.210 --> 00:08:15.990
+silloin se käyttäjänimi pitää olla tässä ensimmäisenä, niin
+
+127
+00:08:15.990 --> 00:08:19.750
+se muuttuu ja sitten toisena etunimi ja niin
+
+128
+00:08:19.750 --> 00:08:20.290
+edelleen.
+
+129
+00:08:20.290 --> 00:08:23.610
+Eli nämä nyt menee vastineena silleen, että tämä
+
+130
+00:08:23.610 --> 00:08:26.530
+ensimmäinen menee tuohon ensimmäiseen, toinen toiseen ja niin
+
+131
+00:08:26.530 --> 00:08:27.250
+edelleen.
+
+132
+00:08:29.420 --> 00:08:31.340
+No toi oli siis se lisäyskomento.
+
+133
+00:08:32.039 --> 00:08:35.240
+No sitten meillä on vielä päivityskomento, joka tarkoittaa
+
+134
+00:08:35.240 --> 00:08:37.820
+siis sitä, että jos me halutaan muuttaa jotain
+
+135
+00:08:37.820 --> 00:08:42.159
+tietoja, niin silloin me käytetään tämmöistä update-komentoa,
+
+136
+00:08:42.500 --> 00:08:45.940
+eli kerrotaan silleen, että mitä taulukkoa muokataan, niin
+
+137
+00:08:45.940 --> 00:08:48.500
+kuin tässä nyt muokataan asiakkaat taulukkoa.
+
+138
+00:08:48.500 --> 00:08:52.080
+Sen jälkeen me annetaan set-komento, eli mitä
+
+139
+00:08:52.080 --> 00:08:55.580
+kenttiä muokataan ja millä arvoilla, eli sanotaan, että
+
+140
+00:08:55.580 --> 00:08:58.060
+se etunimi on tuo, sukunimi on tuo ja
+
+141
+00:08:58.060 --> 00:08:58.940
+niin edelleen.
+
+142
+00:08:59.680 --> 00:09:03.320
+Ja sitten ihan viimeisenä meillä pitää taas olla
+
+143
+00:09:03.320 --> 00:09:06.780
+tuo where täällä näin, eli meidän pitää kertoa,
+
+144
+00:09:06.920 --> 00:09:09.120
+että kenen tietoja päivitetään.
+
+145
+00:09:09.740 --> 00:09:13.640
+Jos meillä nimittäin jää tämä pois, niin käy
+
+146
+00:09:13.640 --> 00:09:15.160
+aika mielenkiintoisesti.
+
+147
+00:09:15.820 --> 00:09:19.140
+Käy silleen, että jos mulla on kymmenen tuhatta
+
+148
+00:09:19.140 --> 00:09:24.100
+riviä, eli kymmenen tuhatta asiakasta, niin kaikkien asiakkaiden
+
+149
+00:09:24.100 --> 00:09:27.040
+etunimi on sen jälkeen tuo, sukunimi on tuo
+
+150
+00:09:27.040 --> 00:09:29.760
+ja niin edelleen, koska mä en määrittele, että
+
+151
+00:09:29.760 --> 00:09:33.680
+mikä asiakas siellä muutetaan, niin se muuttaa kaikki.
+
+152
+00:09:34.660 --> 00:09:39.340
+Eli tämä on erittäin tärkeä tämä, että kerrotaan
+
+153
+00:09:39.340 --> 00:09:43.940
+where, eli missä käyttäjätunnus on tai käyttäjänimi on
+
+154
+00:09:43.940 --> 00:09:44.220
+toi.
+
+155
+00:09:44.220 --> 00:09:48.460
+Sitten meillä on vielä yksi tämmöinen komento, jota
+
+156
+00:09:48.460 --> 00:09:52.120
+me käytetään, eli jos me halutaan jostain syystä
+
+157
+00:09:52.120 --> 00:09:56.480
+poistaa tietokannasta rivi, eli siis toisin sanoen käyttäjän
+
+158
+00:09:56.480 --> 00:10:02.300
+tiedot, niin taas, anteeksi, käytetään siis tämmöistä delete
+
+159
+00:10:02.300 --> 00:10:08.100
+-komentoa ja sitten from, eli mistä, ja kerrotaan
+
+160
+00:10:08.100 --> 00:10:10.640
+siis, mistä taulukosta tieto poistetaan.
+
+161
+00:10:10.640 --> 00:10:13.800
+Nyt tässä me ei tarvitakaan mitään muuta kuin
+
+162
+00:10:13.800 --> 00:10:20.100
+sitten se yksilöivä asia, eli toisin sanoen, kun
+
+163
+00:10:20.100 --> 00:10:23.980
+mulla oli käyttäjänimi, oli se yksilöivä asia, niin
+
+164
+00:10:23.980 --> 00:10:29.080
+me kerrotaan where ja sitten mikä tietoja poistetaan.
+
+165
+00:10:29.080 --> 00:10:32.240
+Eli toisin sanoen, mä sanon where käyttäjänimi on
+
+166
+00:10:32.240 --> 00:10:35.400
+tuo, niin silloin, kun se on yksilöivä asia
+
+167
+00:10:35.400 --> 00:10:39.780
+tuo käyttäjänimin, niin se poistaa pelkästään tämän käyttäjän,
+
+168
+00:10:39.860 --> 00:10:43.060
+joka mulla sieltä lomakkeelta sitten tulee.
+
+169
+00:10:43.060 --> 00:10:47.740
+Eli nyt katson vain sen, että mulla tuo
+
+170
+00:10:47.740 --> 00:10:54.960
+tietokanta on kunnossa, ihan pieni hetki, niin tarkistan
+
+171
+00:10:54.960 --> 00:11:00.940
+tuon tietokannan vaan tuolta, niin mulla siis täällä
+
+172
+00:11:00.940 --> 00:11:08.600
+on sellainen kuin hotelli tuolla ja sitten siellä
+
+173
+00:11:08.600 --> 00:11:11.400
+se asiakastietokanta.
+
+174
+00:11:12.260 --> 00:11:19.230
+Eli asiakkaat, joo täälläkin on tuo käyttäjäid, eli
+
+175
+00:11:19.230 --> 00:11:22.230
+mä nyt poistan sen käyttäjäiden, ettei mulle tule
+
+176
+00:11:22.230 --> 00:11:25.030
+ongelmia, ihan pieni hetki.
+
+177
+00:11:26.310 --> 00:11:37.380
+Eli otetaan toi pois, drop, noin,
+
+178
+00:11:38.140 --> 00:11:42.980
+ja sitten tehdään tästä käyttäjänimestä avainkenttä, eli primary
+
+179
+00:11:42.980 --> 00:11:44.740
+kenttä, näin.
+
+180
+00:11:46.960 --> 00:11:51.080
+Okei, ja nyt kun mä sitten ajan tuon
+
+181
+00:11:51.080 --> 00:11:56.560
+ohjelman tuolta, niin mä pystyn toivottavasti demoomaan teille,
+
+182
+00:11:56.940 --> 00:11:58.300
+että miten tää toimii.
+
+183
+00:12:06.390 --> 00:12:14.550
+Noin, eli mä kirjaudun sisään, noin, ja pääsin
+
+184
+00:12:14.550 --> 00:12:17.770
+tähän pääikkunaan, ja sitten mä hallitsen asiakkaita.
+
+185
+00:12:17.770 --> 00:12:21.450
+Ja jos me nyt tehdään se asiakkaan lisäys,
+
+186
+00:12:21.610 --> 00:12:31.530
+eli Eeva Tervala, keskikatu 3, 04,
+
+187
+00:12:32.610 --> 00:12:37.070
+200, kieraava, no on tää näköjään mulla, tässä
+
+188
+00:12:37.070 --> 00:12:40.290
+se ei vaan näy kunnolla, niin tää käyttäjätunnus
+
+189
+00:12:40.290 --> 00:12:43.490
+ja salasana on harmaana nämä kentät.
+
+190
+00:12:43.490 --> 00:12:46.930
+Ja nyt kun mä painan lisää asiakas, niin
+
+191
+00:12:46.930 --> 00:12:50.710
+se sanoo mulle, että uusi asiakas lisätty onnistuneesti,
+
+192
+00:12:51.150 --> 00:12:54.050
+niin semmonen vielä, että kun Niina kysyi tuossa,
+
+193
+00:12:54.290 --> 00:12:58.110
+että mitä hyvässä ohjelmassa on, niin hyvässä ohjelmassa
+
+194
+00:12:58.110 --> 00:13:01.130
+toki on aina tämmöiset kuittaukset.
+
+195
+00:13:01.130 --> 00:13:04.450
+Eli nyt jos mä oisin vain painannut lisää
+
+196
+00:13:04.450 --> 00:13:09.410
+asiakas ja mitään ei tapahdu, niin käyttäjä saattaa
+
+197
+00:13:09.410 --> 00:13:13.570
+napauttaa lisää asiakas kymmenen kertaa ja ihmettelee kun
+
+198
+00:13:13.570 --> 00:13:14.650
+mitään ei tapahdu.
+
+199
+00:13:15.130 --> 00:13:18.450
+Eli sen takia tämmöiset kuittausviestit on aina hyvä
+
+200
+00:13:18.450 --> 00:13:22.310
+olla olemassa silloinkin kun on uutta tapahtumaa.
+
+201
+00:13:22.310 --> 00:13:24.190
+Ja niin kuin mä nyt sanoin, niin mä
+
+202
+00:13:24.190 --> 00:13:28.170
+en ole tällä hetkellä niin tehnyt tätä ikkunaa
+
+203
+00:13:28.170 --> 00:13:31.210
+niin, että tää latautuisi joka kerta kun näitä
+
+204
+00:13:31.210 --> 00:13:36.090
+painikkeita painaa, joten mä nyt joudun tekemään niin,
+
+205
+00:13:36.330 --> 00:13:41.290
+että käydään päivittämässä tää ikkuna ja huomaatte, että
+
+206
+00:13:41.290 --> 00:13:44.130
+nyt täällä on tää Eeva Tervalan tiedot.
+
+207
+00:13:44.630 --> 00:13:48.110
+No nyt jos mä haluan muokata jotain riviä,
+
+208
+00:13:48.550 --> 00:13:51.170
+niin mä oon nyt tehnyt tästä semmosen, katsotaan
+
+209
+00:13:51.170 --> 00:13:53.730
+kohta tota koodia, että kun mä napautan tätä
+
+210
+00:13:53.730 --> 00:13:56.550
+riviä, niin ne tiedot tulee tänne näin.
+
+211
+00:13:57.170 --> 00:14:00.550
+Ja nyt muokkauksessa oli tärkeetä se, että meillä
+
+212
+00:14:00.550 --> 00:14:03.450
+pitää olla, että mitä me muokataan, muuten se
+
+213
+00:14:03.450 --> 00:14:04.690
+muokkaa kaikkia.
+
+214
+00:14:05.670 --> 00:14:10.770
+Otetaanpas tosta nytten toi Pekka pois, noin ja
+
+215
+00:14:10.770 --> 00:14:13.130
+sitten mä painan tästä näin muokkaa.
+
+216
+00:14:13.830 --> 00:14:17.070
+Ja taas se sanoo mulle, että uusi asiakas
+
+217
+00:14:17.070 --> 00:14:20.790
+päivitetty onnistuneesti, no tossa voisi olla, että asiakas
+
+218
+00:14:20.790 --> 00:14:23.970
+päivitetty onnistuneesti, koska eihän tää ole uusi, vaan
+
+219
+00:14:23.970 --> 00:14:27.210
+tää on olemassa oleva, eli jotain järkeä noissa
+
+220
+00:14:27.210 --> 00:14:28.430
+pitää olla.
+
+221
+00:14:28.430 --> 00:14:30.850
+Ja taaskaan tuo ei nyt näy tuolla, eli
+
+222
+00:14:30.850 --> 00:14:35.010
+mun pitää käydä päivittämässä tää lomake ja huomaatte,
+
+223
+00:14:35.210 --> 00:14:38.370
+että nyt mun tiedot on siellä päivitetty tällä
+
+224
+00:14:38.370 --> 00:14:39.090
+tavalla näin.
+
+225
+00:14:39.090 --> 00:14:42.970
+No jos tyttitiivanainen ei halua enää olla meidän
+
+226
+00:14:42.970 --> 00:14:50.590
+asiakasrekisterikannassa, niin uuden GDPR, miten se nyt meneekään,
+
+227
+00:14:50.730 --> 00:14:53.670
+niin lain mukaan meidän pitää se poistaa.
+
+228
+00:14:53.910 --> 00:14:58.950
+Joten tällä poistopainikkeella voin poistaa sen tytin ja
+
+229
+00:14:58.950 --> 00:15:01.530
+nyt se näkyykin tässä suoraan, että se tytti
+
+230
+00:15:01.530 --> 00:15:02.350
+on poistettu.
+
+231
+00:15:02.350 --> 00:15:05.830
+No sitten vielä toi tyhjänä kentät, eli jos
+
+232
+00:15:05.830 --> 00:15:10.170
+mä lisään nyt tänne vielä yhden käyttäjän, eli
+
+233
+00:15:10.170 --> 00:15:16.970
+Kai Sinkkonen lähiosoite on edelleen se Keski-Katu
+
+234
+00:15:16.970 --> 00:15:22.730
+3, 04200 ja Kerava.
+
+235
+00:15:24.750 --> 00:15:29.150
+No Kerava, noin, ja mä laitan lisää asiakas.
+
+236
+00:15:29.730 --> 00:15:36.640
+Niin tietysti fiksua taas olisi tässä vaiheessa niin
+
+237
+00:15:36.640 --> 00:15:39.620
+se, että kun mä olen onnistuneesti saanut tän
+
+238
+00:15:39.620 --> 00:15:43.600
+asiakkaan lisättyä, niin nää kentät tyhjenis tästä näin.
+
+239
+00:15:44.360 --> 00:15:46.320
+Nyt mulla ei ole sitä tehty, ja tää
+
+240
+00:15:46.320 --> 00:15:51.500
+on nyt opetuksellisella kannalla, tai siis opetuksellisesta syystä
+
+241
+00:15:51.500 --> 00:15:53.400
+tehty näin, ettei sitä ole.
+
+242
+00:15:53.400 --> 00:15:58.240
+Mutta olisi tietysti järkevää, että nää tyhjenee, ettei
+
+243
+00:15:58.240 --> 00:16:02.340
+kukaan yritä sitten uudestaan lisätä sinne samaa asiakasta.
+
+244
+00:16:02.460 --> 00:16:05.800
+Nyt jos mä koitan lisätä Kain uudestaan sinne,
+
+245
+00:16:06.260 --> 00:16:08.400
+niin nyt kaatuu mulla ohjelma, eli tää on
+
+246
+00:16:08.400 --> 00:16:09.340
+huonosti tehty.
+
+247
+00:16:10.120 --> 00:16:11.840
+Ja se johtuu siitä, että se ei voisi
+
+248
+00:16:11.840 --> 00:16:14.520
+suorittaa nyt tätä kyselyä, mikä täällä on.
+
+249
+00:16:14.520 --> 00:16:18.440
+Ja se taas johtuu siitä, että kun mulla
+
+250
+00:16:18.440 --> 00:16:26.020
+on määritettynä, että käyttäjätunnus tulee automaattisesti silleen, että
+
+251
+00:16:26.020 --> 00:16:32.560
+etunimestä katkaistaan kolme ensimmäistä ja sitten laitetaan ne
+
+252
+00:16:32.560 --> 00:16:33.080
+pieniksi.
+
+253
+00:16:33.560 --> 00:16:37.000
+Ja sitten sukunimestä katkaistaan viisi kirjainta ja laitetaan
+
+254
+00:16:37.000 --> 00:16:37.940
+nekin pieniksi.
+
+255
+00:16:37.940 --> 00:16:40.380
+Ja koska tää oli nyt avainkenttä, tää meidän
+
+256
+00:16:40.380 --> 00:16:46.620
+käyttäjänimikenttä, niin se ei voi lisätä toista samanlaista
+
+257
+00:16:46.620 --> 00:16:47.580
+tänne näin.
+
+258
+00:16:48.000 --> 00:16:50.380
+Ja sen takia tää mun ohjelma kaatuu, eli
+
+259
+00:16:50.380 --> 00:16:53.780
+tottakai mulla nyt pitäisi tässä olla niin tota
+
+260
+00:16:53.780 --> 00:16:56.940
+try catch, eli try it ja kokeillaan tota
+
+261
+00:16:56.940 --> 00:16:57.680
+yhteyttä.
+
+262
+00:16:58.080 --> 00:17:00.680
+Ja jos ei se onnistu, niin siinä tapauksessa
+
+263
+00:17:00.680 --> 00:17:03.960
+me heitetään se catch virheviesti sinne.
+
+264
+00:17:04.960 --> 00:17:11.160
+Eli tässä on just semmosia asioita, jotka hyvässä
+
+265
+00:17:11.160 --> 00:17:17.060
+kiitettävän arvoisessa ohjelmassa pitää ehdottomasti olla.
+
+266
+00:17:20.329 --> 00:17:24.650
+No mä vielä palaan hetkeksi tuohon ikkunaan, mikä
+
+267
+00:17:24.650 --> 00:17:25.530
+meillä äsken oli.
+
+268
+00:17:26.450 --> 00:17:28.650
+Ja sitten lähdetään katsomaan tätä koodia.
+
+269
+00:17:37.380 --> 00:17:40.280
+Ja todella jos mulla nyt täällä on siis
+
+270
+00:17:40.280 --> 00:17:44.480
+jonkun asiakkaan tiedot, niin tota jos mä haluan
+
+271
+00:17:44.480 --> 00:17:46.980
+nämä kentät tyhjiksi, niin mun ei tarvitse yksitellen
+
+272
+00:17:46.980 --> 00:17:49.680
+lähteä näitä tyhjentämään, vaan mulla on täällä tämmönen
+
+273
+00:17:49.680 --> 00:17:53.540
+tyhjennä kentät painike, joka sitten tyhjentää sen.
+
+274
+00:17:53.540 --> 00:17:57.080
+Ja todella tossa uuden asiakkaan lisäämisessä ja miksei
+
+275
+00:17:57.080 --> 00:18:03.280
+muokkaa painikkeessakin, niin kannattaisi kutsua tätä tyhjennä kentät
+
+276
+00:18:03.280 --> 00:18:07.600
+funktiota, jolloin se automaattisesti sen tyhjentäisi.
+
+277
+00:18:08.080 --> 00:18:12.200
+No lähdetäänpäs nyt katsomaan sitten sitä asiakkaiden hallintaa.
+
+278
+00:18:12.200 --> 00:18:20.260
+Ja aivan kun mä tein tuohon kirjautumisen, mä
+
+279
+00:18:20.260 --> 00:18:23.020
+tein tuon yhdistämisen, niin nyt mä oon tehnyt
+
+280
+00:18:23.020 --> 00:18:27.520
+tänne tämmöisen luokan kuin asiakas, jossa on muutamia
+
+281
+00:18:27.520 --> 00:18:32.200
+funktioita.
+
+282
+00:18:32.200 --> 00:18:37.300
+Elikkä täällä on tämmönen funktio kuin lisäasiakas, sellainen
+
+283
+00:18:37.300 --> 00:18:38.360
+löytyy sieltä.
+
+284
+00:18:38.900 --> 00:18:42.360
+Sitten on hae-asiakkaat, joka hakee siis sen
+
+285
+00:18:42.360 --> 00:18:46.260
+siihen datagridiin ja sitten mulla on tää muokkaa
+
+286
+00:18:46.260 --> 00:18:50.220
+-asiakasta siellä ja sitten mulla oli tää poista
+
+287
+00:18:50.220 --> 00:18:57.820
+-asiakas painikkeet täällä näin näkyvillä.
+
+288
+00:18:57.820 --> 00:19:03.360
+Ja todella tuossa lisäasiakkaassa, niin nämä komennot on
+
+289
+00:19:03.360 --> 00:19:07.160
+hyvin samanlaisia, elikkä meidän pitää taas rakentaa tämä
+
+290
+00:19:07.160 --> 00:19:15.540
+mysql command komento tuolla mysql command komennolla ja
+
+291
+00:19:15.540 --> 00:19:19.380
+muistaa taas tänne laittaa se, että me käytetään
+
+292
+00:19:19.380 --> 00:19:24.440
+tätä mysql data, mysql client kirjastoa hyväksi.
+
+293
+00:19:25.060 --> 00:19:27.800
+Ja sitten mä tein sen kyselyn ja mä
+
+294
+00:19:27.800 --> 00:19:31.400
+nyt oon vaan leikannut sen vähän pienemmäksi, koska
+
+295
+00:19:31.400 --> 00:19:39.800
+niin hajattein, että jos mä luokassa näytän sitä,
+
+296
+00:19:39.960 --> 00:19:43.520
+niin silloin mä pystyn vähän suurentamaan tätä näkymää
+
+297
+00:19:43.520 --> 00:19:44.440
+teille.
+
+298
+00:19:44.440 --> 00:19:47.600
+Ja tää on siis se lisäyskomento ja sitten
+
+299
+00:19:47.600 --> 00:19:53.040
+me kuten jo siellä yhdistämisen puolella, niin sanotaan,
+
+300
+00:19:53.180 --> 00:19:57.060
+että me lisätään siihen komentotekstiin niin toi lisäyskysely
+
+301
+00:19:57.060 --> 00:20:01.320
+ja sitten me luodaan se yhteys, ei siis
+
+302
+00:20:01.320 --> 00:20:03.040
+vielä oteta yhteyttä.
+
+303
+00:20:03.040 --> 00:20:05.220
+No joo, itse asiassa tää ottaa yhteyden jo
+
+304
+00:20:05.220 --> 00:20:10.340
+tuossa noin, mutta se sitten käyttää näitä parametreja
+
+305
+00:20:10.340 --> 00:20:15.020
+hyväkseen, eli se syöttää sinne meidän komentokomentoon, elikkä
+
+306
+00:20:15.020 --> 00:20:18.720
+tuohon samaan komentoon, niin se syöttää nyt meidän
+
+307
+00:20:21.600 --> 00:20:26.980
+sieltä tuota taulusta niin tuota ne arvot, mutta
+
+308
+00:20:26.980 --> 00:20:30.780
+mä oon antanut ne tuossa lisäasiakaskohdassa, niin mä
+
+309
+00:20:30.780 --> 00:20:34.880
+oon antanut ne sitten tänne suoraan, eli tähän
+
+310
+00:20:34.880 --> 00:20:39.020
+meidän funktion kutsuun, katsotaan kohta tuota niin tuota
+
+311
+00:20:39.020 --> 00:20:42.040
+asiakkaan hallintakohdasta, että miten se tapahtuu.
+
+312
+00:20:43.340 --> 00:20:46.120
+Minun ei nyt tarvitse sanoa, että se ottaa
+
+313
+00:20:46.120 --> 00:20:50.240
+tuota taulukosta niin tietyn kentän, vaan mä oon
+
+314
+00:20:50.240 --> 00:20:53.120
+sen tehnyt, no voidaanhan se katsoa täällä näin,
+
+315
+00:20:53.380 --> 00:20:56.840
+elikkä mä oon nyt sanonut suoraan, että tuota
+
+316
+00:20:56.840 --> 00:21:03.200
+pieni hetki, täällä, että tuota etunimi on toi,
+
+317
+00:21:03.320 --> 00:21:05.860
+mikä tulee sieltä taulukosta, sukunimi on se, mikä
+
+318
+00:21:05.860 --> 00:21:09.900
+tulee taulukosta ja niin edelleen, ja tuota sitten
+
+319
+00:21:09.900 --> 00:21:14.700
+mä lähetän sen tuota ne tiedot täältä eteenpäin,
+
+320
+00:21:14.760 --> 00:21:19.760
+kun mä kutsun sitä luokkaa, elikkä tätä asiakasluokkaa.
+
+321
+00:21:20.880 --> 00:21:23.560
+No sitten kun nämä arvot on sinne annettu,
+
+322
+00:21:23.840 --> 00:21:28.140
+niin sitten vielä mä tarkistan, että onko käyttäjä,
+
+323
+00:21:28.300 --> 00:21:31.900
+elikkä onko siis toisin sanoen siinä käyttäjätunnus kohdassa,
+
+324
+00:21:32.400 --> 00:21:36.180
+niin tuota onko se tyhjä, ja jos se
+
+325
+00:21:36.180 --> 00:21:42.800
+on tyhjä, niin sitten niin tuota mä lisään
+
+326
+00:21:42.800 --> 00:21:52.080
+sinne tuon käyttäjätunnuksen tällä komennolla, elikkä sieltä taulusta
+
+327
+00:21:52.080 --> 00:21:58.310
+taas käyn hakemassa sen käyttäjän, tai siis tuolta,
+
+328
+00:21:58.650 --> 00:22:01.730
+tuo käyttäjä tulee sitten tähän näin.
+
+329
+00:22:02.470 --> 00:22:07.310
+Ja tuota, jos sitä käyttäjää ei ole, elikkä
+
+330
+00:22:07.310 --> 00:22:11.210
+toisin sanoen niin henkilöllä ei ole sitä käyttäjätunnusta,
+
+331
+00:22:12.210 --> 00:22:16.310
+no mähän olin itseasiassa niin tuota laittanut harmaaksen
+
+332
+00:22:16.310 --> 00:22:19.910
+kentän, joten tää on sinänsä turha, koska tuota
+
+333
+00:22:19.910 --> 00:22:22.830
+sinne ei pääsisi sitä lisäämään, mutta mulla on
+
+334
+00:22:22.830 --> 00:22:26.470
+tarkoituksena se, että jos käyttäjä haluaa laittaa oman
+
+335
+00:22:26.470 --> 00:22:28.930
+käyttäjätunnuksen, niin sitten se on mahdollista.
+
+336
+00:22:28.930 --> 00:22:33.210
+No joka tapauksessa sitten tulee tämä komento, elikkä
+
+337
+00:22:33.210 --> 00:22:38.290
+tuota sitten me lisätään siihen käyttäjätunnusmuuttujaan, niin arvo,
+
+338
+00:22:38.470 --> 00:22:43.210
+joka on etunimestä, muistatte jo sieltä javaskriptin puolelta,
+
+339
+00:22:43.330 --> 00:22:47.590
+niin tää substringi, elikkä lähdetään katkomaan sitä meidän
+
+340
+00:22:47.590 --> 00:22:52.890
+etunimeä silleen, että aloitetaan nollannesta ja lopetetaan niin
+
+341
+00:22:52.890 --> 00:22:56.410
+kolmanteen niin, että se kolmas ei tule mukaan.
+
+342
+00:22:56.410 --> 00:23:01.410
+Muistakaa, että tää tarkoittaa kolmea ensimmäistä kirjainta, elikkä
+
+343
+00:23:01.410 --> 00:23:05.810
+nollatta kirjainta, ensimmäistä kirjainta ja toista kirjainta, elikkä
+
+344
+00:23:05.810 --> 00:23:07.610
+yhteensä kolme kirjainta.
+
+345
+00:23:08.610 --> 00:23:11.830
+Elikkä nollasta kolmoseen ja sitten tota mä oon
+
+346
+00:23:11.830 --> 00:23:16.030
+vielä sanonut sen, että tullover, elikkä niin tuota
+
+347
+00:23:16.030 --> 00:23:20.370
+käyttäjätunnuksessa on hyvä se, että ne kaikki on
+
+348
+00:23:20.370 --> 00:23:23.190
+pienellä, niin tota se on helpompi käyttää.
+
+349
+00:23:24.750 --> 00:23:29.490
+Ja siihen mä sitten lisään sukunimestä, niin viisi
+
+350
+00:23:29.490 --> 00:23:34.890
+kirjainta samalla metodilla ja muutan ne sitten pieniksi.
+
+351
+00:23:37.170 --> 00:23:42.010
+Sama juttu tuossa salasanakohdassa, eli jos salasanaa ei
+
+352
+00:23:42.010 --> 00:23:43.950
+ole, niin sitten mennään tänne.
+
+353
+00:23:44.270 --> 00:23:47.210
+Muussa tapauksessa se salasana on se, joka sinne
+
+354
+00:23:47.210 --> 00:23:50.090
+on syötetty sinne taulukkoon, mutta niin kuin muistatte,
+
+355
+00:23:50.250 --> 00:23:53.090
+niin tässä vaiheessa ei sinne pysty syöttämään.
+
+356
+00:23:53.090 --> 00:23:56.410
+Ja sitten mä oon laittanut kaikille niin nytten
+
+357
+00:23:56.410 --> 00:23:57.810
+tämän oletussalasanan.
+
+358
+00:23:58.210 --> 00:24:01.990
+Tätäkin mä varmasti muokkaan silleen, että tota se
+
+359
+00:24:01.990 --> 00:24:06.510
+arpoo tähän niin tota 12-merkkisen salasanan tai
+
+360
+00:24:06.510 --> 00:24:08.610
+jotakin, mutta nyt tässä vaiheessa mä en ole
+
+361
+00:24:08.610 --> 00:24:12.390
+sitä tehnyt, vaan tuota mä oon laittanut kaikille
+
+362
+00:24:12.390 --> 00:24:14.450
+oletuksena tuon salasanan.
+
+363
+00:24:14.450 --> 00:24:17.390
+No nyt kun meillä sitten toi komento-komento,
+
+364
+00:24:17.870 --> 00:24:22.310
+eli tämä komentomuuttuja on valmis, niin sitten mä
+
+365
+00:24:22.310 --> 00:24:25.690
+avaan tämän yhteyden ja nyt mulla on tässä
+
+366
+00:24:25.690 --> 00:24:30.330
+näin, että onnistuuko tämä kysely, eli pystyykö se
+
+367
+00:24:30.330 --> 00:24:31.770
+tekemään sen kyselyn.
+
+368
+00:24:32.130 --> 00:24:36.410
+Muistatte, että ykkönen vastaa trueta, nolla vastaa falsea,
+
+369
+00:24:37.030 --> 00:24:39.990
+niin jos tämä onnistuu, niin sitten se tekee
+
+370
+00:24:39.990 --> 00:24:40.730
+sen kyselyn.
+
+371
+00:24:40.730 --> 00:24:44.410
+Elikkä nythän me ei tarvitse tehdä mitään muuta
+
+372
+00:24:44.410 --> 00:24:47.450
+kuin ajaa se kysely, koska se syöttää sen
+
+373
+00:24:47.450 --> 00:24:50.610
+tiedon sinne, eli mun ei tarvitse ottaa palautteena
+
+374
+00:24:50.610 --> 00:24:54.610
+mitään, vaan pelkästään ajaa se kysely ja sitten
+
+375
+00:24:54.610 --> 00:24:55.890
+sulkee tämä yhteys.
+
+376
+00:24:56.290 --> 00:25:03.350
+Muistakaa todella se, että tämä tietokantayhteys pitää sulkea,
+
+377
+00:25:03.570 --> 00:25:05.690
+koska jos se jää auki, niin sitten teille
+
+378
+00:25:05.690 --> 00:25:07.570
+saattaa tulla ongelmia siellä.
+
+379
+00:25:09.030 --> 00:25:14.230
+Ja tuota, jos se ei onnistu, niin se
+
+380
+00:25:14.230 --> 00:25:17.690
+myös sulkee sen yhteyden, mutta sitten se palauttaa
+
+381
+00:25:17.690 --> 00:25:25.270
+falsen tähän meidän varsinaiseen komentoon, eli tuohon noin.
+
+382
+00:25:26.670 --> 00:25:33.310
+No sitten se Data Table, eli jos me
+
+383
+00:25:33.310 --> 00:25:36.090
+katsotaan tuosta, niin se oli tämä näin.
+
+384
+00:25:36.190 --> 00:25:37.630
+Tämä on nyt se Data Table.
+
+385
+00:25:37.770 --> 00:25:42.110
+Hei, mulla taas näköjään toimii noin hienoa, niin
+
+386
+00:25:42.110 --> 00:25:45.670
+se löytyy siis täältä näin, niin tuota Common
+
+387
+00:25:45.670 --> 00:25:49.410
+Controls, niin tuota, no ei näköjään löydy sieltä,
+
+388
+00:25:49.470 --> 00:25:55.070
+vaan se löytyy kaikista, niin Data Grid View,
+
+389
+00:25:55.250 --> 00:26:00.250
+eli tuo, niin tuota, tonne me pystytään sitten,
+
+390
+00:26:00.850 --> 00:26:06.890
+niin kun meillä on tietoverkkonäkymä, no toi verkkokridi
+
+391
+00:26:06.890 --> 00:26:10.130
+tarkoittaa nyt tässä tapauksessa sitä, että kun me
+
+392
+00:26:10.130 --> 00:26:14.350
+palautetaan taulukko, niin se näyttää sen taulukkomuodossa.
+
+393
+00:26:15.470 --> 00:26:20.670
+Ja tuota, nyt siihen mä sitten haen tuota
+
+394
+00:26:20.670 --> 00:26:25.950
+asiakkaita, eli mennäisi tuonne vielä, niin tuota, eli
+
+395
+00:26:25.950 --> 00:26:29.210
+kun mulla on tämä Hae asiakkaat-funktio tässä
+
+396
+00:26:29.210 --> 00:26:34.150
+näin, niin se on tämä Select komento, eli
+
+397
+00:26:34.150 --> 00:26:37.870
+nyt kerrotaan tällä Select komennolla, että mitkä kentät
+
+398
+00:26:37.870 --> 00:26:44.360
+otetaan näkyviin täältä näin, eli mä en halua
+
+399
+00:26:44.360 --> 00:26:47.580
+nyt, että siellä näkyy se salasana, siksi mä
+
+400
+00:26:47.580 --> 00:26:51.700
+en valinnut salasanaa, enkä mä myöskään sitten, niin
+
+401
+00:26:51.700 --> 00:26:55.900
+tuota, ottanut sitä, no onhan se käyttäjän nimi
+
+402
+00:26:55.900 --> 00:26:59.980
+siellä, sorry, joo, eli salasana ei tuu näkyviin,
+
+403
+00:27:00.100 --> 00:27:02.160
+ja sitten mä sanon, että mistä ne haetaan,
+
+404
+00:27:02.340 --> 00:27:06.700
+eli sieltä asiakkaat-taulukosta, ja sitten tämän komennon
+
+405
+00:27:06.700 --> 00:27:10.920
+perässä piti olla tämä yhteydenotto, että me saadaan
+
+406
+00:27:10.920 --> 00:27:14.640
+se yhteys sieltä, ja sen jälkeen mä luon
+
+407
+00:27:14.640 --> 00:27:17.800
+tämmöisen data-adapterin tästä näin, johon mä sitten
+
+408
+00:27:17.800 --> 00:27:24.340
+sen, tuota, lisään nuo meidän komennot, ja sitten
+
+409
+00:27:24.340 --> 00:27:27.820
+mä teen tämän vastaustaulun, eli toisin sanoen, niin
+
+410
+00:27:27.820 --> 00:27:31.100
+sanon, että tämä taulu on tätä data-tabletyyppiä,
+
+411
+00:27:31.460 --> 00:27:35.640
+johon sitten se meidän vastaus tulee, ja sitten
+
+412
+00:27:35.640 --> 00:27:40.280
+niin mä lisään sen, tuota, komennon tuonne mun
+
+413
+00:27:40.280 --> 00:27:43.640
+adapteriin, ja sitten mä sanon, että se adapteri
+
+414
+00:27:43.640 --> 00:27:49.920
+täyttää niin tämän meidän vastaustaulun, tuota noin, ja
+
+415
+00:27:49.920 --> 00:27:57.960
+siinähän se on, eli käytännössä niin se tekee
+
+416
+00:27:57.960 --> 00:28:01.660
+sen siinä vaiheessa, kun se lataa niin tuota
+
+417
+00:28:01.660 --> 00:28:09.500
+tuon lomakkeen, niin se näyttää meille sen taulun,
+
+418
+00:28:09.660 --> 00:28:13.240
+eli ihan pieni hetki, niin tässä vaiheessa niin
+
+419
+00:28:13.240 --> 00:28:16.900
+se näyttää suoraan tämän taulukon sisällön täällä näin,
+
+420
+00:28:16.900 --> 00:28:20.420
+eli siinä mä oon käyttöön hyväkseen sitä, että
+
+421
+00:28:20.420 --> 00:28:28.720
+se käyttää sitä, jos täältä katsotaan, niin tässä
+
+422
+00:28:28.720 --> 00:28:33.660
+mua on tämä asiakkaiden hallinta load, eli kun
+
+423
+00:28:33.660 --> 00:28:39.720
+se lataa tämän kyseisen asiakkaan hallinta ikkunan, niin
+
+424
+00:28:39.720 --> 00:28:46.520
+tuota se sitten niin syöttää siihen mun asiakkaat
+
+425
+00:28:46.520 --> 00:28:49.880
+DG, eli se on siis toisin sanoen se
+
+426
+00:28:49.880 --> 00:28:57.600
+datagrid, niin sen tuota datasourceksi, eli tietosisällöksi, niin
+
+427
+00:28:57.600 --> 00:29:02.400
+se hakee täältä nytten niin ne asiakkaat, tästä
+
+428
+00:29:02.400 --> 00:29:06.600
+meidän asiakkaat, niin luokasta.
+
+429
+00:29:07.500 --> 00:29:10.920
+No sitten vielä mulla on tää muokkaa asiakkaat,
+
+430
+00:29:11.240 --> 00:29:14.040
+ja sama juttu, niin haetaan se tai tämä
+
+431
+00:29:14.040 --> 00:29:18.400
+antaa suoraan sitten sieltä kutsusta, niin nämä meidän
+
+432
+00:29:19.760 --> 00:29:23.080
+muuttujat tänne näin, ja sehän oli tämä update
+
+433
+00:29:23.080 --> 00:29:28.540
+-komento, jossa sanotaan, että päivitetään, ja sitten mikä
+
+434
+00:29:28.540 --> 00:29:32.750
+taulu päivitetään, ja sitten set-komennolla sanotaan, että
+
+435
+00:29:33.700 --> 00:29:37.420
+kenttä etunimi pitää sisältää sen, mikä sieltä taulusta
+
+436
+00:29:37.420 --> 00:29:39.160
+tulee, ja niin edelleen.
+
+437
+00:29:39.720 --> 00:29:42.040
+Ja taas, jotta me saadaan nuo muuttujat tonne,
+
+438
+00:29:42.340 --> 00:29:46.120
+niin sitten me käytetään näitä komentoja täällä näin.
+
+439
+00:29:47.660 --> 00:29:50.760
+Ja sama juttu, mä avaan siellä yhteyden, ja
+
+440
+00:29:50.760 --> 00:29:53.540
+jos se yhteys ei onnistu, niin se sulkee
+
+441
+00:29:53.540 --> 00:29:57.300
+sen joka tapauksessa, niin siis tuo ELSI-kohta,
+
+442
+00:29:57.560 --> 00:29:58.960
+ja muussa tapauksessa siellä

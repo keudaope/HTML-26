@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Canvas-esimerkki</title>
+    <style>
+      /* Määritetään canvasin koko CSS:llä */
+      canvas {
+        width: 300px; /* leveys pikseleinä */
+        height: 200px; /* korkeus pikseleinä */
+        border: 1px solid black; /* jotta näkyy raja */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Itse canvas-elementti -->
+    <canvas
+      id="piirtoalusta"
+      width="300"
+      height="200"
+      aria-label="Canvas kenttä, jossa harjoittelemme canvasin eri toimintoja"
+      role="img"
+    ></canvas>
+    <script>
+      // 1. Etsitään canvas-elementti sivulta id:n avulla
+      var canvas = document.getElementById("piirtoalusta");
+
+      // 2. Haetaan piirtokonteksti (tyyppinä "2d")
+      var ctx = canvas.getContext("2d");
+
+      // 3. Piirretään ensimmäinen suorakulmio!
+      ctx.fillStyle = "rgba(0, 0, 255, 0.3)"; // asetetaan väri vaaleansiniseksi (läpinäkyvä)
+      ctx.fillRect(0, 0, 300, 200); // piirretään suorakulmio
+      ctx.fillStyle = "red"; // muutetaan väri punaiseksi
+      ctx.fillRect(20, 20, 50, 50);
+      ctx.fillStyle = "blue"; // muutetaan väri siniseksi
+      ctx.fillRect(70, 70, 30, 30); // piirretään toinen suorakulmio punaisena
+      ctx.strokeStyle = "green"; // muut
+      ctx.lineWidth = 5; // asetetaan viivan leveys
+      ctx.strokeRect(0, 0, 20, 20); // piirretään kolmas suorakulmio vihreänä
+      ctx.fillStyle = "gold"; // muutetaan väri keltaiseksi
+      ctx.fillRect(280, 0, 20, 20); // piirretään neljäs suorakulmio keltaisena
+      ctx.fillStyle = "orange"; // muutetaan väri oranssiksi
+      ctx.fillRect(250, 100, 50, 50); // piirretään viides suorakulmio oranssina
+      ctx.fillStyle = "purple"; // muutetaan väri violetiksi
+      ctx.fillRect(0, 100, 50, 50); // piirretään kuudes suorakulmio violettina
+      ctx.fillStyle = "pink"; // muutetaan väri vaaleanpunaiseksi
+      ctx.fillRect(100, 50, 50, 50); // piirretään seitsemäs suorakulmio vaaleanpunaisena
+      ctx.clearRect(120, 70, 10, 10); // tyhjennetään edellisestä suorakulmiosta pieni alue
+      ctx.fillStyle = "rgba(139, 69, 19, 0.5)"; // muutetaan väri ruskeaksi
+      ctx.fillRect(220, 30, 50, 50); // piirretään kahdeksas suorakulmio ruskeana
+      ctx.strokeStyle = "black"; // muutetaan viivan väri mustaksi
+      ctx.lineWidth = 2; // asetetaan viivan leveys
+      ctx.beginPath(); // 1. Aloitetaan uusi polku
+      ctx.moveTo(50, 50); // 2. Siirrä kynä (50,50):een — ei vielä piirrä mitään
+      ctx.lineTo(150, 50); // 3. Piirrä viiva (50,50):stä (150,50):een
+      ctx.lineTo(100, 150); // 4. Piirrä viiva (150,50):stä (100,150):een
+      ctx.closePath(); // 5. Sulje polku: viiva takaisin aloituspisteeseen
+      ctx.stroke(); // 6. Piirrä polun viivat näkyviin
+      ctx.fillStyle = "rgba(255, 0, 255, 0.5)"; // muutetaan väri punaiseksi
+      ctx.fill(); // 7. Täytä polku punaisella värillä
+
+      ctx.beginPath(); // 1. Aloitetaan uusi polku
+      ctx.moveTo(50, 100); // 2. Siirrä kynä (50,100):een — ei vielä piirrä mitään
+      ctx.lineTo(150, 100); // 3. Piirrä viiva (50,100):stä (150,100):een
+      ctx.lineTo(100, 0); // 4. Piirrä viiva (150,100):stä (100,200):een
+      ctx.closePath(); // 5. Sulje polku: viiva takaisin aloituspisteeseen
+      ctx.fillStyle = "rgba(0, 255, 0, 0.5)"; // muutetaan väri vihreäksi
+      ctx.fill(); // 6. Täytä polku vihreällä värillä
+
+      // YMPYRÄ: täytetty sininen
+      ctx.beginPath(); // 1. Aloita uusi polku
+      ctx.arc(175, 75, 50, 0, 2 * Math.PI); // 2. Määritä ympyrä
+      ctx.fillStyle = "blue";
+      ctx.fill(); // 3. Täytä se
+
+      // KAARI (puolikaari): vain reuna
+      ctx.beginPath(); // 4. Uusi polku
+      ctx.arc(175, 75, 50, 0, Math.PI); // 5. Kaari 0:sta 180 asteeseen
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 16;
+      ctx.stroke(); // 6. Piirrä reunaviiva
+
+      ctx.beginPath(); // 7. Uusi polku
+      ctx.arc(175, 75, 50, Math.PI, 2 * Math.PI); // 8. Kaari 180:sta 360 asteeseen
+      ctx.strokeStyle = "green";
+      ctx.lineWidth = 16;
+      ctx.stroke(); // 9. Piirrä reunaviiva
+
+      ctx.beginPath(); // 10. Uusi polku
+      ctx.arc(275, 25, 25, 0, 2 * Math.PI); // 11. Määritä ympyrä
+      ctx.fillStyle = "yellow";
+      ctx.fill(); // 12. Täytä ympyrä
+
+      // 1. Asetetaan fontti ja tekstin tasaus
+      ctx.font = "30px Arial";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      // 2. Täytetty teksti
+      ctx.fillStyle = "black";
+      ctx.fillText("Hei Canvas!", 200, 100); // teksti, x, y
+
+      // 3. Vain reuna teksti
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 2;
+      ctx.strokeText("Reunalla", 150, 50); // teksti, x, y
+
+      var kuva = new Image(); // 1. Luodaan uusi kuva-olio
+      kuva.src = "kuvat/koira.png";
+      kuva.onload = function () {
+        // 2. Kun kuva on ladattu, piirretään se
+        ctx.drawImage(kuva, 50, 50, 70, 100); // x, y, leveys, korkeus
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 2. Piirretään pallo (ympyrä) uuteen paikkaan
+        ctx.beginPath();
+        ctx.arc(150, 100, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(50, 50, 30, 0, 2 * Math.PI);
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(200, 50, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 1. Hiiren klikkaus: piirretään piste klikkauskohtaan
+        // canvas.addEventListener("click", function (tapahtuma) {
+        //   var x = tapahtuma.clientX - canvas.getBoundingClientRect().left;
+        //   var y = tapahtuma.clientY - canvas.getBoundingClientRect().top;
+        //   ctx.beginPath();
+        //   ctx.arc(x, y, 10, 0, 2 * Math.PI);
+        //   ctx.fillStyle = "green";
+        //   ctx.fill();
+        // });
+
+        // // 2. Näppäimistö: tarkistetaan, mitä painettiin
+        // document.addEventListener("keydown", function (tapahtuma) {
+        //   console.log("Painoit näppäintä:", tapahtuma.key);
+        // });
+
+        // korjattu koodi:
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.addEventListener("click", function (tapahtuma) {
+          const rect = canvas.getBoundingClientRect();
+
+          const scaleX = canvas.width / rect.width;
+          const scaleY = canvas.height / rect.height;
+
+          const x = (tapahtuma.clientX - rect.left) * scaleX;
+          const y = (tapahtuma.clientY - rect.top) * scaleY;
+
+          ctx.beginPath();
+          ctx.arc(x, y, 10, 0, 2 * Math.PI);
+          ctx.fillStyle = "green";
+          ctx.fill();
+        });
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var x = 0; // pallon x-sijainti
+
+        function piirra() {
+          // 1. Tyhjennetään koko canvas
+          //ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (x % 20 === 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+
+          // 2. Piirretään pallo uuteen paikkaan
+          ctx.beginPath();
+          ctx.arc(x, 100, 30, 0, 2 * Math.PI);
+          ctx.fillStyle = "green";
+          ctx.fill();
+
+          // 3. Siirretään palloa oikealle
+          x = x + 1;
+
+          // 4. Pyydetään seuraavaa ruutua
+          requestAnimationFrame(piirra);
+        }
+
+        // Käynnistetään silmukka ensimmäistä kertaa
+        requestAnimationFrame(piirra);
+
+        var x = 150; // pallon aloitussijainti (keskellä)
+        var y = 100;
+        var vx = 3; // nopeus x-suunnassa (pikseliä/ruutu)
+        var vy = 2; // nopeus y-suunnassa
+        var sade = 10; // pallon säde
+
+        function piirra() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // 1. Päivitetään sijainti nopeuden mukaan
+          x = x + vx;
+          y = y + vy;
+
+          // 2. Reunojen havaitseminen ja pomppiminen
+          // Oikea reuna: jos pallon oikea laita ylittää reunauksen
+          if (x + sade > canvas.width) {
+            vx = vx * -1; // käännetään x-nopeus vastakkaiseksi
+          }
+          // Vasen reuna: jos pallon vasen laita menee alle 0
+          if (x - sade < 0) {
+            vx = vx * -1;
+          }
+          // Alareuna
+          if (y + sade > canvas.height) {
+            vy = vy * -1;
+          }
+          // Yläreuna
+          if (y - sade < 0) {
+            vy = vy * -1;
+          }
+
+          // 3. Piirretään pallo nykyiseen sijaintiin
+          ctx.beginPath();
+          ctx.arc(x, y, sade, 0, 2 * Math.PI);
+          if (vx > 0 && vy > 0) {
+            ctx.fillStyle = "red";
+            ctx.fill();
+          }
+          if (vx < 0 && vy < 0) {
+            ctx.fillStyle = "blue";
+            ctx.fill();
+          }
+          if (vx > 0 && vy < 0) {
+            ctx.fillStyle = "green";
+            ctx.fill();
+          }
+          if (vx < 0 && vy > 0) {
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+          }
+          // 4. Seuraava ruutu
+          requestAnimationFrame(piirra);
+        }
+
+        requestAnimationFrame(piirra);
+      };
+    </script>
+  </body>
+</html>

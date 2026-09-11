@@ -1,0 +1,24 @@
+{
+  "courses": [
+    {
+      "id": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "name": "HTML",
+      "groupIds": [
+        "eecd94b9-5f45-4e51-8a2b-4c354d194d11"
+      ],
+      "assignments": [
+        {
+          "id": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+          "name": "Portfolio",
+          "templateRepoUrl": "https://github.com/keudaope/html-tehtava-pohjat",
+          "repoPrefix": "html-tehtavat",
+          "instructions": "Luo itsestäsi portfolio, jossa on vähintään 3 sivua, joista yhden pitää olla \\\"laskeutumissivu\\\", eli se sivu, jolle käyttäjä tulee, kun hän klikkaa mainosta tai jollain toisella sivulla olevaa linkkiä, jokas johtaa näille sivuille - siis index.html, toinen pakollinen sivu on tietoja sinusta, jossa voi olla mukana esim. CV, jota potentiaalinen työnantaja voi käydä katsomassa. Viimeinen pakollinen sivu on jonkinlainen lomake, jossa on käytetty kaikkia tai melkein kaikkia erilaisia lomake-elementtejä. Muut sivut voit keksiä itse, esimerkiksi harrastukset.",
+          "maxHintLevel": 4,
+          "privateRepo": false,
+          "allowFullSolution": true,
+          "minAttemptsBeforeFullSolution": 4
+        }
+      ]
+    }
+  ]
+}

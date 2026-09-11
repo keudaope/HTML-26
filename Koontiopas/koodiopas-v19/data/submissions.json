@@ -1,0 +1,27 @@
+{
+  "submissions": [
+    {
+      "id": "df161699-a552-4932-ad48-4649a833ed6d",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "88837269ce14cf9fd4a84656e91cff1891ad1bed",
+      "commitShortSha": "8883726",
+      "commitMessage": "indexiä muokattu",
+      "studentMessage": "tässä korjattu index",
+      "status": "changes_requested",
+      "submittedAt": "2026-08-21T05:58:28.938Z",
+      "updatedAt": "2026-08-21T06:00:14.523Z",
+      "teacherFeedback": "Hienoa, osasit muokata title-tägiä ja lisätä h1-tägin sekä tekstiä sivulle. Tästä puuttuu kuitenkin vielä todella paljon - katso tehtäväksiantoa",
+      "reviewedAt": "2026-08-21T06:00:14.523Z",
+      "previousSubmissionId": null
+    }
+  ]
+}

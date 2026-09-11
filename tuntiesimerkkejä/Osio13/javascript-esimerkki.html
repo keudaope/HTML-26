@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Popover Example</title>
+    <style>
+      /* Basic styling for the popover element */
+      #my-dialog-popover {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        max-width: 300px;
+      }
+      /* Style the backdrop behind the popover */
+      #my-dialog-popover::backdrop {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .button-group {
+        margin-bottom: 15px;
+      }
+      button {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Popover API JavaScript Demo</h1>
+
+    <!-- Control Buttons -->
+    <div class="button-group" inert>
+      <button onclick="openPopover()">Show Popover</button>
+      <button onclick="closePopover()">Hide Popover</button>
+      <button onclick="togglePopoverState()">Toggle Popover</button>
+    </div>
+
+    <!-- The Popover Element -->
+    <!-- The 'popover' attribute makes it hidden by default and managed by the top layer -->
+    <div id="my-dialog-popover" popover>
+      <h3>Action Required</h3>
+      <p>
+        This is a popover dialog managed dynamically via JavaScript API methods.
+      </p>
+      <button onclick="closePopover()">Close</button>
+    </div>
+
+    <script>
+      // Get a reference to the popover element
+      const popover = document.getElementById("my-dialog-popover");
+
+      // 1. Explicitly open the popover
+      function openPopover() {
+        popover.showPopover();
+      }
+
+      // 2. Explicitly close the popover
+      function closePopover() {
+        popover.hidePopover();
+      }
+
+      // 3. Toggle the visibility state based on current state
+      function togglePopoverState() {
+        popover.togglePopover();
+      }
+    </script>
+    <form action="" id="lomake">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="Sähöposti" />
+      <button type="submit" onclick="emali()">Lähetä</button>
+    </form>
+    <script>
+      function emali() {
+        event.preventDefault();
+        const form = document.getElementById("lomake");
+        console.log(form.elements.email.value);
+        console.log(form.elements.email.name);
+        console.log(form.elements.email.id);
+        if (form.checkValidity()) {
+          console.log("Lomake kunnossa");
+        } else {
+          form.reportValidity();
+        }
+      }
+    </script>
+    <progress id="upload" max="5" value="4">4</progress>
+
+    <meter low="2" high="4" optimum="5" value="5" max="5"></meter>
+    <details class="faq">
+      <summary>Mitä HTML tarkoittaa?</summary>
+      <p>HyperText Markup Language.</p>
+    </details>
+    <progress id="progress-bar" aria-label="Content loading…"></progress>
+    <script>
+      document
+        .querySelector(".faq")
+        .addEventListener("toggle", (e) => console.log(e.currentTarget.open));
+    </script>
+  </body>
+</html>

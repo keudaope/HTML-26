@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koodiopas v14</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<header>
+<small>KOODIOPAS • V14</small>
+<h1>Hallinta ja jako<br>samassa paikassa.</h1>
+<p>Luo ryhmät, kurssit ja tehtävät ensin. Sen jälkeen jaa tehtävä koko ryhmälle GitHubiin.</p>
+</header>
+
+<section id="loginCard" class="card narrow">
+<h2>Opettajan kirjautuminen</h2>
+<label>Salasana</label>
+<input id="password" type="password">
+<button id="login">Kirjaudu</button>
+<div id="loginStatus"></div>
+</section>
+
+<section id="admin" hidden>
+<div class="topbar">
+<div>
+<strong id="teacherState">Opettaja kirjautunut</strong>
+<span id="githubSummary" class="muted"></span>
+</div>
+<button id="logout" class="secondary">Kirjaudu ulos</button>
+</div>
+
+<nav class="mainnav">
+<button id="groupsTab" class="active">1. Ryhmät</button>
+<button id="coursesTab">2. Kurssit ja tehtävät</button>
+<button id="githubTab">3. GitHub-asetukset</button>
+<button id="distributeTab">4. Tehtävien jako</button>
+</nav>
+
+<section id="groupsView">
+<section class="card">
+<div class="between">
+<div>
+<h2>Ryhmät ja opiskelijat</h2>
+<p class="muted">Lisää opiskelijan nimi ja GitHub-käyttäjänimi. GitHub-tunnusta käytetään repository-oikeuksiin.</p>
+</div>
+<button id="addGroup">+ Lisää ryhmä</button>
+</div>
+<div id="groupsEditor"></div>
+</section>
+<section class="card">
+<button id="saveGroups">Tallenna ryhmät</button>
+<span id="groupsStatus"></span>
+</section>
+</section>
+
+<section id="coursesView" hidden>
+<section class="card">
+<div class="between">
+<div>
+<h2>Kurssit ja tehtävät</h2>
+<p class="muted">Liitä kurssiin yksi tai useampi ryhmä ja määritä jokaiselle tehtävälle template-repository.</p>
+</div>
+<button id="addCourse">+ Lisää kurssi</button>
+</div>
+<div id="coursesEditor"></div>
+</section>
+<section class="card">
+<button id="saveCourses">Tallenna kurssit</button>
+<span id="coursesStatus"></span>
+</section>
+</section>
+
+<section id="githubView" hidden>
+<section class="card">
+<h2>GitHub-organisaatio</h2>
+<p class="muted">Opiskelijoiden repositoryt luodaan tämän organisaation alle. Kirjoita vain organisaation nimi, ei koko URL:ia.</p>
+<label>Organisaation nimi</label>
+<input id="githubOrg" placeholder="esim. keuda-ohjelmistokehitys">
+<label class="check">
+<input id="defaultPrivate" type="checkbox">
+Luo tehtävärepositoryt oletuksena yksityisinä
+</label>
+<button id="saveSettings">Tallenna GitHub-asetukset</button>
+<span id="settingsStatus"></span>
+</section>
+
+<section class="card">
+<div class="between">
+<div>
+<h2>GitHub-yhteys</h2>
+<p class="muted">Opettajan GitHub-yhteyttä käytetään repositoryjen luomiseen ja opiskelijoiden lisäämiseen.</p>
+</div>
+<div id="githubActions"></div>
+</div>
+<div id="githubStatus"></div>
+</section>
+</section>
+
+<section id="distributeView" hidden>
+<section class="card">
+<h2>Valitse jaettava tehtävä</h2>
+<div class="grid3">
+<div><label>Kurssi</label><select id="courseSelect"></select></div>
+<div><label>Tehtävä</label><select id="assignmentSelect"></select></div>
+<div><label>Ryhmä</label><select id="groupSelect"></select></div>
+</div>
+<button id="preview">Esikatsele jako</button>
+</section>
+
+<section id="previewCard" class="card" hidden>
+<div class="between">
+<div>
+<h2>Esikatselu</h2>
+<p id="previewInfo" class="muted"></p>
+</div>
+<button id="distribute">Jaa tehtävä ryhmälle</button>
+</div>
+<div id="previewTable"></div>
+</section>
+
+<section id="resultCard" class="card" hidden>
+<h2>Jakotulos</h2>
+<div id="results"></div>
+</section>
+</section>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

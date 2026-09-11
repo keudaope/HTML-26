@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koodiopas v9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header>
+    <small>KOODIOPAS • V9</small>
+    <h1>Ryhmästä yksittäiseen<br>oppimispolkuun.</h1>
+    <p>Opiskelija työskentelee oman ryhmänsä ja repositorynsa kautta. Opettaja näkee avuntarpeen ryhmä-, opiskelija-, tehtävä- ja aikavälitasolla.</p>
+
+    <nav>
+      <button id="studentTab" class="tab active">Opiskelijan näkymä</button>
+      <button id="teacherTab" class="tab">Opettajan näkymä</button>
+    </nav>
+  </header>
+
+  <section id="studentView">
+    <section id="teacherNotice" class="teacherNotice" hidden></section>
+
+    <section class="card">
+      <div class="grid2">
+        <div>
+          <label>Ryhmä</label>
+          <select id="studentGroup"></select>
+        </div>
+        <div>
+          <label>Opiskelija</label>
+          <select id="studentSelect"></select>
+        </div>
+      </div>
+
+      <label>GitHub repository</label>
+      <div class="row">
+        <input id="repo">
+        <button id="load">Hae tehtävät</button>
+      </div>
+
+      <div id="projectArea" hidden>
+        <label>Valitse tehtävä</label>
+        <div id="projects"></div>
+      </div>
+
+      <div id="help" hidden>
+        <div class="between">
+          <label>Mikä ei toimi?</label>
+          <b id="level">Vihjetaso 1</b>
+        </div>
+        <div id="policy" class="policy"></div>
+        <div id="progress"></div>
+        <textarea id="msg" rows="4" placeholder="Kerro mitä olet yrittänyt ja mitä odotit tapahtuvan..."></textarea>
+        <div class="row">
+          <button id="ask">Pyydä vihje</button>
+          <button id="reset" class="secondary">Aloita alusta</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="status" hidden></div>
+
+    <section id="chat" class="card" hidden>
+      <h2 id="title"></h2>
+      <div id="messages"></div>
+    </section>
+  </section>
+
+  <section id="teacherView" hidden>
+    <section id="teacherLoginCard" class="card narrow">
+      <h2>Opettajan kirjautuminen</h2>
+      <label>Salasana</label>
+      <input id="teacherPassword" type="password">
+      <button id="teacherLogin">Kirjaudu</button>
+      <div id="loginStatus" class="inlineStatus"></div>
+    </section>
+
+    <section id="teacherAdmin" hidden>
+      <div class="teacherNav">
+        <button id="dashboardTab" class="subtab active">Koontinäkymä</button>
+        <button id="groupsTab" class="subtab">Ryhmät</button>
+        <button id="settingsTab" class="subtab">Asetukset</button>
+        <button id="teacherLogout" class="secondary">Kirjaudu ulos</button>
+      </div>
+
+      <section id="dashboardView">
+        <section class="card">
+          <h2>Suodattimet</h2>
+          <div class="filters">
+            <div><label>Ryhmä</label><select id="filterGroup"></select></div>
+            <div><label>Opiskelija</label><select id="filterStudent"></select></div>
+            <div><label>Tehtävä</label><select id="filterProject"></select></div>
+            <div><label>Alkaen</label><input id="filterFrom" type="date"></div>
+            <div><label>Asti</label><input id="filterTo" type="date"></div>
+            <div class="filterActions"><button id="applyFilters">Suodata</button><button id="clearFilters" class="secondary">Tyhjennä</button></div>
+          </div>
+        </section>
+
+        <div class="stats">
+          <div class="stat"><span>Yrityksiä</span><strong id="statAttempts">0</strong></div>
+          <div class="stat"><span>Opiskelijoita</span><strong id="statStudents">0</strong></div>
+          <div class="stat"><span>Tehtäviä</span><strong id="statProjects">0</strong></div>
+          <div class="stat"><span>Vihjetaso 3–4</span><strong id="statHighHints">0</strong></div>
+        </div>
+
+        <section class="card">
+          <h2>Tehtävät, joissa tarvitaan eniten apua</h2>
+          <div id="projectTable"></div>
+        </section>
+
+        <section class="card grid2cards">
+          <div><h2>Yleisimmät ongelmateemat</h2><div id="themeList"></div></div>
+          <div><h2>Vihjetasojen käyttö</h2><div id="hintBars"></div></div>
+        </section>
+
+        <section class="card">
+          <h2>Viimeisimmät avunpyynnöt</h2>
+          <div id="recentTable"></div>
+        </section>
+      </section>
+
+      <section id="groupsView" hidden>
+        <section class="card">
+          <div class="between">
+            <h2>Kurssit ja ryhmät</h2>
+            <button id="addGroup">+ Lisää ryhmä</button>
+          </div>
+          <div id="groupsEditor"></div>
+        </section>
+
+        <section class="card">
+          <button id="saveGroups">Tallenna ryhmät</button>
+          <span id="groupsSaveStatus"></span>
+        </section>
+      </section>
+
+      <section id="settingsView" hidden>
+        <section class="card">
+          <h2>Opettajan oletusasetukset</h2>
+          <label>Opiskelijalle näytettävä viesti</label>
+          <textarea id="teacherMessage" rows="3"></textarea>
+
+          <div class="grid2">
+            <div>
+              <label>Maksimivihjetaso</label>
+              <select id="defaultMaxHintLevel">
+                <option value="1">1 – pieni vihje</option>
+                <option value="2">2 – tarkempi vihje</option>
+                <option value="3">3 – rinnakkainen esimerkki</option>
+                <option value="4">4 – malliratkaisu mahdollinen</option>
+              </select>
+            </div>
+            <div>
+              <label>Yrityksiä ennen malliratkaisua</label>
+              <input id="minAttempts" type="number" min="1" value="4">
+            </div>
+          </div>
+
+          <label class="check"><input id="allowFullSolution" type="checkbox"> Salli malliratkaisu oletuksena</label>
+        </section>
+
+        <section class="card">
+          <div class="between"><h2>Tehtäväkohtaiset säännöt</h2><button id="addRule">+ Lisää sääntö</button></div>
+          <div id="rules"></div>
+        </section>
+
+        <section class="card">
+          <button id="saveConfig">Tallenna asetukset</button>
+          <span id="saveStatus"></span>
+        </section>
+      </section>
+    </section>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
