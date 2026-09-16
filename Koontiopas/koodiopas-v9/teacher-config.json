@@ -1,0 +1,7 @@
+{
+  "defaultMaxHintLevel": 3,
+  "allowFullSolution": false,
+  "minAttemptsBeforeFullSolution": 4,
+  "teacherMessage": "Kokeile ensin itse. Koodiopas auttaa vihjeillä, mutta ei tee tehtävää puolestasi.",
+  "projectRules": []
+}

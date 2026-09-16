@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gift Certificate</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Georgia, serif;
+            margin: 0;
+        }
+
+        .certificate {
+            width: 600px;
+            height: 350px;
+            background-color: #fff;
+            position: relative;
+            padding: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .border-frame {
+            border: 2px solid #d4af37;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            position: relative;
+        }
+
+        .inner-border {
+            border: 1px solid #d4af37;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background-image:
+                radial-gradient(#ffebf0 20%, #fff 20%);
+            background-size: 10px 10px;
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .field {
+            text-align: left;
+            width: 40%;
+        }
+
+        .label {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ccc;
+            display: block;
+            margin-bottom: 5px;
+            padding-bottom: 2px;
+        }
+
+        .value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Kulmakoristeet */
+
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d4af37;
+        }
+
+        .top-left {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .top-right {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Leikkausohje */
+
+        .cut-line {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f4f4f4;
+            padding: 0 10px;
+            color: #999;
+            font-size: 0.8rem;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="certificate">
+
+        <div class="cut-line">
+            -- ✂ CUT HERE ✂ --
+        </div>
+
+        <div class="border-frame">
+
+            <!-- Decorative corners -->
+            <div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+
+            <div class="inner-border">
+
+                <h1>Gift Certificate</h1>
+
+                <p class="subtitle">
+                    This certificate entitles the bearer to
+                </p>
+
+                <div class="amount">
+                    $50.00
+                </div>
+
+                <p style="color: #666; margin-top: 0;">
+                    OFF ANY PURCHASE
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html><html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Koodiopas v11</title><link rel="stylesheet" href="styles.css"></head>
+<body><main><header><small>KOODIOPAS • V11</small><h1>Oma kevyt<br>GitHub Classroom.</h1><p>Kurssit, tehtävät, ryhmät ja repository-suunnitelma samassa paikassa.</p><nav><button id="studentTab" class="active">Opiskelija</button><button id="teacherTab">Opettaja</button></nav></header>
+
+<section id="studentView">
+<div id="teacherNotice" class="notice" hidden></div>
+<section class="card"><div class="grid2"><div><label>Kurssi</label><select id="sCourse"></select></div><div><label>Tehtävä</label><select id="sAssignment"></select></div></div><div class="grid2"><div><label>Ryhmä</label><select id="sGroup"></select></div><div><label>Opiskelija</label><select id="sStudent"></select></div></div><label>Repository</label><input id="sRepo" readonly><div id="assignmentInfo" class="notice" hidden></div></section>
+</section>
+
+<section id="teacherView" hidden>
+<section id="loginCard" class="card narrow"><h2>Opettajan kirjautuminen</h2><label>Salasana</label><input id="password" type="password"><button id="login">Kirjaudu</button><div id="loginStatus"></div></section>
+
+<section id="admin" hidden><nav class="subnav"><button id="coursesTab" class="active">Kurssit</button><button id="groupsTab">Ryhmät</button><button id="reposTab">Repositoryt</button><button id="logout">Kirjaudu ulos</button></nav>
+
+<section id="coursesView"><section class="card"><div class="between"><h2>Kurssit ja tehtävät</h2><button id="addCourse">+ Lisää kurssi</button></div><div id="courses"></div></section><section class="card"><button id="saveCourses">Tallenna kurssit</button><span id="courseStatus"></span></section></section>
+
+<section id="groupsView" hidden><section class="card"><div class="between"><h2>Ryhmät ja GitHub-tunnukset</h2><button id="addGroup">+ Lisää ryhmä</button></div><div id="groups"></div></section><section class="card"><button id="saveGroups">Tallenna ryhmät</button><span id="groupStatus"></span></section></section>
+
+<section id="reposView" hidden><section class="card"><div class="between"><h2>Repository-suunnitelma</h2><button id="refreshRepos">Päivitä</button></div><p class="muted">Odotettu repo muodostetaan tehtävän prefixistä ja opiskelijan GitHub-tunnuksesta.</p><button id="checkRepos">Tarkista GitHubista</button><div id="repoPlan"></div></section></section>
+
+</section></section>
+</main><script src="app.js"></script></body></html>

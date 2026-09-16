@@ -1,0 +1,235 @@
+{
+  "submissions": [
+    {
+      "id": "df161699-a552-4932-ad48-4649a833ed6d",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "88837269ce14cf9fd4a84656e91cff1891ad1bed",
+      "commitShortSha": "8883726",
+      "commitMessage": "indexiä muokattu",
+      "studentMessage": "tässä korjattu index",
+      "status": "changes_requested",
+      "submittedAt": "2026-08-21T05:58:28.938Z",
+      "updatedAt": "2026-08-21T07:47:01.523Z",
+      "teacherFeedback": "Hienoa, osasit muokata title-tägiä ja lisätä h1-tägin sekä tekstiä sivulle. Tästä puuttuu kuitenkin vielä todella paljon - katso tehtäväksiantoa",
+      "reviewedAt": "2026-08-21T07:47:01.523Z",
+      "previousSubmissionId": null,
+      "assessment": {
+        "scores": [
+          {
+            "id": "structure",
+            "name": "Rakenne ja toimivuus",
+            "maxPoints": 5,
+            "points": 0
+          },
+          {
+            "id": "quality",
+            "name": "Koodin laatu ja luettavuus",
+            "maxPoints": 5,
+            "points": 1
+          },
+          {
+            "id": "requirements",
+            "name": "Tehtävänannon vaatimukset",
+            "maxPoints": 5,
+            "points": 0
+          },
+          {
+            "id": "finish",
+            "name": "Ongelmanratkaisu ja viimeistely",
+            "maxPoints": 5,
+            "points": 0
+          }
+        ],
+        "totalPoints": 1,
+        "maxPoints": 20,
+        "percent": 5
+      }
+    },
+    {
+      "id": "eeb26ebd-a9f1-49d1-99d8-f2e7aaf580ae",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "342a73a141951ea31a18bf882a94594823ae89d1",
+      "commitShortSha": "342a73a",
+      "commitMessage": "laskeutumissivu",
+      "studentMessage": "Tein laskeutumissivun",
+      "status": "changes_requested",
+      "submittedAt": "2026-08-21T08:04:22.934Z",
+      "updatedAt": "2026-08-21T08:08:11.178Z",
+      "teacherFeedback": "Hienoa, olet käyttänyt semanttista rakennetta sivuillasi. Teepä vielä muutkin sivut ja muista lisätä kuvia ja linkkeja yms.",
+      "reviewedAt": "2026-08-21T08:08:11.178Z",
+      "previousSubmissionId": "df161699-a552-4932-ad48-4649a833ed6d",
+      "assessment": {
+        "scores": [
+          {
+            "id": "structure",
+            "name": "Rakenne ja toimivuus",
+            "maxPoints": 5,
+            "points": 5
+          },
+          {
+            "id": "quality",
+            "name": "Koodin laatu ja luettavuus",
+            "maxPoints": 5,
+            "points": 5
+          },
+          {
+            "id": "requirements",
+            "name": "Tehtävänannon vaatimukset",
+            "maxPoints": 5,
+            "points": 2
+          },
+          {
+            "id": "finish",
+            "name": "Ongelmanratkaisu ja viimeistely",
+            "maxPoints": 5,
+            "points": 1
+          }
+        ],
+        "totalPoints": 13,
+        "maxPoints": 20,
+        "percent": 65
+      }
+    },
+    {
+      "id": "eb1c3491-cf35-4b93-a33f-4f55e83895c9",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "be1baaeaa776973bf7402352817e7ebc4aade1c5",
+      "commitShortSha": "be1baae",
+      "commitMessage": "muotoilu",
+      "studentMessage": "",
+      "status": "submitted",
+      "submittedAt": "2026-08-21T09:21:37.749Z",
+      "updatedAt": "2026-08-21T09:21:37.749Z",
+      "teacherFeedback": "",
+      "reviewedAt": null,
+      "previousSubmissionId": "eeb26ebd-a9f1-49d1-99d8-f2e7aaf580ae"
+    },
+    {
+      "id": "0c48be79-d3b6-4e27-a9c3-e919b3988c98",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "a60bf85e02bd8c3ab5f647dec838df0b015842ed",
+      "commitShortSha": "a60bf85",
+      "commitMessage": "loput sivut",
+      "studentMessage": "",
+      "status": "submitted",
+      "submittedAt": "2026-08-21T09:46:42.692Z",
+      "updatedAt": "2026-08-21T09:46:42.692Z",
+      "teacherFeedback": "",
+      "reviewedAt": null,
+      "previousSubmissionId": "eb1c3491-cf35-4b93-a33f-4f55e83895c9"
+    },
+    {
+      "id": "4db586db-375d-4120-81ed-e1e12f9f9956",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "d43aaa94d0d5755e8e333343f4303fb889419880",
+      "commitShortSha": "d43aaa9",
+      "commitMessage": "kuvan lisäys",
+      "studentMessage": "",
+      "status": "submitted",
+      "submittedAt": "2026-08-21T10:29:11.339Z",
+      "updatedAt": "2026-08-21T10:29:11.339Z",
+      "teacherFeedback": "",
+      "reviewedAt": null,
+      "previousSubmissionId": "0c48be79-d3b6-4e27-a9c3-e919b3988c98"
+    },
+    {
+      "id": "fe802fa3-91d6-406b-a8f8-fc24e34e1301",
+      "studentId": "keudaopettaja",
+      "studentName": "Oma tunnus",
+      "githubUsername": "keudaopettaja",
+      "groupId": "eecd94b9-5f45-4e51-8a2b-4c354d194d11",
+      "groupName": "Ohjelmointi 2026",
+      "courseId": "3d4636ba-4381-4ff5-9bbc-d44a09beef5c",
+      "courseName": "HTML",
+      "assignmentId": "9e6237fe-cc5c-41ad-bfe0-eff0268587ec",
+      "assignmentName": "Portfolio",
+      "repoUrl": "https://github.com/keuda-ohjelmointi/html-tehtavat-keudaopettaja",
+      "commitSha": "d037ae4f058ff9699d19de080e5f06844692aea2",
+      "commitShortSha": "d037ae4",
+      "commitMessage": "kuvan nimen muunto",
+      "studentMessage": "",
+      "status": "approved",
+      "submittedAt": "2026-08-21T10:34:47.416Z",
+      "updatedAt": "2026-08-21T10:35:33.624Z",
+      "teacherFeedback": "",
+      "reviewedAt": "2026-08-21T10:35:33.624Z",
+      "previousSubmissionId": "4db586db-375d-4120-81ed-e1e12f9f9956",
+      "assessment": {
+        "scores": [
+          {
+            "id": "structure",
+            "name": "Rakenne ja toimivuus",
+            "maxPoints": 5,
+            "points": 5
+          },
+          {
+            "id": "quality",
+            "name": "Koodin laatu ja luettavuus",
+            "maxPoints": 5,
+            "points": 5
+          },
+          {
+            "id": "requirements",
+            "name": "Tehtävänannon vaatimukset",
+            "maxPoints": 5,
+            "points": 5
+          },
+          {
+            "id": "finish",
+            "name": "Ongelmanratkaisu ja viimeistely",
+            "maxPoints": 5,
+            "points": 5
+          }
+        ],
+        "totalPoints": 20,
+        "maxPoints": 20,
+        "percent": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "defaultMaxHintLevel": 3,
+  "allowFullSolution": false,
+  "minAttemptsBeforeFullSolution": 4,
+  "teacherMessage": "Kokeile ensin itse. Koodiopas auttaa vihjeillä, mutta ei tee tehtävää puolestasi.",
+  "projectRules": [
+    {"match": "Projekti 1A", "maxHintLevel": 3, "allowFullSolution": false},
+    {"match": "Projekti 10", "maxHintLevel": 4, "allowFullSolution": true, "minAttemptsBeforeFullSolution": 4}
+  ]
+}

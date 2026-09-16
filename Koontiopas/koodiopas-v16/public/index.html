@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koodiopas v16</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<header>
+<small>KOODIOPAS • V16</small>
+<h1>Yksi GitHub-kirjautuminen.<br>Kaksi käyttäjäroolia.</h1>
+<p>Opettaja hallitsee kurssit ja tehtäväjaon. Opiskelija näkee vain omat tehtävänsä ja saa asteittaisia vihjeitä.</p>
+<nav>
+<button id="studentTab" class="tab active">Opiskelija</button>
+<button id="teacherTab" class="tab">Opettaja</button>
+</nav>
+</header>
+
+<section id="studentView">
+<section id="studentLoggedOut" class="card heroCard">
+<h2>Kirjaudu GitHubilla</h2>
+<p class="muted">GitHub-käyttäjänimesi yhdistetään automaattisesti oikeaan opiskelijaan, ryhmään ja repositoryihin.</p>
+<a class="buttonLink" href="/auth/github/start?role=student">Kirjaudu GitHubilla</a>
+</section>
+
+<section id="studentLoggedIn" hidden>
+<section class="card profileCard">
+<img id="studentAvatar" alt="">
+<div>
+<small>KIRJAUTUNUT</small>
+<h2 id="studentName"></h2>
+<p id="studentGithub" class="muted"></p>
+</div>
+<button id="studentLogout" class="secondary">Kirjaudu ulos</button>
+</section>
+
+<section id="studentUnmatched" class="card warning" hidden>
+<h2>GitHub-tunnustasi ei löytynyt ryhmästä</h2>
+<p>Pyydä opettajaa lisäämään GitHub-käyttäjänimesi Koodioppaan Ryhmät-näkymään.</p>
+</section>
+
+<section id="studentWorkspace" hidden>
+<section class="card">
+<div class="grid2">
+<div><label>Kurssi</label><select id="studentCourse"></select></div>
+<div><label>Tehtävä</label><select id="studentAssignment"></select></div>
+</div>
+<div id="assignmentInfo" class="notice" hidden></div>
+<label>Repository</label>
+<div class="row">
+<input id="studentRepo" readonly>
+<a id="openRepo" class="buttonLink secondaryLink" target="_blank" rel="noopener">Avaa GitHubissa</a>
+</div>
+<div id="helpArea" hidden>
+<div class="between">
+<label>Mikä ei toimi?</label>
+<b id="hintLevel">Vihjetaso 1</b>
+</div>
+<div id="hintProgress"></div>
+<textarea id="studentMessage" rows="4" placeholder="Kerro mitä olet yrittänyt, mitä odotit tapahtuvan ja mitä nyt tapahtuu..."></textarea>
+<div class="row">
+<button id="askHint">Pyydä vihje</button>
+<button id="resetHelp" class="secondary">Aloita alusta</button>
+</div>
+<div id="studentStatus"></div>
+</div>
+</section>
+
+<section id="chatCard" class="card" hidden>
+<h2 id="chatTitle"></h2>
+<div id="messages"></div>
+</section>
+</section>
+</section>
+</section>
+
+<section id="teacherView" hidden>
+<section id="teacherLoginCard" class="card narrow">
+<h2>Opettajan kirjautuminen</h2>
+<label>Salasana</label>
+<input id="teacherPassword" type="password">
+<button id="teacherLogin">Kirjaudu</button>
+<div id="teacherLoginStatus"></div>
+</section>
+
+<section id="teacherAdmin" hidden>
+<div class="teacherNav">
+<button data-view="groups" class="subtab active">1. Ryhmät</button>
+<button data-view="courses" class="subtab">2. Kurssit ja tehtävät</button>
+<button data-view="github" class="subtab">3. GitHub-asetukset</button>
+<button data-view="distribute" class="subtab">4. Tehtävien jako</button>
+<button data-view="history" class="subtab">5. Jakohistoria</button>
+<button data-view="analytics" class="subtab">6. Opiskelijaseuranta</button>
+<button id="teacherLogout" class="secondary">Kirjaudu ulos</button>
+</div>
+
+<section id="groupsView">
+<section class="card">
+<div class="between">
+<div><h2>Ryhmät ja opiskelijat</h2><p class="muted">GitHub-käyttäjänimi tunnistaa opiskelijan ja antaa oikeudet oikeaan repositoryyn.</p></div>
+<button id="addGroup">+ Lisää ryhmä</button>
+</div>
+<div id="groupsEditor"></div>
+</section>
+<section class="card"><button id="saveGroups">Tallenna ryhmät</button><span id="groupsStatus"></span></section>
+</section>
+
+<section id="coursesView" hidden>
+<section class="card">
+<div class="between">
+<div><h2>Kurssit ja tehtävät</h2><p class="muted">Liitä kurssiin ryhmät ja määritä tehtävän template-repository.</p></div>
+<button id="addCourse">+ Lisää kurssi</button>
+</div>
+<div id="coursesEditor"></div>
+</section>
+<section class="card"><button id="saveCourses">Tallenna kurssit</button><span id="coursesStatus"></span></section>
+</section>
+
+<section id="githubView" hidden>
+<section class="card">
+<h2>GitHub-organisaatio</h2>
+<label>Organisaation nimi</label>
+<input id="githubOrg" placeholder="esim. keuda-ohjelmointi">
+<label class="check"><input id="defaultPrivate" type="checkbox"> Luo repositoryt oletuksena yksityisinä</label>
+<button id="saveSettings">Tallenna asetukset</button>
+<span id="settingsStatus"></span>
+</section>
+<section class="card">
+<div class="between">
+<div><h2>Opettajan GitHub-yhteys</h2><p class="muted">Samaa OAuth-callbackia käytetään nyt sekä opettajalle että opiskelijalle.</p></div>
+<div id="githubActions"></div>
+</div>
+<div id="githubStatus"></div>
+</section>
+</section>
+
+<section id="distributeView" hidden>
+<section class="card">
+<h2>Jaa tehtävä ryhmälle</h2>
+<div class="grid3">
+<div><label>Kurssi</label><select id="courseSelect"></select></div>
+<div><label>Tehtävä</label><select id="assignmentSelect"></select></div>
+<div><label>Ryhmä</label><select id="groupSelect"></select></div>
+</div>
+<button id="preview">Esikatsele jako</button>
+</section>
+<section id="previewCard" class="card" hidden>
+<div class="between"><div><h2>Esikatselu</h2><p id="previewInfo" class="muted"></p></div><button id="distribute">Jaa tehtävä ryhmälle</button></div>
+<div id="previewTable"></div>
+</section>
+<section id="resultCard" class="card" hidden><h2>Jakotulos</h2><div id="results"></div></section>
+</section>
+
+<section id="historyView" hidden>
+<section class="card">
+<div class="between"><div><h2>GitHub-jakohistoria</h2><p class="muted">Aiemmat jaot ja opiskelijakohtaiset repositoryt.</p></div><button id="refreshHistory">Päivitä</button></div>
+<div id="historyList"></div>
+</section>
+</section>
+
+<section id="analyticsView" hidden>
+<div class="stats">
+<div class="stat"><span>Avunpyyntöjä</span><strong id="totalAttempts">0</strong></div>
+<div class="stat"><span>Opiskelijoita</span><strong id="studentCount">0</strong></div>
+<div class="stat"><span>Vihjetaso 3–4</span><strong id="highLevelCount">0</strong></div>
+</div>
+<section class="card"><h2>Opiskelijakohtainen avuntarve</h2><div id="studentAnalytics"></div></section>
+<section class="card"><h2>Viimeisimmät avunpyynnöt</h2><div id="recentAnalytics"></div></section>
+</section>
+</section>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

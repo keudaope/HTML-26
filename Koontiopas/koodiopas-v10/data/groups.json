@@ -1,0 +1,65 @@
+{
+  "groups": [
+    {
+      "id": "85d11f94-4f4b-4cf4-8421-1e17bacd630c",
+      "name": "Ohjelmistokehittäjä 2026",
+      "students": [
+        {
+          "id": "kosa",
+          "name": "Koskenranta, Sami Kristian",
+          "repoUrl": "https://github.com/Samkosken/HTML"
+        },
+        {
+          "id": "jumu",
+          "name": "Jubair, Mugheeth",
+          "repoUrl": "https://github.com/mugheeht-jubair/HTML"
+        },
+        {
+          "id": "knla",
+          "name": "Knuuti, Laura Mari Katariina",
+          "repoUrl": "https://github.com/laura-knuuti/HTML"
+        },
+        {
+          "id": "koak",
+          "name": "Koivunen, Aku Elmeri",
+          "repoUrl": "https://github.com/aku-koivunen/HTML-harjoituksia"
+        },
+        {
+          "id": "leem",
+          "name": "Leppänen, Emilia",
+          "repoUrl": "https://github.com/emiemmi2/HTML"
+        },
+        {
+          "id": "mcse",
+          "name": "McConnell, Sean Malcolm",
+          "repoUrl": "https://github.com/Keudamascus/HTML"
+        },
+        {
+          "id": "mini",
+          "name": "Miinalainen, Niko Patrik",
+          "repoUrl": "https://github.com/Niko-Miinalainen/Harjoitus-1"
+        },
+        {
+          "id": "rasa",
+          "name": "Raassina, Sakari Julius",
+          "repoUrl": "https://github.com/Sakraas/JS"
+        },
+        {
+          "id": "raon",
+          "name": "Rantanen, Onni",
+          "repoUrl": "https://github.com/Shocked2k23/HTML"
+        },
+        {
+          "id": "rari",
+          "name": "Ratiyapinan, Rina",
+          "repoUrl": "https://github.com/Rina-Ratiyapinan/HTML"
+        },
+        {
+          "id": "saju",
+          "name": "Sandelin, Juuso Niko Patrik",
+          "repoUrl": "https://github.com/Juiso95/HTML-harjoituksia"
+        }
+      ]
+    }
+  ]
+}

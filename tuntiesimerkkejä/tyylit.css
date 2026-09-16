@@ -1,0 +1,21 @@
+h1 {
+  color: blue;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 2em;
+  font-style: italic;
+}
+.kuka_olen {
+  background-color: lightblue;
+  border: 2px solid black;
+}
+.mita_harrastan {
+  background-color: lightyellow;
+  border-radius: 10px;
+}
+.esittely {
+  color: darkgreen;
+}
+.harrastukset {
+  color: lightcoral;
+}

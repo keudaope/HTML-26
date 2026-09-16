@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "id": "99328ebe-046e-48e6-921f-c5eef85fb8ec",
+      "timestamp": "2026-08-20T07:19:17.723Z",
+      "studentId": "Anonyymi",
+      "project": "Projekti 1A kirjautumislomake",
+      "level": 1,
+      "theme": "Muu ohjelmointiongelma",
+      "message": "-lkjhgfd",
+      "demo": true
+    },
+    {
+      "id": "3e98f9cc-246b-4564-895c-f726d3699d37",
+      "timestamp": "2026-08-20T07:19:30.061Z",
+      "studentId": "Anonyymi",
+      "project": "Projekti 1A kirjautumislomake",
+      "level": 1,
+      "theme": "Muu ohjelmointiongelma",
+      "message": "-lkjhgfd",
+      "demo": true
+    },
+    {
+      "id": "7861c2f4-1e52-43c6-92fa-68e1e8532c99",
+      "timestamp": "2026-08-20T07:19:36.145Z",
+      "studentId": "Anonyymi",
+      "project": "Projekti 1A kirjautumislomake",
+      "level": 1,
+      "theme": "Muu ohjelmointiongelma",
+      "message": "-lkjhgfdiuygfd",
+      "demo": true
+    }
+  ]
+}
