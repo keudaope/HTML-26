@@ -1,0 +1,757 @@
+```html
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Osa 2 – Selectorit ja Cascade</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIVUN YLÄOSA
+         ===================================================== -->
+
+    <header id="hero">
+        <h1>CSS Osa 2</h1>
+        <p>Selectorit ja cascade</p>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="#yhdistelmat">Yhdistelmäselectorit</a></li>
+                <li><a href="#attribuutit">Attribuutit</a></li>
+                <li><a href="#pseudoluokat">Pseudoluokat</a></li>
+                <li>
+                    <a href="#rakenne">Rakenne</a>
+
+                    <ul>
+                        <li><a href="#kortit">Kortit</a></li>
+                        <li><a href="#lista">Lista</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="app">
+
+        <!-- =================================================
+             1. YHDISTELMÄSELECTORIT
+             article p
+             .card > h2
+             h2 + p
+             h2 ~ p
+             ================================================= -->
+
+        <section id="yhdistelmat" class="demo-section">
+
+            <h2>1. Yhdistelmäselectorit</h2>
+
+            <article class="post">
+
+                <h2>Artikkelin otsikko</h2>
+
+                <p class="lead">
+                    Tämä kappale tulee heti h2-otsikon jälkeen.
+                </p>
+
+                <p>
+                    Tämä on toinen artikkelin kappale.
+                </p>
+
+                <section>
+                    <h3>Sisäkkäinen section</h3>
+
+                    <p>
+                        Tämä kappale on article-elementin jälkeläinen,
+                        mutta ei suora lapsi.
+                    </p>
+                </section>
+
+                <p>
+                    Tämäkin on myöhempi h2:n sisaruselementti.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             2. LAPSIVALITSIN
+             .menu > li
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>2. Lapsivalitsin</h2>
+
+            <ul class="menu demo-menu">
+
+                <li>Ensimmäinen suora lapsi</li>
+
+                <li>
+                    Toinen suora lapsi
+
+                    <ul>
+                        <li>Sisäkkäinen listaelementti</li>
+                        <li>Toinen sisäkkäinen elementti</li>
+                    </ul>
+                </li>
+
+                <li>Kolmas suora lapsi</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             3. KORTIT
+             .card
+             .card > h2
+             .card:has(img)
+             ================================================= -->
+
+        <section id="kortit" class="demo-section">
+
+            <h2>3. Kortit</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h2>Peruskortti</h2>
+
+                    <p>
+                        Tässä kortissa ei ole kuvaa.
+                    </p>
+
+                    <a href="#">Lue lisää</a>
+
+                </article>
+
+
+                <article class="card" data-state="active">
+
+                    <img
+                        src="https://picsum.photos/300/180"
+                        alt="Esimerkkikuva"
+                    >
+
+                    <div>
+                        <h2>Aktiivinen kortti</h2>
+
+                        <p>
+                            Tässä kortissa on kuva ja
+                            data-state="active".
+                        </p>
+
+                        <a href="#">Lue lisää</a>
+                    </div>
+
+                </article>
+
+
+                <article class="card" data-state="inactive">
+
+                    <h2>Ei-aktiivinen kortti</h2>
+
+                    <p>
+                        Tämän kortin data-state on inactive.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. ATTRIBUUTTIVALITSIMET
+
+             [required]
+             [type="email"]
+             [target="_blank"]
+             [class~="tag"]
+             [href^="https"]
+             [href$=".pdf"]
+             ================================================= -->
+
+        <section id="attribuutit" class="demo-section">
+
+            <h2>4. Attribuuttivalitsimet</h2>
+
+            <div class="form-group">
+
+                <label class="required" for="name">
+                    Nimi
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="required" for="email">
+                    Sähköposti
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Puhelin
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                >
+
+            </div>
+
+
+            <h3>Linkit</h3>
+
+            <p>
+                <a href="https://example.com" target="_blank">
+                    Ulkoinen HTTPS-linkki
+                </a>
+            </p>
+
+            <p>
+                <a href="ohje.pdf">
+                    PDF-tiedosto
+                </a>
+            </p>
+
+            <p>
+                <a href="sivu.html">
+                    Tavallinen linkki
+                </a>
+            </p>
+
+
+            <h3>Tagit</h3>
+
+            <p>
+                <span class="tag css">CSS</span>
+                <span class="tag html">HTML</span>
+                <span class="tag javascript">JavaScript</span>
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             5. PSEUDOLUOKAT
+
+             :hover
+             :focus
+             :focus-visible
+             :active
+             :checked
+             ================================================= -->
+
+        <section id="pseudoluokat" class="demo-section">
+
+            <h2>5. Interaktiotilat</h2>
+
+            <p>
+                <a href="#">
+                    Vie hiiri tämän linkin päälle
+                </a>
+            </p>
+
+
+            <button type="button">
+                Tavallinen painike
+            </button>
+
+
+            <button type="button" class="primary">
+                Primary-painike
+            </button>
+
+
+            <div class="form-group">
+
+                <label>
+                    <input type="checkbox">
+                    Hyväksyn ehdot
+                </label>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="focus-demo">
+                    Testaa focus
+                </label>
+
+                <input
+                    type="text"
+                    id="focus-demo"
+                    placeholder="Klikkaa tai käytä Tab-näppäintä"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             6. RAKENNEPSEUDOLUOKAT
+
+             :first-child
+             :last-child
+             :nth-child()
+             :nth-of-type()
+             :only-child
+             ================================================= -->
+
+        <section id="lista" class="demo-section">
+
+            <h2>6. Rakennepseudoluokat</h2>
+
+            <ul class="demo-list">
+                <li>Ensimmäinen</li>
+                <li>Toinen</li>
+                <li>Kolmas</li>
+                <li>Neljäs</li>
+                <li>Viides</li>
+                <li>Kuudes</li>
+            </ul>
+
+
+            <div class="only-child-demo">
+                <p>Olen vanhempani ainoa lapsi.</p>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. :IS(), :NOT() JA :WHERE()
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>7. :is(), :not() ja :where()</h2>
+
+            <article class="functional-demo">
+
+                <h1>H1-otsikko</h1>
+
+                <h2>H2-otsikko</h2>
+
+                <h3>H3-otsikko</h3>
+
+                <p>
+                    Näihin otsikoihin voidaan kohdistaa
+                    :is(h1, h2, h3).
+                </p>
+
+
+                <button class="primary">
+                    Primary
+                </button>
+
+                <button>
+                    Tavallinen
+                </button>
+
+                <button class="secondary">
+                    Secondary
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             8. :HAS()
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>8. :has()</h2>
+
+            <article class="card">
+
+                <img
+                    src="https://picsum.photos/250/150"
+                    alt="Maisema"
+                >
+
+                <div>
+                    <h2>Kortti, jossa on kuva</h2>
+
+                    <p>
+                        CSS voi valita tämän card-elementin,
+                        koska sen sisältä löytyy img.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <h2>Kortti ilman kuvaa</h2>
+
+                <p>
+                    :has(img) ei osu tähän korttiin.
+                </p>
+
+            </article>
+
+
+            <form>
+
+                <div class="form-group">
+
+                    <label class="required" for="demo-email">
+                        Sähköposti
+                    </label>
+
+                    <input
+                        type="email"
+                        id="demo-email"
+                        required
+                        value="ei-ole-email"
+                    >
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =================================================
+             9. PSEUDOELEMENTIT
+
+             ::before
+             ::after
+             ::first-line
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>9. Pseudoelementit</h2>
+
+            <p class="required">
+                Pakollinen tieto
+            </p>
+
+
+            <p class="first-line-demo">
+                Tämän kappaleen ensimmäinen rivi voidaan
+                tyylitellä eri tavalla kuin kappaleen muut
+                rivit. Lisää tähän tarpeeksi tekstiä, jotta
+                kappale varmasti jatkuu useammalle riville
+                selaimessa.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             10. SPECIFICITY
+
+             p
+             .note
+             #intro
+
+             sekä diojen:
+             .card p
+             .card .lead
+             #intro .lead
+             ================================================= -->
+
+        <section class="demo-section content">
+
+            <h2>10. Specificity</h2>
+
+            <p
+                id="intro"
+                class="note lead"
+            >
+                Minuun osuu useita CSS-sääntöjä.
+                Mikä niistä voittaa?
+            </p>
+
+
+            <article class="card">
+
+                <p class="lead">
+                    Myös tähän voidaan kohdistaa
+                    useita eri specificity-tason sääntöjä.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             11. LÄHDEJÄRJESTYS
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>11. Lähdejärjestys</h2>
+
+            <p class="source-order-demo note">
+                Jos kaksi yhtä spesifiä sääntöä antaa
+                minulle eri värin, myöhemmin kirjoitettu
+                sääntö voittaa.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             12. PERIYTYMINEN
+             ================================================= -->
+
+        <section class="inheritance-demo">
+
+            <h2>12. Periytyminen</h2>
+
+            <p>
+                Tämä kappale voi periä esimerkiksi värin
+                section-elementiltä.
+            </p>
+
+            <div>
+
+                <p>
+                    Tämä kappale on vielä syvemmällä
+                    DOM-rakenteessa.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             13. !IMPORTANT
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>13. !important</h2>
+
+            <p
+                id="notice"
+                class="notice"
+            >
+                Tähän voidaan tehdä tarkoituksellinen
+                !important-konflikti demonstraatiota varten.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             14. CASCADE LAYERS
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>14. Cascade Layers</h2>
+
+            <p>
+                <a
+                    href="#"
+                    class="text-purple"
+                >
+                    Tähän linkkiin voidaan kohdistaa sekä
+                    base- että utilities-layerin sääntö.
+                </a>
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             15. CSS NESTING
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>15. CSS Nesting</h2>
+
+            <article class="card nesting-demo">
+
+                <h2>Nesting-kortti</h2>
+
+                <p>
+                    Tämän kortin CSS voidaan kirjoittaa
+                    sisäkkäisesti.
+                </p>
+
+                <a href="#">
+                    Kortin linkki
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             16. KOMPONENTTIKIRJASTO
+
+             .button
+             .card
+             .alert
+
+             modifier-classit
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>16. Komponentit</h2>
+
+
+            <h3>Button</h3>
+
+            <button class="button">
+                Default
+            </button>
+
+            <button class="button button--primary">
+                Primary
+            </button>
+
+            <button class="button button--secondary">
+                Secondary
+            </button>
+
+
+            <h3>Card</h3>
+
+            <article class="card">
+
+                <h2>Tavallinen kortti</h2>
+
+                <p>
+                    Kortin sisältö.
+                </p>
+
+            </article>
+
+
+            <article class="card card--featured">
+
+                <h2>Featured-kortti</h2>
+
+                <p>
+                    Modifier-class muuttaa kortin ulkoasua.
+                </p>
+
+            </article>
+
+
+            <h3>Alert</h3>
+
+            <div class="alert">
+                Tavallinen ilmoitus.
+            </div>
+
+            <div class="alert alert--success">
+                Toiminto onnistui.
+            </div>
+
+            <div class="alert alert--warning">
+                Tarkista antamasi tiedot.
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             17. DEVTOOLS / CASCADE -DEMO
+
+             tarkoituksella monta luokkaa samalla elementillä
+             ================================================= -->
+
+        <section class="demo-section">
+
+            <h2>17. Cascade DevToolsissa</h2>
+
+            <div
+                id="cascade-demo"
+                class="card note special demo"
+                data-state="active"
+            >
+
+                <h2>Inspectoi minut</h2>
+
+                <p class="lead">
+                    Tähän elementtiin voidaan tarkoituksella
+                    tehdä monta kilpailevaa CSS-sääntöä.
+                </p>
+
+                <p>
+                    Avaa selaimen DevTools → Inspect → Styles
+                    ja tutki, mitkä säännöt voittavat ja
+                    mitkä näkyvät yliviivattuina.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <p>
+            CSS Osa 2 – Selectorit ja cascade
+        </p>
+
+        <a href="#hero">
+            Takaisin alkuun
+        </a>
+
+    </footer>
+
+</body>
+</html>
+```
