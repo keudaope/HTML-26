@@ -19,6 +19,8 @@ header>a{
 header li{
     display: inline-block;
 }
+/* Tähän loppuu headerin muokkaus */
+
 main {
     background-color: aliceblue;
     padding: 15px;
@@ -35,6 +37,5 @@ main {
     border-radius: 10px;
     padding: 10px;
 }
-/* Tähän loppuu headerin muokkaus */
 
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
