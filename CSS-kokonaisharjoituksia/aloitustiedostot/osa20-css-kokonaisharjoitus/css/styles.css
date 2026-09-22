@@ -1,0 +1,6 @@
+/* CSS-kokonaisharjoitus, osa 20 – päätyylitiedosto */
+@import url("tokens.css");
+@import url("base.css");
+@import url("components.css");
+
+/* Kirjoita sivukohtaiset ja layout-tyylit tämän kommentin alle. */

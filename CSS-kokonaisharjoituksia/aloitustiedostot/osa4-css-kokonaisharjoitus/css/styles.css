@@ -1,0 +1,40 @@
+/* CSS-kokonaisharjoitus, osa 4 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.skip-link, .eyebrow {
+    display: none;
+}
+/* Tästä alkaa headerin muokkaus */
+header {
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+header>a{
+    font-size: 48px;
+}
+header li{
+    display: inline-block;
+}
+main {
+    background-color: aliceblue;
+    padding: 15px;
+}
+.hero__lead {
+    margin: 16px 0;
+}
+.button--primary {
+    margin-bottom: 16px;
+}
+.button {
+    background-color: gray;
+    color:white;
+    border-radius: 10px;
+    padding: 10px;
+}
+/* Tähän loppuu headerin muokkaus */
+
+/* Aloita CSS:n kirjoittaminen tämän kommentin alta. */

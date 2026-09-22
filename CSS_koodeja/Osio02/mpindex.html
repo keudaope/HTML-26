@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mptyyli.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <article class="card">
+            <h2>Kortti 1</h2>
+            <p>Tämä on ensimmäinen kortti</p>
+              <!-- Avauspainike -->
+            <button class="open-btn container" onclick="this.nextElementSibling.show()"><span class="element">Avaa tiedot</span></button>
+
+            <!-- Dialogi, joka pysyy kortin sisällä -->
+            <dialog class="inline-dialog">
+                <h4>Sisäinen dialogi</h4>
+                <p>Tämä ikkuna on lukittu vain tämän kortin rajojen sisäpuolelle.</p>
+                
+                <!-- Sulkupainike -->
+                <button class="close-btn" onclick="this.closest('dialog').close()">Sulje</button>
+            </dialog>
+        </article>
+        <article class="card">
+            <h2>Kortti 2</h2>
+            <p>Tämä on toinen kortti</p>
+                        <button class="open-btn container" onclick="this.nextElementSibling.show()"><span class="element">Avaa tiedot</span></button>
+
+            <!-- Dialogi, joka pysyy kortin sisällä -->
+            <dialog class="inline-dialog">
+                <h4>Sisäinen dialogi</h4>
+                <p>Tämä ikkuna on lukittu vain tämän kortin rajojen sisäpuolelle.</p>
+                
+                <!-- Sulkupainike -->
+                <button class="close-btn" onclick="this.closest('dialog').close()">Sulje</button>
+            </dialog>
+        </article>
+        <article class="card">
+            <h2>Kortti 3</h2>
+            <p>Tämä on kolmas kortti</p>
+                        <button class="open-btn container" onclick="this.nextElementSibling.show()"><span class="element">Avaa tiedot</span></button>
+
+            <!-- Dialogi, joka pysyy kortin sisällä -->
+            <dialog class="inline-dialog">
+                <h4>Sisäinen dialogi</h4>
+                <p>Tämä ikkuna on lukittu vain tämän kortin rajojen sisäpuolelle.</p>
+                
+                <!-- Sulkupainike -->
+                <button class="close-btn" onclick="this.closest('dialog').close()">Sulje</button>
+            </dialog> 
+        </article>
+    </main>
+</body>
+</html>

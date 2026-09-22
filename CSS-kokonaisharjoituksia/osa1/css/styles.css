@@ -1,0 +1,95 @@
+/*
+  CSS-kokonaisharjoitus – Osa 1
+  Täydennä alla olevat säännöt tehtäväsivun vaatimusten mukaan.
+
+  Tässä harjoituksessa EI käytetä Flexboxia tai Gridiä.
+*/
+
+/* 1. Elementtivalitsin
+   Aseta sivulle margin, fontti, fonttikoko, rivikorkeus,
+   tekstin väri ja taustaväri. */
+   @import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Mystery+Quest&display=swap');
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: darkgrey;
+  background-color: antiquewhite;
+}
+
+/* 2. Ryhmittelyvalitsin
+   Anna h1-, h2- ja h3-otsikoille sama tekstiväri. */
+h1,
+h2,
+h3 {
+  /* Kirjoita ominaisuus tähän. */
+  color: green;
+}
+
+/* 3. Elementtivalitsin
+   Valitse linkeille tekstiväri. */
+a {
+  /* Kirjoita ominaisuus tähän. */
+  color: black;
+}
+
+/* 4. Luokkavalitsimet
+   Rajaa sisältö enimmäisleveyteen, keskitä se ja lisää sisätilaa. */
+.site-header,
+main,
+.site-footer {
+  /* Kirjoita ominaisuudet tähän. */
+  max-width: 100vw;
+  text-align:center;
+  padding: 15px;
+}
+
+/* 5. Luokkavalitsin
+   Lisää kortille ulkoväli, sisätila, tausta, reuna ja pyöristetyt kulmat. */
+.card {
+  /* Kirjoita ominaisuudet tähän. */
+  margin: 15px;
+  padding: 15px;
+  background-color: aliceblue;
+  border: 2px blue solid;
+  border-radius: 15px;
+}
+
+/* 6. ID-valitsin
+   Lisää ylätunnisteen alareunaan erottuva reunaviiva. */
+#top {
+  /* Kirjoita ominaisuus tähän. */
+  border-bottom: 2px solid #424344;
+}
+
+/* 7. Luokkavalitsin
+   Tee linkistä painikkeen näköinen väreillä, reunalla, sisätilalla
+   ja pyöristyksellä. Poista tavallinen alleviivaus. */
+.button {
+  /* Kirjoita ominaisuudet tähän. */
+  background-color: gray;
+  color: white;
+  border: 1px black solid;
+  padding: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.hero h1 {
+  background-color: darkgreen;
+  /* color: darkGREEN; */
+  text-decoration: underline;
+  background-image: linear-gradient(blue,red,darkgreen, yellow);
+  color: transparent;
+  background-clip: text;
+  /* text-shadow: 2px 5px; */
+  /* text-shadow: 0 0 3px #000000, 0 0 5px #FFF; */
+  padding: 20px;
+}
+
+/* 8. Valitse vielä vähintään yksi sivun luokka ja tee sille oma sääntö.
+   Esimerkkejä: .hero, .eyebrow, .card__badge tai .site-footer. */
