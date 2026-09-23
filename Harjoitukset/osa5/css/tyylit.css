@@ -1,0 +1,32 @@
+.card {
+    width: 400px;
+    height: 200px;
+    background-color: bisque;
+    font-size: 16px;
+    position: relative;
+    
+}
+.badge {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    font-size:12px;
+    position:absolute;
+    right: 12px;
+    top: 12px;
+    text-align: center;
+    
+}
+.toolbar {
+    background-color: blanchedalmond;
+    position: sticky;
+    top: 0;
+    z-index:1;
+}
+.help{
+    position:fixed;
+    right:0;
+    bottom: 0;
+    background-color: #c8d068;
+    border-radius: 10px;
+}

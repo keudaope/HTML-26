@@ -1,3 +1,63 @@
 /* CSS-kokonaisharjoitus, osa 5 */
+.skip-link{
+    display: none;
+}
+.site-header{
+    background-color: lightgreen;    
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    top:0;
+}
+   
 
+.site-header li, .hero .button, .content-section .button {
+    display: inline-block;
+    background-color:gray;
+    border-radius: 10px;
+    padding: 5px;
+}
+.site-header a, .button{
+    text-decoration: none;
+    color: white;
+}
+.site-header .brand{
+    font-size: 48px;
+    text-decoration: none;
+    color: navy;
+}
+.card{
+    width: 250px;
+    background-color: rgb(71, 177, 71);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.card__badge{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    color: white;
+    display: fixed;
+    margin-left: 112px;
+    
+    transform: translate(-50%, -50%);
+}
+.card__title{
+    color: darkblue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.help-button {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+.site-footer{
+    display: block;
+    text-align: center;
+    background-color: lightgreen;
+    padding: 0.1px;
+}
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
