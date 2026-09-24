@@ -1,0 +1,32 @@
+.nav {
+    display:flex;
+    align-items: center;
+    gap: 2rem;
+}
+.nav a{
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.nav .login{
+    background-color: red;
+    color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+}
+.login{
+    margin-inline-start: auto;
+}
+
+/* TOINEN TEHTÄVÄ */
+.cards{
+    display: flex;
+    gap: 1.5rem;
+}
+.card{
+    display: flex 1 1 16rem;
+    hyphens: auto;
+    text-justify: auto;
+}
