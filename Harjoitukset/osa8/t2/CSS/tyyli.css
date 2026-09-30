@@ -1,0 +1,22 @@
+.page 
+{
+    /*oli:width: 1200px;*/ 
+    width: (100% - 2em);
+    display: grid;
+    gap: 1rem;
+}
+.card {
+    /* oli: width: 380px; height: 220px; */
+    width: 100%;
+    max-width: 25em;
+    }
+h1 {
+    /* oli: font-size: 72px; */
+    font-size: clamp(1.5rem, 5vw,    3rem)
+}
+@media (width >= 480px)
+{
+    .page{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
