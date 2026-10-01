@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Osa 10 – Typografia</title>
+  <style>
+    /* =====================================================================
+       CSS OSA 10 – TYPOGRAFIA
+       Jokainen section.dia vastaa yhtä PowerPoint-diaa.
+       Tehtävien mallivastaukset ovat dioissa 30 ja 31.
+       ===================================================================== */
+    :root {
+      --bg: #eef2ff; --surface: #fff; --soft: #f5f3ff; --text: #111827;
+      --muted: #475569; --accent: #6d28d9; --accent-dark: #4c1d95;
+      --border: #c4b5fd; --danger: #b91c1c;
+      --text-sm: .875rem; --text-md: 1rem; --text-lg: 1.25rem;
+      --text-h3: 1.5rem; --text-h2: 2rem; --leading-body: 1.65;
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 100%; scroll-behavior: smooth; }
+    body { margin: 0; color: var(--text); background: var(--bg); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 1rem; line-height: 1.6; }
+    body > header, main, body > footer { width: min(100% - 2rem, 74rem); margin-inline: auto; }
+    body > header { padding-block: 3rem 1.5rem; }
+    h1, h2, h3 { line-height: 1.15; }
+    h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.8rem); }
+    h2 { margin-top: 0; color: var(--accent-dark); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    code { padding: .1rem .3rem; border-radius: .25rem; background: #e5e7eb; }
+    pre { overflow-x: auto; padding: 1rem; border-radius: .75rem; color: #e5e7eb; background: #111827; line-height: 1.45; white-space: pre-wrap; }
+    .nav a { display: inline-block; margin: .2rem; padding: .45rem .7rem; border-radius: .5rem; color: white; background: var(--accent); text-decoration: none; }
+    .dia { margin: 1.25rem 0; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--border); border-radius: 1rem; background: var(--surface); box-shadow: 0 8px 24px rgb(30 41 59 / 8%); }
+    .dianumero { display: inline-block; margin-bottom: .6rem; padding: .2rem .65rem; border-radius: 999px; color: white; background: var(--accent); font-weight: 700; }
+    .demo { margin: 1rem 0; padding: 1rem; border: 2px dashed var(--border); border-radius: .75rem; background: var(--soft); }
+    .selite, .varoitus, .vastaus { padding: .8rem 1rem; border-left: .35rem solid var(--accent); background: #ede9fe; }
+    .varoitus { border-left-color: #ea580c; background: #ffedd5; }
+    .vastaus { border-left-color: #15803d; background: #dcfce7; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+    .box { min-width: 0; padding: 1rem; border: 2px solid #4338ca; border-radius: .6rem; color: white; background: #6366f1; }
+    details { margin-top: 1rem; border: 2px solid var(--border); border-radius: .75rem; background: #fafafa; }
+    summary { padding: .85rem 1rem; color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+    details > div { padding: 0 1rem 1rem; }
+    /* DIA 1 */ .intro { max-width: 65ch; } .intro p { font-size: 1.1rem; line-height: 1.7; }
+    /* DIA 3 */ .dia3-font { font-family: Georgia, serif; } .dia3-size { font-size: 1.35rem; } .dia3-lead { line-height: 2; } .dia3-length { max-width: 28ch; }
+    /* DIA 4 */ .fallback-a { font-family: "Fontti Jota Ei Ole", Arial, Helvetica, sans-serif; }
+    /* DIA 5 */ .sans { font-family: system-ui, sans-serif; } .serif { font-family: Georgia, serif; } .mono { font-family: ui-monospace, monospace; }
+    /* DIA 6 */ .system-stack { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    /* DIA 7–8: rakenne näytetään koodina, toimiva demo käyttää fallbackia */
+    .course-font { font-family: "Course Sans", system-ui, sans-serif; }
+    /* DIA 9 */ .size-rem { font-size: 1rem; } .size-h1 { font-size: 2.5rem; }
+    /* DIA 10 */ .rem-card { font-size: 1.25rem; } .rem-card .rem { font-size: 1rem; } .rem-card .em { font-size: .875em; }
+    /* DIA 11 */ .scale small { font-size: var(--text-sm); } .scale p { font-size: var(--text-md); } .scale h3 { font-size: var(--text-h3); } .scale h2 { font-size: var(--text-h2); }
+    /* DIA 12 */ .fluid-title { font-size: clamp(2rem, 5vw, 4.5rem); }
+    /* DIA 13 */ .weights span { display: block; font-size: 1.4rem; } .w400 { font-weight: 400; } .w700 { font-weight: 700; } .w800 { font-weight: 800; }
+    /* DIA 14 */ .variable-demo span { display: block; font-size: 1.4rem; } .v200 { font-weight: 200; } .v500 { font-weight: 500; } .v900 { font-weight: 900; }
+    /* DIA 15 */ .italic { font-style: italic; } .oblique { font-style: oblique 12deg; }
+    /* DIA 16 */ .lead-tight { line-height: 1.05; } .lead-good { line-height: 1.65; } .lead-loose { line-height: 2.3; }
+    /* DIA 17 */ .article-width { max-width: 65ch; margin-inline: auto; }
+    /* DIA 18 */ .eyebrow { letter-spacing: .08em; text-transform: uppercase; font-weight: 700; } .too-spaced { letter-spacing: .35em; word-spacing: .6em; }
+    /* DIA 19 */ .align-start { text-align: start; } .align-center { text-align: center; max-width: 32ch; }
+    /* DIA 20 */ .link-demo { text-decoration-thickness: .1em; text-underline-offset: .18em; } .link-demo:hover { text-decoration-style: wavy; }
+    /* DIA 21 */ .uppercase { text-transform: uppercase; letter-spacing: .06em; }
+    /* DIA 22 */ .long-string { overflow-wrap: break-word; hyphens: auto; } .prewrap { white-space: pre-wrap; }
+    /* DIA 23 */ .ellipsis { max-width: 24rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 2px solid var(--accent); padding: .5rem; }
+    /* DIA 24 */ .color-prose { color: #1f2937; background: #fff; padding: 1rem; } .color-prose .muted { color: #64748b; }
+    /* DIA 25 */ .zoom-card { min-height: 0; padding: 1rem; border: 2px solid var(--accent); }
+    /* DIA 26 */ .hierarchy h3 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: .5rem; } .hierarchy h4 { font-size: 2rem; margin-block: 1.5rem .5rem; } .hierarchy p { max-width: 65ch; line-height: 1.65; }
+    /* DIA 27 */ .bad-type { font-size: 12px; line-height: 13px; } .good-type { font-size: 1rem; line-height: 1.6; }
+    /* DIA 28 */ .wide-prose { width: 100%; } .narrow-prose { max-width: 65ch; } .visible-link { text-decoration-thickness: .1em; text-underline-offset: .18em; }
+    /* DIA 29 */ .debug-title { font-family: "Course Sans", system-ui, sans-serif; font-size: 2rem; font-weight: 700; }
+    /* DIA 30 */ .article-solution { max-width: 65ch; margin-inline: auto; } .article-solution h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); } .article-solution h2 { font-size: var(--text-h2); } .article-solution h3 { font-size: var(--text-h3); } .article-solution p { font-size: var(--text-md); line-height: var(--leading-body); } .article-solution small { font-size: var(--text-sm); color: var(--muted); } .article-solution a { text-underline-offset: .18em; } .article-solution code { font-size: .9em; }
+    /* DIA 31 */ .news-card { width: min(100%, 38rem); min-height: 0; padding: 1.25rem; border: 2px solid var(--border); border-radius: .8rem; } .news-card h3 { font-size: clamp(1.5rem, 6vw, 2.5rem); } .news-card a { color: #5b21b6; text-decoration: underline; text-decoration-thickness: .1em; text-underline-offset: .18em; font-weight: 700; }
+    /* DIA 32 */ .blog { max-width: 70rem; margin-inline: auto; } .blog article { max-width: 65ch; } .blog h3 { font-size: clamp(2.4rem, 6vw, 4rem); } .blog p { line-height: 1.7; }
+    body > footer { padding: 1.5rem 0 3rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <header><p>CSS • OSA 10</p><h1>Typografia</h1><p>32 diaesimerkkiä, tehtävien ratkaisut ja pikavisan vastaukset.</p><nav class="nav"><a href="#dia1">Diat 1–8</a><a href="#dia9">Diat 9–16</a><a href="#dia17">Diat 17–24</a><a href="#dia25">Diat 25–29</a><a href="#dia30">Tehtävä 1</a><a href="#dia31">Tehtävä 2</a><a href="#dia32">Kertaus</a></nav></header>
+  <main>
+    <section class="dia" id="dia1"><span class="dianumero">Dia 1</span><h2>Typografia</h2><article class="demo intro"><h3>Hyvä typografia auttaa ymmärtämään</h3><p>Tämä teksti käyttää järjestelmäfonttia, yhden rem:n peruskokoa ja yksikötöntä rivikorkeutta 1.7. Tekstipalstan leveys on rajattu.</p></article></section>
+    <section class="dia" id="dia2"><span class="dianumero">Dia 2</span><h2>Typografinen järjestelmä</h2><div class="demo grid"><div class="box">Fonttiperheet</div><div class="box">Mittakaava</div><div class="box">Luettavuus</div><div class="box">Suorituskyky</div></div></section>
+    <section class="dia" id="dia3"><span class="dianumero">Dia 3</span><h2>Neljä peruspalikkaa</h2><div class="demo grid"><div class="box dia3-font">Fonttiperhe</div><div class="box dia3-size">Fonttikoko</div><div class="box dia3-lead">Riviväli kahdella rivillä<br>näkyy selvästi</div><div class="box dia3-length">Rajattu rivinpituus tekee kappaleesta helpommin seurattavan.</div></div></section>
+    <section class="dia" id="dia4"><span class="dianumero">Dia 4</span><h2>font-family ja fallback-ketju</h2><div class="demo fallback-a">Ensimmäistä fonttia ei ole, joten selain siirtyy Arialiin, Helveticaan ja lopulta generiseen sans-serif-perheeseen.</div><pre><code>font-family: Inter, Arial, Helvetica, sans-serif;</code></pre></section>
+    <section class="dia" id="dia5"><span class="dianumero">Dia 5</span><h2>Generiset fonttiperheet</h2><div class="demo grid"><div class="box sans">sans-serif käyttöliittymään</div><div class="box serif">serif pitkään tekstiin tai ilmeeseen</div><div class="box mono">monospace: const x = 1;</div></div></section>
+    <section class="dia" id="dia6"><span class="dianumero">Dia 6</span><h2>System font stack</h2><div class="demo system-stack"><h3>Latautuu ilman fonttitiedostoa</h3><p>Ulkoasu käyttää käyttöjärjestelmän omaa käyttöliittymäfonttia.</p></div><pre><code>font-family: system-ui, -apple-system,
+             "Segoe UI", sans-serif;</code></pre></section>
+    <section class="dia" id="dia7"><span class="dianumero">Dia 7</span><h2>Web-fontit ja @font-face</h2><div class="demo course-font">Koska esimerkkitiedostoon ei liitetä ulkoista fonttia, tämä teksti käyttää turvallista fallbackia.</div><pre><code>@font-face {
+  font-family: "Course Sans";
+  src: url("course.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}</code></pre><p class="varoitus">Käytä vain fonttia, jonka verkkokäyttö- ja jakeluoikeus sinulla on.</p></section>
+    <section class="dia" id="dia8"><span class="dianumero">Dia 8</span><h2>font-display</h2><div class="demo"><strong>swap:</strong> fallback-fontti näkyy heti ja vaihtuu verkkofonttiin latauksen valmistuttua.</div><p>Jos fontit ovat mittasuhteiltaan hyvin erilaisia, vaihto voi liikuttaa tekstiä. Pidä fonttileikkausten määrä hallittuna.</p></section>
+    <section class="dia" id="dia9"><span class="dianumero">Dia 9</span><h2>font-size</h2><div class="demo"><p class="size-rem">Leipäteksti 1rem</p><p class="size-h1">Otsikko 2.5rem</p></div><p class="selite">Älä muuta HTML:n peruskokoa esimerkiksi 62.5 prosenttiin vain rem-laskujen helpottamiseksi.</p></section>
+    <section class="dia" id="dia10"><span class="dianumero">Dia 10</span><h2>rem ja em</h2><div class="demo rem-card"><p>Vanhempi on 1.25rem.</p><p class="rem">Tämä 1rem perustuu juurielementtiin.</p><p class="em">Tämä .875em perustuu vanhemman fonttikokoon.</p></div><p>Rem sopii sivun yhteiseen asteikkoon. Em sopii komponentin sisäisiin suhteisiin.</p></section>
+    <section class="dia" id="dia11"><span class="dianumero">Dia 11</span><h2>Typografinen asteikko</h2><div class="demo scale"><small>Pieni teksti .875rem</small><p>Leipäteksti 1rem</p><h3>Kolmannen tason otsikko 1.5rem</h3><h2>Toisen tason otsikko 2rem</h2></div><p>HTML-otsikkotaso kertoo rakenteen. CSS-koko kertoo ulkoasun.</p></section>
+    <section class="dia" id="dia12"><span class="dianumero">Dia 12</span><h2>Responsiivinen font-size ja clamp()</h2><div class="demo"><h3 class="fluid-title">Kavenna ja levennä ikkunaa</h3></div><pre><code>font-size: clamp(2rem, 5vw, 4.5rem);</code></pre></section>
+    <section class="dia" id="dia13"><span class="dianumero">Dia 13</span><h2>font-weight</h2><div class="demo weights"><span class="w400">400 normaali</span><span class="w700">700 lihavoitu</span><span class="w800">800 erittäin vahva</span></div><p>Jos fonttitiedosto ei sisällä pyydettyä painoa, selain voi syntetisoida epätäydellisen tuloksen.</p></section>
+    <section class="dia" id="dia14"><span class="dianumero">Dia 14</span><h2>Variable fonts</h2><div class="demo variable-demo"><span class="v200">Paino 200</span><span class="v500">Paino 500</span><span class="v900">Paino 900</span></div><pre><code>@font-face {
+  font-family: "InterVar";
+  src: url("inter-var.woff2") format("woff2");
+  font-weight: 100 900;
+}</code></pre></section>
+    <section class="dia" id="dia15"><span class="dianumero">Dia 15</span><h2>font-style ja semanttinen painotus</h2><div class="demo"><p>Normaali teksti, <em class="italic">merkityksellinen em-painotus</em> ja <span class="oblique">pelkkä visuaalinen oblique</span>.</p></div><p><code>&lt;em&gt;</code> kertoo merkityksen. CSS päättää ulkoasun.</p></section>
+    <section class="dia" id="dia16"><span class="dianumero">Dia 16</span><h2>line-height</h2><div class="demo grid"><p class="box lead-tight">1.05: rivit ovat liian lähellä toisiaan ja lukeminen muuttuu raskaaksi usealla rivillä.</p><p class="box lead-good">1.65: leipätekstin riveillä on sopivasti hengitystilaa ja katse löytää seuraavan rivin.</p><p class="box lead-loose">2.3: liian suuri väli voi hajottaa rivit erillisiksi kappaleiksi.</p></div></section>
+    <section class="dia" id="dia17"><span class="dianumero">Dia 17</span><h2>Rivinpituus ja ch-yksikkö</h2><article class="demo article-width"><p>Tämä tekstipalsta on enintään 65ch leveä. Pitkä rivi ei veny koko laajakuvanäytön halki, joten katseen on helpompi siirtyä rivin lopusta seuraavan rivin alkuun.</p></article></section>
+    <section class="dia" id="dia18"><span class="dianumero">Dia 18</span><h2>letter-spacing ja word-spacing</h2><div class="demo"><p class="eyebrow">Lyhyt yläotsikko</p><p class="too-spaced">Liiallinen välistys vaikeuttaa lukemista</p></div></section>
+    <section class="dia" id="dia19"><span class="dianumero">Dia 19</span><h2>text-align</h2><div class="demo grid"><div class="box align-start"><h3>start</h3><p>Pitkä kappale on helpompi lukea, kun rivit alkavat samasta loogisesta reunasta.</p></div><div class="box align-center"><h3>center</h3><p>Keskitys sopii lyhyeen hero-tekstiin.</p></div></div></section>
+    <section class="dia" id="dia20"><span class="dianumero">Dia 20</span><h2>text-decoration</h2><div class="demo"><p>Lue myös <a class="link-demo" href="#dia21">seuraava typografiaesimerkki</a>. Vie hiiri linkin päälle.</p></div><p>Alleviivaus tekee linkistä tunnistettavan myös ilman värieron havaitsemista.</p></section>
+    <section class="dia" id="dia21"><span class="dianumero">Dia 21</span><h2>text-transform</h2><div class="demo"><p class="uppercase">Lyhyt käyttöliittymäetiketti</p><p>HTML:n varsinainen sisältö säilyy kirjoitettuna muodossa “Lyhyt käyttöliittymäetiketti”.</p></div></section>
+    <section class="dia" id="dia22"><span class="dianumero">Dia 22</span><h2>Valkoinen tila ja rivitys</h2><div class="demo grid"><p class="box long-string">https://esimerkki.fi/erittain-pitka-polku-joka-voisi-rikkoa-layoutin-ilman-rivitysta</p><pre class="prewrap">const nimi = "Jyri";
+console.log(nimi); // rivinvaihdot säilyvät</pre></div></section>
+    <section class="dia" id="dia23"><span class="dianumero">Dia 23</span><h2>text-overflow ja ellipsis</h2><div class="demo"><p class="ellipsis" title="Koko pitkä otsikko näkyy title-attribuutissa">Tämä on hyvin pitkä uutisotsikko, joka ei mahdu yhdelle riville varattuun tilaan</p><details><summary>Näytä koko otsikko</summary><div>Tämä on hyvin pitkä uutisotsikko, joka ei mahdu yhdelle riville varattuun tilaan.</div></details></div><p>Ellipsis ratkaisee visuaalisen tilan. Koko sisältö täytyy silti tarjota käyttäjälle.</p></section>
+    <section class="dia" id="dia24"><span class="dianumero">Dia 24</span><h2>Typografia ja värit</h2><div class="demo color-prose"><h3>Luettava leipäteksti</h3><p>Tekstillä ja taustalla on selkeä kontrasti.</p><p class="muted">Toissijainen metatieto on kevyempi, mutta edelleen luettava.</p></div></section>
+    <section class="dia" id="dia25"><span class="dianumero">Dia 25</span><h2>Saavutettava typografia</h2><div class="demo zoom-card"><h3>Zoomaa sivu 200 prosenttiin</h3><p>Laatikolla ei ole kiinteää korkeutta. Teksti saa kasvaa, rivittyä ja kasvattaa komponenttia ilman leikkautumista.</p></div></section>
+    <section class="dia" id="dia26"><span class="dianumero">Dia 26</span><h2>Typografinen hierarkia</h2><article class="demo hierarchy"><h3>Artikkelin pääotsikko</h3><p class="selite">Koko, paino, väri ja ympäröivä tila tekevät otsikosta pääotsikon.</p><h4>Väliotsikko jäsentää sisältöä</h4><p>Leipätekstin koko on maltillinen, riviväli 1.65 ja rivinpituus rajattu. HTML-tasot kertovat dokumentin rakenteen.</p></article></section>
+    <section class="dia" id="dia27"><span class="dianumero">Dia 27</span><h2>Liian pieni teksti ja riviväli</h2><div class="demo grid"><p class="box bad-type">12 px fontti ja 13 px rivikorkeus tekevät usean rivin tekstistä tiheää ja raskasta lukea.</p><p class="box good-type">1 rem fontti ja 1.6 rivikorkeus muodostavat paremman lähtökohdan tavalliselle leipätekstille.</p></div></section>
+    <section class="dia" id="dia28"><span class="dianumero">Dia 28</span><h2>Muut yleiset typografiavirheet</h2><div class="demo"><p class="wide-prose">Koko näytön levyinen pitkä tekstirivi on vaikea seurata erityisesti suurella näytöllä. Rajaa lukupalstan leveys.</p><p class="narrow-prose">Tämä tekstipalsta on rajattu. Vältä myös liian montaa fonttia, kiinteää tekstikortin korkeutta ja linkkejä, jotka näyttävät tavalliselta tekstiltä. <a class="visible-link" href="#dia29">Tämä linkki erottuu.</a></p></div></section>
+    <section class="dia" id="dia29"><span class="dianumero">Dia 29</span><h2>DevTools: fonttien debuggaus</h2><div class="demo"><h3 class="debug-title">Tutki tätä otsikkoa</h3></div><ol><li>Tarkista Computed-näkymästä family, size, weight, line-height ja letter-spacing.</li><li>Etsi Rendered Fonts ja katso, käytetäänkö Course Sansia vai fallbackia.</li><li>Tarkista Network-välilehdeltä fonttitiedoston lataus.</li><li>Varmista, että family-, weight- ja style-määritykset täsmäävät.</li></ol></section>
+    <section class="dia" id="dia30"><span class="dianumero">Dia 30</span><h2>Harjoitus 1: typografinen järjestelmä</h2><article class="demo article-solution"><small>CSS-KURSSI • 28.9.2026</small><h1>Typografia tekee sisällöstä ymmärrettävää</h1><p>Johdanto käyttää samaa leipätekstin kokoa ja rivirytmiä kuin muu artikkeli.</p><h2>Johdonmukainen asteikko</h2><p>Rajattu asteikko vähentää sattumanvaraisia kokoja. Esimerkiksi <code>font-size: var(--text-md)</code> käyttää yhteistä tokenia.</p><h3>Linkit ja koodi</h3><p>Lisätietoa löytyy <a href="#">typografian ohjeesta</a>. Koodin fontti on monospace.</p></article><details><summary>Näytä tehtävän 1 CSS-ratkaisu</summary><div><pre><code>:root {
+  --text-sm: .875rem;
+  --text-body: 1rem;
+  --text-h3: 1.5rem;
+  --text-h2: 2rem;
+  --leading-body: 1.65;
+}
+article { max-width: 65ch; margin-inline: auto; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+p { font-size: var(--text-body); line-height: var(--leading-body); }
+small { font-size: var(--text-sm); }
+a { text-underline-offset: .18em; }
+code { font: .9em ui-monospace, monospace; }</code></pre></div></details></section>
+    <section class="dia" id="dia31"><span class="dianumero">Dia 31</span><h2>Harjoitus 2 ja virheenetsintä</h2><article class="demo news-card"><small>UUTINEN</small><h3>Pidempi uutisotsikko säilyy luettavana myös kapeassa näkymässä</h3><p>Kortilla ei ole kiinteää korkeutta, joten pitkä teksti ja 200 prosentin zoomaus kasvattavat korttia.</p><a href="#">Lue koko uutinen</a></article><details open><summary>Ratkaisu ja pikavisan vastaukset</summary><div><pre><code>.card {
+  width: min(100%, 38rem);
+  min-height: 0;
+  padding: 1.25rem;
+}
+.card h2 {
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+}
+.card a {
+  text-decoration: underline;
+  text-decoration-thickness: .1em;
+  text-underline-offset: .18em;
+}</code></pre><p class="vastaus"><strong>Miksi kiinteä height aiheutti ongelman?</strong><br>Sisällön määrä, kielen sanapituudet, fallback-fontin mittasuhteet ja käyttäjän zoomaus voivat kasvattaa tekstin tarvitsemaa korkeutta. Kiinteä 220 px laatikko ei kasva mukana, joten sisältö leikkautuu tai ylivuotaa.</p><p class="vastaus"><strong>rem ja em</strong><br><code>rem</code> perustuu juurielementin laskettuun fonttikokoon, joten se sopii ennustettavaan sivunlaajuiseen asteikkoon. <code>em</code> perustuu font-size-ominaisuudessa vanhemman fonttikokoon ja muissa ominaisuuksissa yleensä elementin omaan fonttikokoon. Se sopii komponentin sisäisiin suhteisiin, mutta sisäkkäisyys voi kerrata arvoja.</p><p class="vastaus"><strong>Miksi yksikötön line-height?</strong><br>Esimerkiksi <code>line-height: 1.6</code> kertoo kertoimen. Se skaalautuu automaattisesti elementin oman fonttikoon mukana ja periytyy turvallisemmin kuin kiinteä pikseli- tai rem-rivikorkeus.</p></div></details></section>
+    <section class="dia" id="dia32"><span class="dianumero">Dia 32</span><h2>Kertausprojekti: responsiivinen blogiartikkeli</h2><div class="demo blog"><article><small>OHJELMOINTI • 8 MIN LUKUAIKA</small><h3>Hyvä typografia kestää sisällön vaihtelun</h3><p>System stack piirtää tekstin nopeasti. Responsiivinen otsikko käyttää clamp()-funktiota, tekstipalsta on rajattu 65ch-leveyteen ja rivikorkeus on 1.7.</p><p>Myös <a class="visible-link" href="#dia1">linkki erottuu tekstistä</a>, ja sivu toimii 200 prosentin zoomauksella.</p></article></div></section>
+  </main>
+  <footer><p>CSS Osa 10 valmis. Seuraavaksi reunat, varjot ja visuaaliset efektit.</p></footer>
+</body>
+</html>

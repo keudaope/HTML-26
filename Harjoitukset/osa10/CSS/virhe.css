@@ -1,0 +1,25 @@
+main{
+    background-image: url("../../osa9/kuvat/panorama.jpg");
+}
+.card {
+  /* height: 220px; */
+  /* background-color: rgb(240 240 240 / 0.5);  */
+  padding: 2rem;
+  padding-top: 0.05rem;
+  border-radius: 2rem;
+  color:white;
+
+
+}
+.card h2 {
+  font-size: clamp(1.5rem,8vw,2.5rem); 
+
+}
+.card a {
+  text-decoration-style:wavy; 
+}
+.card p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
