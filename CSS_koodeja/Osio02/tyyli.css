@@ -1,0 +1,81 @@
+/* main{
+    margin: 0 auto;
+    text-align: center;
+}
+
+article{
+    max-width: 200px;
+    background-color: blanchedalmond;
+    padding: 0 auto;
+}
+
+article > h2 {
+    display: inline-block;
+    background-color: red;
+    color: yellow;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+article > h2:hover {
+    background-color: yellow;
+    color: red;
+}
+
+h2 + p{
+    display: block;
+    background-color: darkblue;
+    color: yellow;
+    padding: 10px;
+    width: 100px;
+    border-radius: 50px;
+    text-align: center;
+}
+article p::after{
+    color: red;
+    content: " *";
+} */
+form{
+    background-color: lightgray;
+    padding: 10px;
+    width: 200px;
+}
+input[type="email"]{
+    background-color: beige;
+}
+input:required{
+    border: 2px solid green;
+}
+input:focus-visible{
+    background-color: black;
+    color: white;
+}
+
+label, input{
+    display: block;
+    width: 96%;
+}
+label{
+    text-align: left;
+}
+fieldset {
+    margin: 10px 0px;
+}
+.form-group:has(input:invalid)
+{
+    border: 4px red double;
+}
+input[type="checkbox"], label{
+    display: inline;
+    width: 10px;
+}
+fieldset label::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+input[type="checkbox"]:checked{
+    background-color: blue;
+    color: white;
+}
+

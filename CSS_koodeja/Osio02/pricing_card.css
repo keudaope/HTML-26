@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: beige;
+}
+.pricing_card {
+    background-color: aliceblue;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    border: 3px gray groove;
+    max-width: calc(33% - 20px);
+    margin-right: 20px;
+    margin:0 10px;
+    border-radius: 12px;
+    /* opacity: 0.5; */
+}
+.pricing_card p, h2{
+    margin-bottom: 24px;
+}
+.pricing_card button {
+    background-color: darkred;
+    color: yellow;
+    padding: 5px;
+}
+.pricing_card button:hover{
+    background-color: yellow;
+    color: red;
+    transition:ease-in-out; 
+}
+h1{
+    margin: 20px;
+    text-align: center;
+    font-size: 2rem;
+}

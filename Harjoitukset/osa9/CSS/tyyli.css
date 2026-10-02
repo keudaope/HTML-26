@@ -1,0 +1,61 @@
+:root 
+{
+  --joulupukki: #669999;
+  --pintavari: #004d4d;
+  --teksti: #A5c663;
+  --huomiovari: #7b9f35;
+  --varoitus: #801515;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.hero 
+{
+ background-image:linear-gradient(rgb(9 11 6 / .85), rgb(12 11 24 / .75)),url("../kuvat/panorama.jpg ");
+background-size:cover;
+  height: 5rem;
+  color: var(--teksti);
+  padding: 1rem;
+}
+.herobutton{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    float: right;
+}
+.kokoalue {
+    background-color: var(--joulupukki);
+    color: var(--teksti);
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+}
+h1{
+    font-size: 5rem;
+    background: linear-gradient(90deg, yellow, red);
+    background-clip: text; color: transparent;
+
+}
+.card{
+    position: relative;
+    display:inline-block;
+    background-color: var(--pintavari);
+    width: 30vw;
+    padding: 1rem;
+    overflow: hidden;
+    height: 6rem;
+}
+.button{
+    background-color: var(--pintavari);
+    color: var(--teksti);
+    border-color: currentColor;
+}
+.notice{
+    /* color: var(--varoitus); */
+    background-color: var(--varoitus);
+    color: var(--teksti);
+    font-weight: 900;
+    padding:1rem;
+}
+

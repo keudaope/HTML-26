@@ -1,0 +1,34 @@
+span{
+    background-color: darkorchid;
+    color: white;
+    width: 200px;
+    padding: 20px;
+}
+
+.box {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+.inlinebox{
+    display: inline-block;
+}
+nav li {
+    display: inline-block;
+    background: gold;
+    color: navy;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease; /* Makes the movement smooth */
+}
+
+nav a{
+    text-decoration: none;
+}
+nav li:hover{
+    background-color: navy;
+    color: gold;
+    transform: translate(5px, -5px); /* Moves the button 5 pixels right and 5 pixels up */
+}

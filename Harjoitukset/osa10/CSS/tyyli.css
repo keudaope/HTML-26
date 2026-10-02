@@ -1,0 +1,58 @@
+:root{
+    --yleis_sisa: 2rem;
+    --yleis_tausta: antiquewhite;
+    --otsikko_xl: 2.5rem;
+    --otsikko: 8vw;
+    --otsikko_md: 1.75rem;
+    --otsikko_sm: 1.35rem;
+    --otsikko_font:'Times New Roman', Times, serif;
+    --otsikko_vari: navy;
+    --teksti_font:  Arial, Helvetica, sans-serif;
+    --teksti_rivi: 1.6;
+    --teksti_leveys: 65ch;
+    --linkki_teksti: white;
+    --linkki_tausta: navy; 
+    --linkki_sisa: 0.75rem;
+    --linkki_radius: 0.875rem;
+    --linkki_koriste: none;
+    --koodi_teksti: 1.10rem;
+    --koodi_white: pre-wrap;
+    --pieni_teksti: 0.66rem;
+    
+}
+h1, h2, h3{
+  font-family:var(--otsikko_font);
+  color: var(--otsikko_vari); 
+}
+h1{
+    font-size: clamp(var(--otsikko_md), var(--otsikko), var(--otsikko_xl));
+}
+h2{
+    font-size: var(--otsikko_md);
+}
+h3{
+    font-size: var(--otsikko_sm);
+}
+p{
+    font-family: var(--teksti_font);
+    line-height: var(--teksti_rivi);
+    max-width: var(--teksti_leveys);
+}
+code{
+    white-space: var(--koodi_white);
+    font-size: var(--koodi_teksti);
+}
+a{
+    padding: var(--linkki_sisa);
+    color: var(--linkki_teksti);
+    background-color: var(--linkki_tausta);
+    border-radius: var(--linkki_radius);
+    text-decoration: var(--linkki_koriste);
+}
+small{
+    font-size: var(--pieni_teksti);
+}
+main{
+    background-color: var(--yleis_tausta);
+    padding: var(--yleis_sisa);
+}

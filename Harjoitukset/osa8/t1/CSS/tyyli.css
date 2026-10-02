@@ -1,0 +1,23 @@
+.features 
+{
+    display: grid;
+    gap: 1rem;
+}
+    
+@media (width >= 48rem) 
+{
+    .features 
+    { 
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card{
+    background-color: antiquewhite;
+    border-radius: 1em;
+    padding: 1.5em;
+    border: 0.25em solid salmon;
+}
+h1{
+    font-size: clamp(2rem, 5vw, 4rem);
+}

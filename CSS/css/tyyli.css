@@ -1,0 +1,34 @@
+
+        p{
+            background-color: yellow;
+        }
+        .ekakappale{
+            background-color: aqua;
+        }
+        #paaotsikko{
+            font-size: 36px;
+            color:brown;
+            text-decoration: underline;
+        }
+        main{
+            font-size: 12px;
+        }
+        section{
+            font-size: 16px;
+        }
+        table{
+            border:1px;
+            background-color: bisque;
+        }
+        th, td{
+            font-size: 24px;
+        }
+        th{
+            color: red;
+        }
+        td{
+            color:blue;
+        }
+        .paatteeton{
+            font-family: Arial, Helvetica, sans-serif;
+        }

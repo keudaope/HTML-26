@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pallopeli</title>
+<style>
+  body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+  }
+  #peliCanvas {
+    background-color: #333;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid white;
+  }
+  #pisteet {
+    font-size: 24px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="pisteet">Kerää keltaisia palloja! <br>Pisteet: 0</div>  
+
+<canvas id="peliCanvas" width="600" height="400" style="width: 600px; height: 400px;" role="img" aria-label="Interaktiivinen pelialue">
+    Selain ei tue canvasia.
+</canvas>   
+
+<script>
+    const canvas = document.getElementById("peliCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // pelaajan aloituskoordinaatit
+    let x = 200;
+    let y = 200;
+
+    // kerättävän pallon sijainti ja koko
+    let pisteX = 100;  
+    let pisteY = 100;  
+    let pisteSade = 5; 
+
+    // pelaajan pistemäärä
+    let pisteet = 0;
+    // muuttuja, joka kertoo onko peli käynnissä vai päättynyt
+    let peliKaynnissa = true;
+
+    // vastustajan aloitusokordinaatit ja liikenopeus
+    let vastusX = 300;
+    let vastusY = 150;
+    let vastusVx = 3;
+    let vastusVy = 3;
+    const vastusSade = 20;
+
+    function animoi() { 
+
+    if (!peliKaynnissa) {
+        return; 
+    }
+
+    // pelaajan keskipiste törmäysten laskemista varten
+    let pelaajaX = x + 10;
+    let pelaajaY = y + 10;
+        
+    let etaisyysVastukseenX = Math.abs(pelaajaX - vastusX);
+    let etaisyysVastukseenY = Math.abs(pelaajaY - vastusY);
+
+    let etaisyysX = Math.abs(x - pisteX);  
+    let etaisyysY = Math.abs(y - pisteY);  
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    ctx.fillStyle = "rgb(255, 153, 204)";
+    ctx.fillRect(x, y , 20, 20);
+
+    ctx.beginPath();  
+    ctx.arc(pisteX, pisteY, pisteSade, 0, Math.PI * 2);  
+    ctx.fillStyle = "yellow";  
+    ctx.fill();  
+
+    ctx.beginPath();
+    ctx.arc(vastusX, vastusY,vastusSade, 0, Math.PI * 2);
+    ctx.fillStyle = "red";
+    ctx.fill();
+
+    // tarkistetaan osuuko keltaiseen pisteeseen
+    if (etaisyysX < 20 + pisteSade && etaisyysY < 20 + pisteSade) {  
+        pisteet += 1; 
+        console.log("Pisteet:", pisteet);
+
+            // jos viisi (5) pistettä, pelaaja voittaa
+            if (pisteet >= 5) {
+                peliKaynnissa = false;
+                document.getElementById("pisteet").innerText = "Onneksi olkoon, voitit pelin! \n Pisteet: " + pisteet;
+            // muuten piste vaihtaa paikkaa, peli jatkuu
+            } else {
+                document.getElementById("pisteet").innerText = "Kerää keltaisia palloja! \n Pisteet: " + pisteet; 
+                pisteX = Math.random() * (canvas.width - 40) + 20;
+                pisteY = Math.random() * (canvas.height - 40) + 20;
+            }
+        }
+    // tarkistetaan törmääkö vastukseen ( punainen pallo )
+    if (etaisyysVastukseenX < 10 + vastusSade && etaisyysVastukseenY < 10 + vastusSade) {
+            peliKaynnissa = false;
+            document.getElementById("pisteet").innerText = "Hävisit pelin! \n Pisteet: " + pisteet;
+        }
+    // liikutetaan vastustajaa nopeuden mukaisesti
+    vastusX += vastusVx;
+    vastusY += vastusVy;   
+    // sivuseinä törmäystarkistus
+    if (vastusX - vastusSade < 0 || vastusX + vastusSade > canvas.width) {    
+      vastusVx = -vastusVx;    
+    }    
+    // ylä- ja alaseinä törmäystarkistus
+    if (vastusY - vastusSade < 0 || vastusY + vastusSade > canvas.height) {    
+      vastusVy = -vastusVy;    
+    }        
+
+  requestAnimationFrame(animoi);  
+}
+// animaatiosilmukka
+animoi();  
+
+    // nuolinäppäimillä liikkuminen
+    document.addEventListener("keydown", function(event) {  
+      if (event.key === "ArrowDown") { 
+        y += 10; 
+      } else if (event.key === "ArrowUp") { 
+        y -= 10; 
+      } else if (event.key === "ArrowRight") { 
+        x += 10; 
+      } else if (event.key === "ArrowLeft") { 
+        x -= 10; 
+      }
+    });  
+
+</script>
+
+</body>
+
+</html>

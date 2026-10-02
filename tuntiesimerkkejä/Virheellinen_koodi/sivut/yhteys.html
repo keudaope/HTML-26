@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<meta property="og:title" content="Cafe Ültra">
+<meta name="description" content="Ullanlinnassa sijaitseva kahvila maustettuna hyvällä maulla">
+<title>Cafe Ültra - hyvällä maulla varustettu</title>
+</head>
+<body>
+    <header>
+        <h1>Hyvän maun kahvila - Cafe Ültra</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Kotisivu</a></li>
+                <li><a href="hinnasto.html">Hinnasto</a></li>
+                <li><a href="yhteys.html">Yhteydenottolomake Ültraan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Yhteydenottolomake</h2>
+        <p>Alla olevalla lomakkeella voit varata yksityistilaisuuden tai lähettää meille muuta viestiä</p>
+        <form>
+            <label for="nimi">Nimi</label>
+            <input type="text" id="nimi" name="nimi" placeholder="Aku Ankka" required>
+            <label for="sahkoposti">Sähköposti</label>
+            <input type="email" id="sahkoposti" name="sahkoposti" placeholder="essi.esimerkki@yritys.fi" required>
+            <label for="tyyppi">Valitse tilaisuus</label>
+            <fieldset>
+                <legend>Tilaisuudet</legend>
+                <input type="radio" id="pelkka" name="tila" checked>
+                <label for="pelkka">Pelkkä tilavaraus</label>
+                <input type="radio" name="tila" id="kaikki">
+                <label for="kaikki">Sekä tilavaraus, että tarjoilu</label>
+                <input type="radio" name="tila" id="tarjoilu">
+                <label for="tarjoilu">Tarjoilu yrityksen tiloissa</label>
+            </fieldset>
+            <label for="paiva">Haluttu tilaisuuden päivämäärä</label>
+            <input type="date" id="paiva" name="paiva">
+            <label for="viesti">Lähetä viestiä</label>
+            <textarea name="viesti" id="viesti"></textarea>
+            <button type="submit">Lähetä</button>
+        </form>
+    </main>
+    <footer>
+        <p>Kahvila Ültra - Aurinkokatu 12 - 04200 Kerava
+        </p>
+    </footer>
+</body>
+</html>

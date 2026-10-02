@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tyyli.css">
+    <title>CSS selectorharjoitus 01</title>
+</head>
+<body>
+    <main>
+
+        <article class="post">
+            <h2>Otsikko</h2>
+            <p>Johdanto</p>
+            <section>
+                <p>Leipäteksti</p>
+            </section>
+        </article>
+        <form action="" class="form-group">
+            <label for="nimi">Nimi:</label>
+            <input type="text" name="nimi" id="nimi" required>
+            <label for="email">Sähköposti:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="salasana">Salasana:</label>
+            <input type="password" name="salasana" id="salasana" required>
+            <fieldset>
+                <legend>Osallistutko seminaariin:</legend>
+                <input type="checkbox" name="yes" id="yes">
+                <label for="yes">Kyllä</label>
+                <input type="checkbox" name="no" id="no">
+                <label for="no">En - tuun</label>
+            </fieldset>
+            <button type="submit">Lähetä</button>
+        </form>
+    </main>
+
+</body>
+</html>

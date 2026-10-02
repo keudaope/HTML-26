@@ -1,0 +1,16 @@
+.cards {
+    display: grid;  
+    grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    background-color: antiquewhite;
+}
+.card{
+    background-color: azure;
+}
+
+@media (min-width: 700px)
+{
+    .featured{
+        grid-column: span 2;
+    }
+}
