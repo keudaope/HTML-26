@@ -1,0 +1,51 @@
+.shadow-box {
+  box-shadow: 2px 2px 9px 6px;
+  background-color: antiquewhite;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 200px;
+}
+.shadow-text {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.shadow-box:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.shadow-text:hover {
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.shadow-button {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.shadow-button:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+  width: 150px;
+  height: 150px;
+  background: red;
+  clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    mask-image: linear-gradient(#000, transparent);
+
+}
+html {
+  toggle-root: switch;
+}
+
+button {
+  toggle-trigger: switch;
+  background-color: black;
+  color: white;
+}
+
+html:toggle(switch) button {
+  background-color: white;
+  color: black;
+}
