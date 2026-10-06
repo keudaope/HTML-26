@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Osa 12 – Transformations ja transitions</title><style>
+:root{--bg:#eef2ff;--surface:#fff;--text:#172033;--muted:#526075;--accent:#6d28d9;--accent2:#0891b2;--line:#c4b5fd;--space:clamp(1rem,2vw,1.5rem)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}header,main,footer{width:min(100% - 2rem,78rem);margin-inline:auto}header{padding-block:3rem 1rem}h1{margin:0;font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.05}h2,h3{line-height:1.2}h2{color:#4c1d95}.nav a{display:inline-block;margin:.2rem;padding:.35rem .65rem;border-radius:999px;background:#5b21b6;color:#fff;text-decoration:none}.dia{margin:1rem 0;padding:var(--space);border:1px solid var(--line);border-radius:1rem;background:var(--surface);box-shadow:0 8px 24px rgb(15 23 42/.08)}.num{display:inline-block;padding:.18rem .6rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:750}.lead{max-width:75ch}.demo{margin:1rem 0;padding:1.2rem;border:2px dashed #a78bfa;border-radius:.8rem;background:#f8fafc;overflow:auto}.explain{padding:.8rem 1rem;border-inline-start:.35rem solid var(--accent);background:#ede9fe}.answer{padding:.8rem 1rem;border-inline-start:.35rem solid #15803d;background:#dcfce7}pre{overflow:auto;padding:1rem;border-radius:.75rem;background:#111827;color:#e5e7eb;white-space:pre-wrap}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}details{margin-top:1rem;border:2px solid var(--line);border-radius:.75rem}summary{padding:.8rem 1rem;cursor:pointer;font-weight:750;color:#4c1d95}details>div{padding:0 1rem 1rem}
+.demo-target{padding:1rem;border-radius:.8rem;background:#312e81;color:#fff}.selector-demo .card{padding:1rem;border:3px solid #16a34a;border-radius:.8rem}.selector-demo .card>h3:first-child{color:#6d28d9}.boxmodel{width:min(100%,20rem);margin:1.5rem;padding:2rem;border:1rem solid #7c3aed;outline:1.5rem solid rgb(8 145 178/.25);background:#bfdbfe;text-align:center}.measure{font-family:monospace}.flow span{display:inline;background:#fde68a}.flow strong{display:block;margin:.5rem 0;background:#bfdbfe}.flow button{display:inline-block;padding:.7rem}.position-stage{position:relative;min-height:9rem;padding:1rem;border:3px solid #0891b2}.position-badge{position:absolute;inset:.5rem .5rem auto auto;padding:.3rem;background:#6d28d9;color:#fff}.transform-demo{padding:1rem;border:0;border-radius:.7rem;background:#6d28d9;color:#fff;transition:transform .3s ease,box-shadow .3s ease}.transform-demo:hover{box-shadow:0 15px 25px rgb(0 0 0/.25)}.transform-demo.move:hover{transform:translateX(2rem)}.transform-demo.rotate:hover{transform:rotate(10deg)}.transform-demo.scale:hover{transform:scale(1.15)}.transform-demo.skew:hover{transform:skewX(-12deg)}@keyframes pulse{50%{transform:scale(1.35);opacity:.55}}.anim-row{display:flex;align-items:center;gap:1rem}.anim-dot{width:2rem;aspect-ratio:1;border-radius:50%;background:#6d28d9;animation:pulse 1.2s ease-in-out infinite}.anim-card{padding:1rem;border-radius:.7rem;background:#dbeafe}.token-card{--card-accent:#6d28d9;--card-space:1.2rem;padding:var(--card-space);border-inline-start:.5rem solid var(--card-accent);background:#ede9fe}.pseudo-field{display:block;margin-bottom:1rem}.pseudo-field input{display:block;width:100%;max-width:28rem;padding:.7rem}.pseudo-field input:invalid:not(:placeholder-shown){border-color:#dc2626}.pseudo-button{padding:.7rem;background:#6d28d9;color:#fff;border:2px solid transparent}.pseudo-button:focus-visible{outline:4px solid #0891b2}.pseudo-note::before{content:"◆ ";color:#6d28d9}.form-demo{display:grid;gap:1rem;max-width:32rem}.form-demo label{font-weight:700}.form-demo input{display:block;width:100%;padding:.75rem;border:2px solid #94a3b8;border-radius:.4rem}.form-demo input:focus-visible{outline:3px solid #0891b2;outline-offset:2px}.form-demo button,.final-card button{width:max-content;padding:.7rem 1rem;border:0;border-radius:.5rem;background:#6d28d9;color:#fff}.arch-card{padding:1rem;border-radius:.8rem;background:#fff;box-shadow:0 10px 25px rgb(0 0 0/.15)}.arch-card__title{color:#6d28d9}.utility-muted{color:#64748b;font-family:monospace}.audit{display:grid;gap:.5rem}.audit label{padding:.5rem;background:#fff}.container-demo{width:min(100%,42rem);min-width:16rem;resize:horizontal;overflow:auto;border:3px dashed #0891b2;padding:1rem;container-type:inline-size}.container-demo article{padding:1rem;background:#dbeafe}@container (width > 30rem){.container-demo article{display:grid;grid-template-columns:1fr 2fr;gap:1rem}}.final-card{position:relative;padding:1.2rem;border:1px solid #94a3b8;border-radius:1rem;box-shadow:0 12px 30px rgb(0 0 0/.18)}.status{position:absolute;inset:.7rem .7rem auto auto;padding:.2rem .5rem;border-radius:999px;background:#dcfce7;color:#166534;font-weight:800}footer{padding:2rem 0;text-align:center}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body><header><p>CSS • OSA 12</p><h1>Transformations ja transitions</h1><p>Jokaiselle dialle oma kommentoitu ja kokeiltava esimerkki. Tehtävissä on malliratkaisut.</p><nav class="nav"><a href="#dia1">1</a><a href="#dia2">2</a><a href="#dia3">3</a><a href="#dia4">4</a><a href="#dia5">5</a><a href="#dia6">6</a><a href="#dia7">7</a><a href="#dia8">8</a><a href="#dia9">9</a><a href="#dia10">10</a><a href="#dia11">11</a><a href="#dia12">12</a><a href="#dia13">13</a><a href="#dia14">14</a><a href="#dia15">15</a><a href="#dia16">16</a><a href="#dia17">17</a><a href="#dia18">18</a><a href="#dia19">19</a><a href="#dia20">20</a><a href="#dia21">21</a><a href="#dia22">22</a><a href="#dia23">23</a><a href="#dia24">24</a><a href="#dia25">25</a><a href="#dia26">26</a><a href="#dia27">27</a><a href="#dia28">28</a><a href="#dia29">29</a><a href="#dia30">30</a><a href="#dia31">31</a><a href="#dia32">32</a></nav></header>
+<main>
+    <!-- OSA 12, DIA 1: Transformations ja transitions -->
+    <section class="dia" id="dia1">
+      <span class="num">Dia 1</span><h2>Transformations ja transitions</h2>
+      <p class="lead">TRANSFORMATIONS JA TRANSITIONS Liike ja muodonmuutos käyttöliittymässä – hallitusti, suorituskykyisesti ja saavutettavasti..button { transition: transform.2s ease, box-shadow.2s ease; }.button:hover { transform: translateY(-2px) scale(1.02); } ↔ Tavoite Osaat siirtää, kiertää, skaalata ja animoida tilamuutoksia CSS:llä hallitusti. ⚙ Miksi tärkeää? Pienet liikkeet selkeyttävät palautetta, hierarkiaa ja käyttöliittymän tiloja. ♿ Saavutettavuus Liike ei saa estää käyttöä. Huomioi prefers-reduced-motion. MUISTA TÄMÄ Transform muuttaa elementin visuaalista koordinaatistoa; transition pehmentää muutoksen ajan yli.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 2: MIKÄ ON TRANSFORM? -->
+    <section class="dia" id="dia2">
+      <span class="num">Dia 2</span><h2>MIKÄ ON TRANSFORM?</h2>
+      <p class="lead">transform muuttaa elementin visuaalista sijaintia, kokoa, kulmaa tai muotoa ilman tavallista layout-laskentaa. MOVE Siirrä translate() liikuttaa elementtiä X- ja Y-suunnassa. SIZE Skaalaa scale() kasvattaa tai pienentää. TURN Kierrä rotate() muuttaa kulmaa. SKEW Vinoita skew() kallistaa koordinaatistoa. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem); rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 3: TRANSLATE – SIIRTÄMINEN -->
+    <section class="dia" id="dia3">
+      <span class="num">Dia 3</span><h2>TRANSLATE – SIIRTÄMINEN</h2>
+      <p class="lead">translate() siirtää elementtiä sen alkuperäisestä visuaalisesta paikasta..card { transform: translate(24px, -8px); } /* vain X tai Y */M Mitä tämä tarkoittaa? translate() siirtää elementtiä sen alkuperäisestä visuaalisesta paikasta. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.badge { transform: translateX(12px); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 4: TRANSLATE JA PROSENTIT -->
+    <section class="dia" id="dia4">
+      <span class="num">Dia 4</span><h2>TRANSLATE JA PROSENTIT</h2>
+      <p class="lead">translate()- funktion prosentit perustuvat transformoitavan elementin omaan kokoon..center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); } M Mitä tämä tarkoittaa? translate()-funktion prosentit perustuvat transformoitavan elementin omaan kokoon. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 5: SCALE – SKAALAUS -->
+    <section class="dia" id="dia5">
+      <span class="num">Dia 5</span><h2>SCALE – SKAALAUS</h2>
+      <p class="lead">scale() muuttaa elementin visuaalista kokoa. Arvo 1 = alkuperäinen koko..card:hover { transform: scale(1.04); }.icon { transform: scale(.8); } M Mitä tämä tarkoittaa? scale() muuttaa elementin visuaalista kokoa. Arvo 1 = alkuperäinen koko. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo scale">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: scale(1.12); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 6: SCALE X- JA Y-SUUNNASSA -->
+    <section class="dia" id="dia6">
+      <span class="num">Dia 6</span><h2>SCALE X- JA Y-SUUNNASSA</h2>
+      <p class="lead">Skaalaus voidaan tehdä eri tavalla vaaka- ja pystysuunnassa..shape { transform: scaleX(1.25); }.badge { transform: scaleY(.9); } M Mitä tämä tarkoittaa? Skaalaus voidaan tehdä eri tavalla vaaka- ja pystysuunnassa. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo scale">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: scale(1.12); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 7: ROTATE – KIERTÄMINEN -->
+    <section class="dia" id="dia7">
+      <span class="num">Dia 7</span><h2>ROTATE – KIERTÄMINEN</h2>
+      <p class="lead">rotate() kiertää elementtiä transform-origin-pisteen ympäri..arrow { transform: rotate(45deg); }.chevron.open { transform: rotate(180deg); } M Mitä tämä tarkoittaa? rotate() kiertää elementtiä transform-origin-pisteen ympäri. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo rotate">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: rotate(12deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 8: KULMAYKSIKÖT -->
+    <section class="dia" id="dia8">
+      <span class="num">Dia 8</span><h2>KULMAYKSIKÖT</h2>
+      <p class="lead">CSS tukee useita kulmayksiköitä. Käytännössä deg on opiskelijalle luontevin aloitus. DEG deg 360deg = täysi kierros. TURN turn 1turn = täysi kierros. RAD rad 2π rad ≈ täysi kierros. GRAD grad 400grad = täysi kierros. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 9: SKEW – VINOITUS -->
+    <section class="dia" id="dia9">
+      <span class="num">Dia 9</span><h2>SKEW – VINOITUS</h2>
+      <p class="lead">skew() vinouttaa elementin X- tai Y-akselin suhteen..banner { transform: skewX(-8deg); } /* sisältö voidaan oikaista */M Mitä tämä tarkoittaa? skew() vinouttaa elementin X- tai Y-akselin suhteen. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo skew">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.banner &gt; * { transform: skewX(8deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 10: USEITA TRANSFORM-FUNKTIOITA -->
+    <section class="dia" id="dia10">
+      <span class="num">Dia 10</span><h2>USEITA TRANSFORM-FUNKTIOITA</h2>
+      <p class="lead">Samaan transform-arvoon voi yhdistää useita funktioita. Järjestyksellä on merkitystä..card { transform: translateY(-4px) rotate(1deg) scale(1.02); } M Mitä tämä tarkoittaa? Samaan transform-arvoon voi yhdistää useita funktioita. Järjestyksellä on merkitystä. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 11: JÄRJESTYS MUUTTAA TULOSTA -->
+    <section class="dia" id="dia11">
+      <span class="num">Dia 11</span><h2>JÄRJESTYS MUUTTAA TULOSTA</h2>
+      <p class="lead">translate() scale() ei välttämättä tuota samaa lopputulosta kuin scale() translate(). A translate → scale Ensin siirretään, sitten skaalataan muuttuneessa koordinaatistossa. B scale → translate Siirtovektori toimii jo skaalatussa koordinaatistossa. ✓ Hyvä käytäntö Pidä transform-lista lyhyenä ja helposti luettavana. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 12: TRANSFORM-ORIGIN -->
+    <section class="dia" id="dia12">
+      <span class="num">Dia 12</span><h2>TRANSFORM-ORIGIN</h2>
+      <p class="lead">transform-origin määrittää pisteen, jonka ympäriltä kierto ja skaalaus tapahtuvat..door { transform-origin: left center; transform: rotateY(35deg); } M Mitä tämä tarkoittaa? transform-origin määrittää pisteen, jonka ympäriltä kierto ja skaalaus tapahtuvat. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 13: YKSITTÄISET TRANSFORM-OMINAISUUDET -->
+    <section class="dia" id="dia13">
+      <span class="num">Dia 13</span><h2>YKSITTÄISET TRANSFORM-OMINAISUUDET</h2>
+      <p class="lead">Modernissa CSS:ssä translate, rotate ja scale voidaan kirjoittaa erillisinä ominaisuuksina..card { translate: 0 -4px; rotate: 1deg; scale: 1.02; } M Mitä tämä tarkoittaa? Modernissa CSS:ssä translate, rotate ja scale voidaan kirjoittaa erillisinä ominaisuuksina. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 14: 2D VS 3D TRANSFORM -->
+    <section class="dia" id="dia14">
+      <span class="num">Dia 14</span><h2>2D VS 3D TRANSFORM</h2>
+      <p class="lead">3D-transformit lisäävät Z-akselin ja perspektiivin. Niitä kannattaa käyttää harkiten..card { transform: rotateY(18deg) translateZ(20px); } M Mitä tämä tarkoittaa? 3D-transformit lisäävät Z-akselin ja perspektiivin. Niitä kannattaa käyttää harkiten. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.scene { perspective: 800px; }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 15: MIKÄ ON TRANSITION? -->
+    <section class="dia" id="dia15">
+      <span class="num">Dia 15</span><h2>MIKÄ ON TRANSITION?</h2>
+      <p class="lead">transition tekee CSS-tilan muutoksesta asteittaisen välittömän hypyn sijaan..button { background: #8b5cf6; transition: background-color.2s ease; }.button:hover { background: #6d28d9; } M Mitä tämä tarkoittaa? transition tekee CSS-tilan muutoksesta asteittaisen välittömän hypyn sijaan. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 16: TRANSITION-PROPERTY -->
+    <section class="dia" id="dia16">
+      <span class="num">Dia 16</span><h2>TRANSITION-PROPERTY</h2>
+      <p class="lead">transition-property kertoo, mitä ominaisuutta tai ominaisuuksia animoidaan..card { transition-property: transform, box-shadow, opacity; } M Mitä tämä tarkoittaa? transition-property kertoo, mitä ominaisuutta tai ominaisuuksia animoidaan. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 17: TRANSITION-DURATION -->
+    <section class="dia" id="dia17">
+      <span class="num">Dia 17</span><h2>TRANSITION-DURATION</h2>
+      <p class="lead">transition-duration määrittää siirtymän keston..button { transition-duration: 180ms; }.panel { transition-duration:.35s; } M Mitä tämä tarkoittaa? transition-duration määrittää siirtymän keston. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 18: TRANSITION-TIMING-FUNCTION -->
+    <section class="dia" id="dia18">
+      <span class="num">Dia 18</span><h2>TRANSITION-TIMING-FUNCTION</h2>
+      <p class="lead">Easing määrittää, miten nopeasti muutos etenee eri vaiheissa. EASE ease Pehmeä yleiskäyttöinen oletus. LIN linear Tasainen nopeus koko ajan. IN ease-in Hidas alku, nopeampi loppu. OUT ease-out Nopea alku, pehmeä pysähtyminen. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 19: CUBIC-BEZIER() -->
+    <section class="dia" id="dia19">
+      <span class="num">Dia 19</span><h2>CUBIC-BEZIER()</h2>
+      <p class="lead">cubic-bezier() mahdollistaa oman easing-käyrän..menu { transition: transform 280ms cubic-bezier(.2,.8,.2, 1); } M Mitä tämä tarkoittaa? cubic-bezier() mahdollistaa oman easing-käyrän. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 20: TRANSITION-DELAY -->
+    <section class="dia" id="dia20">
+      <span class="num">Dia 20</span><h2>TRANSITION-DELAY</h2>
+      <p class="lead">transition-delay viivästyttää siirtymän alkua. Käytä UI:ssa maltillisesti..tooltip { transition: opacity.15s ease.25s; } M Mitä tämä tarkoittaa? transition-delay viivästyttää siirtymän alkua. Käytä UI:ssa maltillisesti. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 21: TRANSITION-SHORTHAND -->
+    <section class="dia" id="dia21">
+      <span class="num">Dia 21</span><h2>TRANSITION-SHORTHAND</h2>
+      <p class="lead">Shorthand kokoaa propertyn, durationin, easingin ja delayn yhteen..card { transition: transform.2s ease, box-shadow.2s ease; } M Mitä tämä tarkoittaa? Shorthand kokoaa propertyn, durationin, easingin ja delayn yhteen. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 22: ÄLÄ ANIMOI transition: all -ARVOTTA -->
+    <section class="dia" id="dia22">
+      <span class="num">Dia 22</span><h2>ÄLÄ ANIMOI transition: all -ARVOTTA</h2>
+      <p class="lead">Kaikkien ominaisuuksien animointi voi tehdä koodista vaikeasti ennustettavan ja aiheuttaa turhaa työtä selaimelle..card { /* parempi */transition: transform.2s ease, opacity.2s ease; } M Mitä tämä tarkoittaa? Kaikkien ominaisuuksien animointi voi tehdä koodista vaikeasti ennustettavan ja aiheuttaa turhaa työtä selaimelle. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 23: HYVÄ HOVER-EFEKTI -->
+    <section class="dia" id="dia23">
+      <span class="num">Dia 23</span><h2>HYVÄ HOVER-EFEKTI</h2>
+      <p class="lead">Pieni translate/scale + varjo toimii usein paremmin kuin suuri liike..card { transition: transform.18s ease, box-shadow.18s ease; }.card:hover { transform: translateY(-3px); } M Mitä tämä tarkoittaa? Pieni translate/scale + varjo toimii usein paremmin kuin suuri liike. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 24: FOCUS EI OLE HOVER -->
+    <section class="dia" id="dia24">
+      <span class="num">Dia 24</span><h2>FOCUS EI OLE HOVER</h2>
+      <p class="lead">Näppäimistöfokus tarvitsee oman näkyvän indikaattorinsa; pelkkä transform ei riitä..button:focus-visible { outline: 3px solid #22d3ee; outline-offset: 3px; } M Mitä tämä tarkoittaa? Näppäimistöfokus tarvitsee oman näkyvän indikaattorinsa; pelkkä transform ei riitä. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 25: MITÄ KANNATTAA ANIMOIDA? -->
+    <section class="dia" id="dia25">
+      <span class="num">Dia 25</span><h2>MITÄ KANNATTAA ANIMOIDA?</h2>
+      <p class="lead">transform ja opacity ovat usein suorituskyvyn kannalta turvallisimpia lähtökohtia. FAST transform Usein voidaan käsitellä ilman koko layoutin uudelleenlaskentaa. FADE opacity Hyvä häivytyksiin ja tilamuutoksiin. CAREFUL width/height/top Voi laukaista layout- ja maalaustyötä. TEST DevTools Mittaa aina, jos käyttöliittymässä on paljon liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 26: STACKING CONTEXT JA TRANSFORM -->
+    <section class="dia" id="dia26">
+      <span class="num">Dia 26</span><h2>STACKING CONTEXT JA TRANSFORM</h2>
+      <p class="lead">Muu kuin none-transform luo stacking contextin ja voi vaikuttaa z-index-käyttäytymiseen..card { transform: translateY(0); /* muodostaa stacking contextin */} M Mitä tämä tarkoittaa? Muu kuin none-transform luo stacking contextin ja voi vaikuttaa z-index-käyttäytymiseen. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 27: PREFERS-REDUCED-MOTION -->
+    <section class="dia" id="dia27">
+      <span class="num">Dia 27</span><h2>PREFERS-REDUCED-MOTION</h2>
+      <p class="lead">Käyttäjä voi pyytää käyttöjärjestelmässä vähemmän liikettä. CSS voi kunnioittaa tätä asetusta. @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } } M Mitä tämä tarkoittaa? Käyttäjä voi pyytää käyttöjärjestelmässä vähemmän liikettä. CSS voi kunnioittaa tätä asetusta. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Liike on käyttöliittymän palautejärjestelmä. Jos se häiritsee, se ei enää palvele käyttäjää.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: none; }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 28: DISCRETE TRANSITIONS – MODERNI CSS -->
+    <section class="dia" id="dia28">
+      <span class="num">Dia 28</span><h2>DISCRETE TRANSITIONS – MODERNI CSS</h2>
+      <p class="lead">transition-behavior: allow-discrete mahdollistaa joidenkin diskreettien ominaisuuksien, kuten displayn, hallitumman transition-käytön moderneissa selaimissa..popover { transition: opacity.2s, display.2s allow-discrete; } M Mitä tämä tarkoittaa? transition-behavior: allow-discrete mahdollistaa joidenkin diskreettien ominaisuuksien, kuten displayn, hallitumman transition-käytön moderneissa selaimissa. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 29: YLEISIMMÄT VIRHEET -->
+    <section class="dia" id="dia29">
+      <span class="num">Dia 29</span><h2>YLEISIMMÄT VIRHEET</h2>
+      <p class="lead">Transformit ja transitionit muuttuvat helposti koristeeksi, joka haittaa käyttöä. Liikaa liikettä Jokainen hover liikkuu eri suuntaan ja eri nopeudella. transition: all Selain yrittää animoida myös ominaisuuksia, joita et tarkoittanut. Focus unohtuu Hover näyttää hyvältä, näppäimistökäyttäjä ei saa palautetta. Layout-animaatio Width/height/top-animaatioita käytetään ilman suorituskyvyn testausta. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 30: DEVTOOLS JA TRANSITIONS -->
+    <section class="dia" id="dia30">
+      <span class="num">Dia 30</span><h2>DEVTOOLS JA TRANSITIONS</h2>
+      <p class="lead">DevToolsilla voit pakottaa hover/focus-tilan ja tutkia transitionin computed-arvoja. HOV:hov Pakota:hover,:focus tai:active. COMP Computed Näe lopullinen transform ja transition. PERF Performance Tarkista, aiheuttaako liike raskasta layout- tai paint-työtä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-.4rem); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      
+    </section>
+    <!-- OSA 12, DIA 31: HARJOITUS 1: INTERAKTIIVINEN KORTTI -->
+    <section class="dia" id="dia31">
+      <span class="num">Dia 31</span><h2>HARJOITUS 1: INTERAKTIIVINEN KORTTI</h2>
+      <p class="lead">Rakenna kortti, joka nousee hieman hoverissa mutta säilyttää näkyvän näppäimistöfokuksen..card { /* transition */}.card:hover { /* transform */}.card:focus-visible { /* outline */} M Mitä tämä tarkoittaa? Rakenna kortti, joka nousee hieman hoverissa mutta säilyttää näkyvän näppäimistöfokuksen. ✓ Käytännössä Muuta arvoja yksi kerrallaan, tarkista vaikutus selaimessa ja varmista, että käyttöliittymä toimii myös ilman liikettä. MUISTA TÄMÄ Pidä transformit ja transitionit tarkoituksellisina, lyhyinä ja helposti ennustettavina.</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      <details open><summary>Malliratkaisu ja vastaus</summary><div><p class="answer">Kortin hover käyttää transform:translateY() ja box-shadow&#x27;ta. Transition rajataan näihin ominaisuuksiin. Focus-visible saa erillisen outline-korostuksen. Reduced motion poistaa siirtymän tarvittaessa.</p><pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre></div></details>
+    </section>
+    <!-- OSA 12, DIA 32: HARJOITUS 2 + PIKAVISA -->
+    <section class="dia" id="dia32">
+      <span class="num">Dia 32</span><h2>HARJOITUS 2 + PIKAVISA</h2>
+      <p class="lead">Tee avautuvan elementin nuoli, joka kiertyy 180°. Vastaa lopuksi neljään kysymykseen. Tehtävä Chevron.rotate → rotate(180deg) transitionilla.? Kysymys 1 Mikä siirtää elementtiä? → translate()? Kysymys 2 Mikä määrittää siirtymän keston? → transition-duration? Kysymys 3 Miten huomioit liikeherkkyyden? → prefers-reduced-motion</p>
+      <div class="demo"><button class="transform-demo move">Vie hiiri tähän</button><p>Transform ei työnnä ympäröivää sisältöä.</p></div>
+      <pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre>
+      <p class="explain"><strong>Kokeile:</strong> Muuta arvoja selaimen DevToolsissa ja tarkkaile sekä ulkoasua että layoutia. Palauta muutos, jos se sotkee seuraavan esimerkin.</p>
+      <details open><summary>Malliratkaisu ja vastaus</summary><div><p class="answer">Kortin hover käyttää transform:translateY() ja box-shadow&#x27;ta. Transition rajataan näihin ominaisuuksiin. Focus-visible saa erillisen outline-korostuksen. Reduced motion poistaa siirtymän tarvittaessa.</p><pre><code>.shape { transform: translateX(1rem) rotate(6deg); }</code></pre></div></details>
+    </section>
+</main><footer><p>CSS Osa 12 • Demo- ja vastaussivu</p></footer></body></html>

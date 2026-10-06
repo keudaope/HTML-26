@@ -1,0 +1,108 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 10px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: lightgreen;
+    border: none;
+    cursor: pointer;
+}
+.box01 button {
+  transition: transform .2s ease,
+              box-shadow .2s ease;
+}
+.box01 button:hover {
+  transform: translateY(-2px) scale(1.5);
+}
+
+.box02 {
+  transform: translate(24px, -8px);
+}
+
+/* vain X tai Y */
+.box02 button { transform: translateX(12px); }
+
+.box03 button {
+  /* position: absolute; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box04:hover {
+  transform: scale(1.04);
+}
+
+.box04 button:hover {
+  transform: scale(.2);
+}
+
+.box05:hover {
+  transform: scaleX(1.25);
+}
+.box05 button:hover {
+  transform: scaleY(.7);
+}
+.box06 button:hover {
+  transform: rotate(45deg);
+}
+.box06:hover {
+  transform: rotate(180deg);
+}
+
+.box07 {
+  transform: skewX(-8deg);
+}
+
+/* sisältö voidaan oikaista */
+.box07 > * { transform: skewX(8deg); }
+
+.box09:hover {
+  transform:
+    translateY(-4px)
+    rotate(1deg)
+    scale(1.02);
+}
+.box10:hover {
+  transform-origin: left center;
+  transform: rotateY(35deg);
+}
+
+.box11:hover {
+  translate: 0 -4px;
+  rotate: 1deg;
+  scale: 1.02;
+}
+
+main { perspective: 800px; }
+.box12:hover {
+  transform: rotateY(18deg) translateZ(20px);
+}
+.box13 button {
+  background: #8b5cf6;
+  transition: background-color .8s ease;
+}
+.box13 button:hover {
+  background:red;
+}
+
+.box14 button:hover {
+  transition: transform 280ms
+    cubic-bezier(2.2, .8, .2, 1);
+}
+
+.box15 button {
+  transition: opacity 5.15s ease .25s;
+}
+
+.box15 button:hover {
+  transition:
+    transform .2s ease,
+    box-shadow 10.2s ease;
+}
+
+
+
