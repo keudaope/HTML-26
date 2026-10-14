@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/tyylit.css" />
+    <title>Pseudoelementit</title>
+  </head>
+  <body>
+    <main class="content">
+        <section class="painikkeet card">
+            <h2>Painikkeet</h2>
+            <button class="primary"><a href="">Painike</a></button>
+            <button class="secondary" disabled><a href="">Poistettu</a></button>
+        </section>
+        <section class="lomakekortti card">
+            <h2>Lomakekortti</h2>
+            <form action="#">
+                <fieldset>
+                    <legend>Vaaditut tiedot</legend>
+                    <label for="nimi">Nimi:</label>
+                    <input type="text" id="nimi" name="nimi" placeholder="Etu- ja sukunimi" required/>
+                    <label for="sahkoposti">Sähköposti:</label>
+                    <input type="email" id="sahkoposti" name="sahkoposti" placeholder="muodossa etu.sukunimi@edu.keuda.fi" required/>
+                </fieldset>
+                <label for="puhelin">Puhelin:</label>
+                <input type="tel" id="puhelin" name="puhelin" placeholder="muodossa 0401234567" />
+                <input type="checkbox" id="muistutus" name="muistutus" />
+                <label for="valinta"></label><a href="" data-label="Kiitos!" class="vaihto"></a></label>
+                <!-- <p>Kiitos!</p> -->
+                <button type="submit" class="laheta">Lähetä</button>
+                <button type="reset" class="nollaa" disabled>Nollaa</button>
+            </form>
+        </section>
+        <section class="kuvakortti card">
+            <h2>Kuvakortti</h2>
+            <article class="kortti">
+                <img src="kuvat/panderolli.jpg" alt="Koira" />
+                <div class="kortin-sisalto">
+                    <h3>Koira</h3>
+                    <p><a href="">Koira</a> on ihmisen paras ystävä.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+  </body>
+</html>
