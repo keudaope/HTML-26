@@ -1,0 +1,173 @@
+/*
+  HARJOITUKSEN ALOITUSTIEDOSTO
+  ---------------------------
+  Tässä CSS:ssä toistetaan tarkoituksella samoja arvoja.
+
+  Tehtävä:
+  1. Etsi toistuvat värit, välit ja pyöristykset.
+  2. Luo :rootiin semanttiset tokenit ja korvaa toistuvat arvot var()-kutsuilla.
+  3. Lisää tumma teema vaihtamalla vain tokenien arvoja.
+  4. Haaste: tee typografia ja section-spacing fluidiksi clamp()-funktiolla.
+
+  Älä muuta HTML:ää ensimmäisiä kolmea vaihetta varten.
+*/
+:root{
+  --yleisvari: #7c3aed;
+  --tausta_ja_teksti: #6d28d9;
+  --kappale_huomio: #475569;
+  --yleisteksti: #1e293b;
+  --lihavointi: 700;
+  --pehmuste: 1rem;
+  --teksti_tausta: #ffffff;
+
+}
+* {
+  box-sizing: border-box;
+}
+[data-theme="dark"] 
+{
+  --teksti_tausta: #0f172a;
+  --yleisteksti: #f8fafc;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8fafc;
+  color: var(--yleisteksti);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.hero {
+  background: var(--tausta_ja_teksti);
+  color: var(--teksti_tausta);
+  padding: calc(var(--pehmuste) * 4) var(--pehmuste);
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-weight: var(--lihavointi);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  max-width: 48rem;
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.intro {
+  padding: calc(var(--pehmuste)*4) calc(var(--pehmuste)*0) calc(var(--pehmuste)*2);
+}
+
+.intro h2,
+.notice h2 {
+  margin-top: 0;
+  color: var(--yleisvari);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  padding: calc(var(--pehmuste)*2) calc(var(--pehmuste)*0) calc(var(--pehmuste)*4);
+}
+
+.card {
+  background: var(--teksti_tausta);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: calc(var(--pehmuste)*1.5);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.08);
+}
+
+.card h2 {
+  margin: 1rem 0 0.5rem;
+  color: var(--yleisteksti);
+}
+
+.card p {
+  margin: 0 0 1.5rem;
+  color: var(--kappale_huomio);
+}
+
+.card--important {
+  border: 2px solid var(--yleisvari);
+}
+
+.badge {
+  display: inline-block;
+  background: #ede9fe;
+  color: var(--tausta_ja_teksti);
+  border-radius: 999px;
+  padding: calc(var(--pehmuste) / 2) var(--pehmuste);
+  font-size: 0.85rem;
+  font-weight: var(--lihavointi);
+}
+
+.button {
+  display: inline-block;
+  background: var(--yleisvari);
+  color: var(--teksti_tausta);
+  border-radius: 0.75rem;
+  padding:  calc(var(--pehmuste) / 2) var(--pehmuste);
+  text-decoration: none;
+  font-weight: var(--lihavointi);
+}
+
+.button:hover {
+  background: var(--tausta_ja_teksti);
+}
+
+.button--accent {
+  background: #dc2626;
+}
+
+.button--accent:hover {
+  background: #b91c1c;
+}
+
+.notice {
+  margin-bottom: 4rem;
+  background: var(--teksti_tausta);
+  border-left: 5px solid var(--yleisvari);
+  border-radius: 0.75rem;
+  padding: calc(var(--pehmuste)*1.5);
+;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.08);
+}
+
+.notice p {
+  margin-bottom: 0;
+  color: var(--kappale_huomio);
+}
+
+footer {
+  background: var(--yleisteksti);
+  color: #ffffff;
+  padding: calc(var(--pehmuste)*2) var(--pehmuste);
+  text-align: center;
+}
+
+/* .container:has(.theme option[value="dark"]:checked) {
+  background: var(--yleisteksti);
+  color: var(--teksti_tausta);
+} */
+
+@media (prefers-color-scheme: dark){
+  :root{
+      --yleisteksti:#f8fafc;
+      --teksti_tausta:#1e293b;
+  }
+}
