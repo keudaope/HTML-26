@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    width: 20rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+.card__title {
+    flex: 1 1 auto;
+    white-space: nowrap;
+}
+
+.card__button {
+    margin-inline-start: auto;
+}
