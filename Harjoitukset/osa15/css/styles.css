@@ -1,0 +1,119 @@
+:hover {
+  transform: translateY(-2px);
+}
+input:invalid {
+  border-color: #f87171;
+}
+.badge::before {
+  content: "★";
+}
+a:hover {
+  color: hotpink;
+}
+input:checked {
+  outline: 2px solid cyan;
+}
+li:first-child {
+  font-weight: 700;
+}
+
+.card {
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 50vw;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card::before {
+  content: "";
+}
+p::first-letter {
+  font-size: 2em;
+}
+::selection {
+  background: #7c3aed;
+  color: WHITE;
+}
+
+a,
+button,
+label,
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+  display: block;
+  margin: 10px;
+}
+
+button:focus {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+button:focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 4px;
+}
+.button:active {
+  transform: translateY(1px) scale(0.92);
+}
+a:link {
+  color: #22d3ee;
+}
+a:visited {
+  color: #a78bfa;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+input[type="checkbox"]:checked + label {
+  color: #6ee7a9;
+  font-weight: 700;
+} 
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+input:enabled {
+  border-color: #475569;
+}
+
+input:required {
+  border-left: 4px solid #8b5cf6;
+}
+input:optional {
+  border-left-color: transparent;
+}
+
+input:valid {
+  border-color: #6ee7a9;
+}
+input:invalid {
+  border-color: #f87171;
+}
+
+input:placeholder-shown {
+  border-color: #475569;
+}
+input:not(:placeholder-shown) {
+  background: #111827;
+}
+li:first-child {
+  color: #6ee7a9;
+}
+li:last-child {
+  color: #f87171;
+}
+p:only-child {
+  max-width: 60ch;
+}
+
+li:nth-child(even) { background: #ccc; }
+li:nth-child(3n + 1) { color: yellow; }

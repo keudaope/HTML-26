@@ -83,7 +83,7 @@ main { perspective: 800px; }
 }
 .box13 button {
   background: #8b5cf6;
-  transition: background-color .8s ease;
+  transition: background-color 4.8s;/* ease;*/
 }
 .box13 button:hover {
   background:red;
@@ -102,6 +102,161 @@ main { perspective: 800px; }
   transition:
     transform .2s ease,
     box-shadow 10.2s ease;
+}
+
+
+/* Uusi HTML-sivu */
+
+.card{
+  width: 200px;
+  margin: 50px;
+  background-color: #8b5cf6;
+  color:aliceblue;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 15px 0px 15px 30px;
+  transition: transform .88s ease-in, box-shadow .88s ease-out;
+}
+.card button{
+  margin: 20px 0;
+}
+.card input{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.card:hover{
+  transform: translateX(250px) scale(1.3) rotate(15deg) skew(45deg);
+  background-color: darkred;
+}
+.card input:focus-visible{
+  border: dotted 3px skyblue;
+  background-color: yellow;
+  color: black;
+
+}
+@keyframes pulse 
+{
+  0%, 100% 
+  { 
+     transform: scale(1);
+  }  
+  50% 
+  { 
+     transform: scale(1.06); 
+  }
+}
+.card1 
+{ 
+  animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes spin 
+{  to 
+   {
+     rotate: 1turn; 
+   }
+}
+.spinner {  
+  width: 50px;
+  height: 50px;
+  animation: spin .8s linear infinite;}
+
+  .card2 {
+    padding: 20px;
+    width: 100px;
+    background-color: aquamarine; 
+    animation: enter 2.3s both;}
+@keyframes enter 
+{
+  0%
+  { 
+     opacity: 0; 
+     transform: translateY(8px); 
+  }
+  25% {transform: skew(35deg)}
+  50% {transform: translateX(700%);}  
+  100%
+  { 
+     opacity: 1; 
+     transform: none; 
+}}
+
+/* 1 */ 
+.spinner2{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
+  }
+}
+
+img {
+    animation-name:            rotate; 
+    animation-duration:        2.5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/* 2 */ 
+ .panel {
+    position: relative;
+    animation: enter 5.3s both;
+    animation-duration: 6s;}
+@keyframes enter 
+{
+  0%
+  { 
+     transform: translateX(0); 
+  }
+  25% {transform: translateX(50%);}
+  50% {transform: translateX(-50%)}  
+  100%
+  { 
+     transform: translateX(center);
+}}
+/* 3 */ 
+@keyframes pulse 
+{
+  0%, 100% 
+  { 
+     transform: scale(1);
+  }  
+  50% 
+  { 
+     transform: scale(1.06); 
+  }
+}
+@keyframes pulse 
+{
+  0%, 100% 
+  { 
+     transform: scale(1);
+     /* background-color: white; */
+  }  
+  50% 
+  { 
+     transform: scale(1.5); 
+     /* background-color: brown; */
+  }
+}
+.badge 
+{ 
+  /* width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  background-color: brown;
+  border-radius: 10px; */
+  position: absolute;
+  animation: pulse 1.2s ease-in-out infinite; 
+}
+.badge img{
+  width: 70px;
+  animation:none;
+
 }
 
 
