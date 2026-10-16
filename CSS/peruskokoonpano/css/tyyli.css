@@ -1,0 +1,331 @@
+
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* Väriteemat ja fontit */
+    --primary-color: #315c9c;
+    --secondary-color: #ddebff;
+    --card-color: #ffffff;
+    --accent-color: #fce9c9;
+    --text-color: #333;
+    --font-family: Arial, sans-serif;
+
+    /* Määritellään perusmarginaalit ja paddingit */
+    --primary-padding: 1rem;
+    --primary-margin: 1rem;
+
+    --primary-radius: 5px;
+    --primary-border: 1px solid var(--primary-color);
+    --primary-box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.1);
+    --primary-gap: 1rem;
+}
+
+body {
+    margin: calc(var(--primary-margin) * 0);
+    font-family: var(--font-family);
+}
+
+.container {
+    display: grid;
+
+    /* Kaksi saraketta: 75 % ja 25 % */
+    grid-template-columns: 3fr 1fr;
+
+    /* Määritellään sivun rakenne */
+    grid-template-areas:
+        "header header"
+        "main   aside"
+        "footer footer";
+
+    gap: calc(var(--primary-gap) * 0.5);
+    max-height: 70vh;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: calc(var(--primary-padding) * 0.5) calc(var(--primary-padding) * 2);
+    max-height: 15vh;
+}
+h1{
+    margin: calc(var(--primary-margin) * 0.5);
+    font-size: 2rem;
+}
+/* Navigaatio */
+nav ul {
+    display: flex;
+    gap: calc(var(--primary-gap) * 2);
+    list-style: none;
+    padding: calc(var(--primary-padding) * 0);
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+h1 {
+    text-align: center;
+}
+
+
+main {
+    grid-area: main;
+    background-color: var(--secondary-color);
+    padding: calc(var(--primary-padding) * 2);
+    min-height: 70vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /* Kolme yhteistä riviä */
+    grid-template-rows: auto 1fr auto;
+
+    gap: calc(var(--primary-gap) * 1);
+}
+
+.content-section {
+    border-radius: calc(var(--primary-radius) * 4);
+    box-shadow: var(--primary-box-shadow);
+
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+
+    background-color: var(--card-color);
+    padding: calc(var(--primary-padding) * 2);
+    border: 1px solid var(--primary-color);
+
+    /* Ei ylimääräistä väliä rivien väliin */
+    row-gap: calc(var(--primary-gap)*0);
+}
+
+/* Ensimmäisen kortin kuva ja otsikko */
+.content-article {
+    display: flex;
+      align-items: center;
+  justify-content: flex-start;
+    gap: calc(var(--primary-gap) * 1);
+}
+
+.content-article img {
+    width: calc(var(--primary-gap) * 4);
+    height: auto;
+}
+
+/* Otsikot */
+.content-section h3 {
+    margin: calc(var(--primary-margin) * 0);
+}
+
+/* Kappaletekstit */
+.content-article-text {
+    margin: calc(var(--primary-margin) * 0);
+    padding-top: calc(var(--primary-padding) * 0.5);
+    align-self: start;
+}
+form{
+    border: var(--primary-border);
+    border-radius: var(--primary-radius);
+    padding: calc(var(--primary-padding) * 1);
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    padding: calc(var(--primary-padding) * 0.2);
+    margin-top: calc(var(--primary-margin) * 0.2);
+    border: var(--primary-border);
+    border-radius: var(--primary-radius);
+}
+input[type="submit"] {
+     margin-top: calc(var(--primary-margin) * 0.6);
+}
+input:user-invalid{
+    border: 3px solid red;
+}
+input:user-valid{
+    border: 3px solid green;
+}
+
+
+/* Painikkeet */
+.content-section button {
+    justify-self: center;
+    align-self: end;
+}
+
+/* Aside */
+aside {
+    grid-area: aside;
+    background-color: var(--accent-color);
+    padding: calc(var(--primary-padding) * 2);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    grid-area: footer;
+    background-color: #315c9c;
+    color: white;
+    padding: calc(var(--primary-padding) * 2);
+    max-height: 13vh;
+    align-content: center;
+    justify-content: center;
+
+}
+button {
+    padding: calc(var(--primary-padding) * 0.5) calc(var(--primary-padding) * 1);
+    background-color: #315c9c;
+    border-radius: var(--primary-radius);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1e3f6c;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.95);
+}
+label {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Responsiivisuus */
+@media (max-width: 1268px) {
+    .container {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+    /* header{
+        display: grid;
+        grid-template-areas:
+        "header"
+        "nav";
+    }
+    h1{
+        grid-area: header;
+        margin: calc(var(--primary-margin) * 0.5);
+    }
+    nav{
+        grid-area: nav;
+        display: flex;
+        justify-content: center;} */
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 1100px) {
+ 
+}
+@media (max-width: 768px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+     header {
+    display: grid;
+    grid-template-areas:
+      "header  hamburger"
+  }
+  h1 {
+    grid-area: header;
+    margin: calc(var(--primary-margin) * 1);
+  }
+  .menu a {
+    text-decoration: none;
+    color: black;
+  }
+  nav, .menu-btn {
+    display: none;
+  }
+  .menu-icon {
+    grid-area: hamburger;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 30px 20px 30px 0;
+    position: relative;
+    user-select: none;
+    visibility: visible;
+  }
+  .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+  }
+  .navicon:before {
+    top: 5px;
+  }
+  .navicon:after {
+    top: -5px;
+  }
+  .navicon:before,
+  .navicon:after {
+    background: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    transition: all 0.2s ease-out;
+  }
+  .menu {
+    grid-area: nav;
+    max-width: unset;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu a {
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    background-color: #eee;
+    width: 100%;
+    text-align: center;
+  }
+  .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:before,
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    top: 0;
+  }
+}

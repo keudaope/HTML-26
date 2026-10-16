@@ -7,6 +7,7 @@
 .card__title {
     flex: 1 1 auto;
     white-space: nowrap;
+    font-size: CLAMP(0.2rem, 2vw, 1.5rem);
 }
 
 .card__button {
