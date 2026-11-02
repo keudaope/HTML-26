@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profiilin tietojen muokkaussivu">
+  <title>Muokkaa profiilia</title>
+  <link rel="stylesheet" href="css/cv.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <main class="profile-container">
+    <aside class="sidebar">
+      <div class="profile-summary">
+        <div class="profile-picture" aria-hidden="true">JD</div>
+        <h2 id="sidebar-name">John Doe</h2>
+        <p>Web Developer</p>
+      </div>
+
+      <nav class="menu" aria-label="Profiilin valikko">
+        <a href="#profile-form" class="active" aria-current="page">
+          <span class="menu-icon" aria-hidden="true">●</span>
+          Profiili
+        </a>
+        <a href="#">
+          <span class="menu-icon" aria-hidden="true">⚙</span>
+          Asetukset
+        </a>
+        <a href="#">
+          <span class="menu-icon" aria-hidden="true">◆</span>
+          Tietoturva
+        </a>
+        <a href="#">
+          <span class="menu-icon" aria-hidden="true">↪</span>
+          Kirjaudu ulos
+        </a>
+      </nav>
+    </aside>
+
+    <section class="main-content" aria-labelledby="page-title">
+      <header class="content-header">
+        <div class="title-row">
+          <span class="title-icon" aria-hidden="true">●</span>
+          <h1 id="page-title">Muokkaa profiilia</h1>
+        </div>
+
+        <button class="notification-button" type="button" aria-label="3 uutta ilmoitusta">
+          <span aria-hidden="true">♟</span>
+          <span class="notification-count">3</span>
+        </button>
+      </header>
+
+      <form id="profile-form" class="profile-form">
+        <div class="form-group">
+          <label for="full-name">Koko nimi</label>
+          <div class="input-wrapper">
+            <span aria-hidden="true">●</span>
+            <input
+              id="full-name"
+              name="fullName"
+              type="text"
+              value="John Doe"
+              autocomplete="name"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Sähköpostiosoite</label>
+          <div class="input-wrapper">
+            <span aria-hidden="true">✉</span>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value="john@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Esittely</label>
+          <textarea id="bio" name="bio" rows="4">Intohimoinen ohjelmistokehittäjä ja kahvin ystävä.</textarea>
+        </div>
+
+        <button type="submit" class="save-button">
+          <span aria-hidden="true">▣</span>
+          Tallenna muutokset
+        </button>
+
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="decoration" aria-hidden="true">
+        <div class="plant">♣</div>
+        <div class="mug">&lt;/&gt;</div>
+        <div class="books">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

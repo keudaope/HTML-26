@@ -1,0 +1,113 @@
+:root {
+  --heading-color: #098273;
+  --variant: default;
+}
+@scope (.article) to (.comments) {
+  h2 {
+    color: var(--heading-color);
+  }
+}
+/* Tyylit itse kortille oletuksena */
+.card {
+  padding: 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* @container style(...) -sääntö tarkistaa, onko vanhemman --card-theme arvo 'dark' */
+@container style(--card-theme: dark) {
+  .card {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+.article {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  font-size: 1.8rem;
+}
+.toinen {
+  width: fit-content;
+}
+.card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+.kortin-sisalto img {
+  width: 10%;
+  height: auto;
+}
+.kortti {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+.kortin-sisalto {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.kortin-sisalto button {
+  width: 20%;
+  height: 1.6rem;
+}
+.kortti-muu{
+      display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+@layer components {
+    /* Tuotekortin perustyyli */
+    .product-card__title {
+        font-size: 1.5rem;
+        color: #222222;
+    }
+
+    /* Korostetun tuotekortin otsikko */
+    .product-card--featured .product-card__title {
+        color: #7c3aed;
+    }
+}
+
+/* Kortin ympärille luodaan container */
+.profile-card-container {
+    container-type: inline-size;
+    container-name: profile;
+    min-width: 0;
+}
+
+/* Kortin perusasettelu kapeassa tilassa */
+.profile-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    background: white;
+}
+
+.profile-card__image {
+    width: 100%;
+    max-width: 8rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Fluidi otsikkokoko */
+.profile-card__title {
+    font-size: clamp(1.25rem, 5cqi, 2rem);
+    overflow-wrap: anywhere;
+}
+
+/* Kortti vaihtaa asettelua containerin mukaan */
+@container profile (min-width: 30rem) {
+    .profile-card {
+        grid-template-columns: 8rem minmax(0, 1fr);
+        align-items: center;
+    }
+}
