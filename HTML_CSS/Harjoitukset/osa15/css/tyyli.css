@@ -1,0 +1,13 @@
+/* Anonymous layer 1 */
+@layer {
+    body {
+        background: blue;
+    }
+}
+
+/* Anonymous layer 2 */
+@layer {
+  body {
+    background: green; /* wins! */
+  }
+}
