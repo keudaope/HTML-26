@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ostoskoriharjoitus</title>
+  <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+
+  <h1>Ostoskori</h1>
+
+  <form id="tuotelomake">
+    <input
+      name="nimi"
+      placeholder="Tuotteen nimi"
+      required
+    >
+
+    <input
+      name="hinta"
+      type="number"
+      min="0"
+      step="0.01"
+      placeholder="Hinta"
+      required
+    >
+
+    <input
+      name="maara"
+      type="number"
+      min="1"
+      step="1"
+      value="1"
+      required
+    >
+
+    <button type="submit">Lisää tuote</button>
+  </form>
+
+  <h2>Tuotteet</h2>
+
+  <ul id="tuotelista"></ul>
+
+  <p>
+    Yhteensä:
+    <strong id="yhteensa">0,00 €</strong>
+  </p>
+
+</body>
+</html>
