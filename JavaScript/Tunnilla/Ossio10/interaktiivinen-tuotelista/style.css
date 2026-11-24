@@ -1,0 +1,31 @@
+:root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b1020; color: #f3f5ff; line-height: 1.5; }
+.container { width: min(1100px, calc(100% - 32px)); margin: 32px auto 64px; }
+.page-header h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0; }
+.page-header p, .muted { color: #abb7d0; }
+.panel { background: #161e31; border: 1px solid #34435d; border-radius: 14px; padding: clamp(18px, 3vw, 28px); margin-top: 22px; }
+h2 { margin: 0 0 18px; font-size: 1.35rem; }
+label { display: block; font-weight: 600; margin-bottom: 7px; }
+input, textarea { display: block; width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid #66758f; border-radius: 8px; background: #0c1426; color: #fff; font: inherit; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #a78bfa; outline-offset: 3px; }
+#haku { max-width: 500px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 16px; }
+.kortti { border: 1px solid #435270; border-radius: 12px; padding: 20px; background: #202b42; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.kortti.favorite { border-color: #f5be48; background: #302b3c; }
+.kortti h3 { margin: 0; font-size: 1.15rem; overflow-wrap: anywhere; }
+.kortti p { margin: 0; color: #c7d1e4; overflow-wrap: anywhere; }
+.kortti .price { font-size: 1.3rem; font-weight: 750; color: #fff; }
+.kortti button { margin-top: auto; align-self: flex-start; }
+button { cursor: pointer; border-radius: 8px; padding: 10px 16px; border: 1px solid #8c99b0; font: inherit; font-weight: 650; }
+.primary { background: #8464eb; color: #fff; border-color: #8464eb; }
+.secondary, .favorite-button { background: #25324c; color: #fff; }
+.favorite .favorite-button { color: #ffda74; border-color: #f5be48; }
+.product-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.field-wide, .form-actions { grid-column: 1 / -1; }
+.form-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.status { min-height: 1.5em; margin-bottom: 0; color: #a4f0c0; }
+.empty { padding: 15px; color: #c7d1e4; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) { .product-form { grid-template-columns: 1fr; } .form-actions { align-items: stretch; } }

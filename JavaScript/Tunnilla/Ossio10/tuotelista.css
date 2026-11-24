@@ -1,0 +1,69 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.lomake {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lomake-grid {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 15px 20px;
+    align-items: center;
+}
+
+.lomake-grid label {
+    font-weight: 600;
+}
+
+.lomake-grid input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.lomake-grid p {
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: #555;
+}
+
+.lomake-grid button {
+    grid-column: 2 / 3;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.kortti{
+    margin: 3rem 10rem;
+    background-color: cadetblue;
+    width: 20rem;
+    padding: 2rem;
+    color: white;
+}
+
+/* Pienemmät näytöt */
+@media (max-width: 650px) {
+    .lomake-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lomake-grid button {
+        grid-column: 1;
+    }
+}

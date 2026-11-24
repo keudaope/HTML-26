@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiivinen tuotelista</title>
+    <link rel="stylesheet" href="tuotelista.css">
+    <script src="tuotelista.js" defer></script>
+</head>
+<body>
+    <section>
+        <article class="lomake">
+            <form action="" class="lomake-grid" id="lomake">
+                <label for="enimi">Etunimi: </label>
+                <input type="text" id="enimi" name="enimi">
+                <p id="etunimi"></p>
+                <label for="snimi">Sukunimi: </label>
+                <input type="text" id="snimi" name="snimi">
+                <p id="sukunimi"></p>
+                <label for="sposti">Sähköposti: </label>
+                <input type="text" id="sposti" name="sposti">
+                <p id="sahkoposti"></p>
+                <label for="puhelin">Puhelin: </label>
+                <input type="text" id="puhelin" name="puhelin">
+                <p id="kannykka"></p>
+                <button type="submit">Lähetä</button>
+            </form>
+        </article>
+        <article class="etsi">
+            <label for="etsi">Etsi: </label>
+            <input type="search" name="etsi" id="etsi">
+        </article>
+        <section id="kortit"></section>
+    </section>
+</body>
+</html>

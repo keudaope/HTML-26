@@ -1,0 +1,20 @@
+article{
+  display: flex;
+  justify-content: center; /* Keskittää vaakasuunnassa */
+  align-items: center;     /* Keskittää pystysuunnassa */
+  height: 100vh;
+}
+section{
+    width: 10rem;
+    height: 5rem;
+    background-color: goldenrod;
+}
+div{
+      display: flex;
+  justify-content: center; /* Keskittää vaakasuunnassa */
+  align-items: center;     /* Keskittää pystysuunnassa */
+  height: 100%;
+}
+button{
+    margin: 0 1rem;
+}
