@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tehtävälista</title>
+    <script type="module" src="./src/maini.js"></script>
+  </head>
+  <body>
+    <h1>Tehtävälista</h1>
+
+    <form id="task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Kirjoita uusi tehtävä"
+        required
+      />
+      <button type="submit">Lisää tehtävä</button>
+    </form>
+
+    <h2>Tehtävät</h2>
+
+    <ul id="task-list"></ul>
+
+    <p id="task-count"></p>
+  </body>
+</html>

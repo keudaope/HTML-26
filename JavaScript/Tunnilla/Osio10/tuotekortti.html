@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="tuotekortti.js" defer></script>
+    <link rel="stylesheet" href="tuotekortti.css" />
+    <title>Tuotekortti</title>
+  </head>
+  <body>
+    <section id="lomake">
+      <form id="tuotekortti-form">
+        <label for="tuote-nimi">Tuotteen nimi:</label>
+        <input type="text" id="tuote-nimi" name="tuote-nimi" required />
+        <br /><br />
+        <label for="tuote-hinta">Hinta:</label>
+        <input type="number" id="tuote-hinta" name="tuote-hinta" required />
+        <br /><br />
+        <label for="tuote-kuvaus">Kuvaus:</label>
+        <textarea id="tuote-kuvaus" name="tuote-kuvaus"></textarea>
+        <br /><br />
+        <input type="submit" value="Lähetä" />
+      </form>
+    </section>
+    <section id="search">
+      <label for="suodatus">Suodata:</label>
+      <input type="text" id="suodatus" name="suodatus" />
+    </section>
+    <section id="tuotekortti">
+    </section>
+  </body>
+</html>

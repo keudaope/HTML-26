@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Local Storage</title>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body>
+    <div id="formDiv">
+      <form id="carForm">
+        <h1>Local Storage</h1>
+        <table>
+          <tr>
+            <td><label for="key">Avain: </label></td>
+            <td><input type="text" id="key" placeholder="Key" required /></td>
+          </tr>
+          <tr>
+            <td><label for="carBrand">Auton merkki: </label></td>
+            <td>
+              <input
+                type="text"
+                id="carBrand"
+                placeholder="Car brand"
+                required
+                autofocus
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="carModel">Auton malli: </label></td>
+            <td>
+              <input
+                type="text"
+                id="carModel"
+                placeholder="Car model"
+                required
+                autofocus
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="carPrice">Hinta: </label></td>
+            <td>
+              <input type="text" id="carPrice" placeholder="Price" required />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit" onclick="store()">Tallenna arvot</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <br />
+      <table>
+        <tr>
+          <td><label for="retrieveKey">Anna hakuavain</label></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="text"
+              id="retrieveKey"
+              placeholder="retrieveKey"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button id="retrieveButton">Hae arkistosta</button></td>
+        </tr>
+        <tr>
+          <td><br /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <label for="removeKey">Anna poistettavan tiedoston avain</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="text"
+              id="removeKey"
+              placeholder="removeKey"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button id="removeButton">Poista tietue</button></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button id="clearButton">Poista kaikki tietueet</button></td>
+        </tr>
+      </table>
+    </div>
+    <div id="retrieve"></div>
+  </body>
+</html>
