@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interaktiivinen tuotelista</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Interaktiivinen tuotelista</h1>
+      <p>Hae tuotteita, merkitse suosikkeja ja lisää omia tuotteitasi.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="search-title">
+      <h2 id="search-title">1. Suodatus</h2>
+      <label for="haku">Hae tuotteita nimellä</label>
+      <input id="haku" type="search" placeholder="Esim. kuulokkeet" autocomplete="off">
+      <p id="tulosmaara" class="muted" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="products-title">
+      <div class="section-heading">
+        <h2 id="products-title">2. Tuotteet ja suosikit</h2>
+        <span class="muted">Paina ☆ merkitäksesi suosikin</span>
+      </div>
+      <div id="tuotelista" class="product-grid"></div>
+      <p id="tyhja-tulos" class="empty" hidden>Hakua vastaavia tuotteita ei löytynyt.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">3. Lisää uusi tuote</h2>
+      <form id="tuotelomake" class="product-form">
+        <div class="field">
+          <label for="nimi">Tuotteen nimi</label>
+          <input id="nimi" name="nimi" type="text" required maxlength="80" placeholder="Esim. Näppäimistö">
+        </div>
+        <div class="field">
+          <label for="hinta">Hinta (€)</label>
+          <input id="hinta" name="hinta" type="number" required min="0" max="1000000" step="0.01" placeholder="49,90">
+        </div>
+        <div class="field field-wide">
+          <label for="kuvaus">Kuvaus</label>
+          <textarea id="kuvaus" name="kuvaus" rows="3" maxlength="300" placeholder="Lyhyt tuotekuvaus"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="primary">Lisää tuote</button>
+          <button type="reset" class="secondary">Tyhjennä</button>
+          <span class="muted">Escape tyhjentää lomakkeen.</span>
+        </div>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </section>
+  </main>
+</body>
+</html>
