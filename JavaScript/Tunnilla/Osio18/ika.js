@@ -8,7 +8,6 @@ function laskeIka(syntymaaika, tanaan = new Date())
         pvNyt = tanaan.getDate();
         kkNyt = tanaan.getMonth();
         vNyt = tanaan.getFullYear();
-        console.log(pvNyt,kkNyt,vNyt);
     }
     else{
         const numeroina2 = tanaan.split("-").map(Number);
