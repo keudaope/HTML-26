@@ -1,0 +1,15 @@
+<!doctype html><html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Geolocation ja Permissions</title><link rel="stylesheet" href="style.css"><script src="13.js" defer></script></head><body><header><a href="index.html">Osa 19 · Sisällysluettelo</a></header><main><h1>Geolocation ja Permissions</h1><article><h2>Mistä on kyse?</h2><p>getCurrentPosition pyytää yhden sijainnin. watchPosition seuraa muutoksia ja clearWatch lopettaa. Käyttäjän lupa ja turvallinen konteksti tarvitaan. Permissions API voi kertoa granted, denied tai prompt; se ei itse myönnä lupaa. Sijainti jää tässä sivulle eikä sitä lähetetä minnekään.</p></article><section class="demo"><h2>Kokeile itse</h2><button id="run">Pyydä sijainti</button><button id="watch">Seuraa sijaintia</button><button id="stop">Lopeta seuranta</button><button id="perm">Tarkista lupa</button><output id="result" aria-live="polite">Tulos näkyy tässä.</output></section><h2>Harjoitus</h2><p>Selitä, miksi jatkuva seuranta pitää lopettaa.</p><details><summary>Avaa toimiva mallikoodi (JavaScript)</summary><pre>// Haetaan demon HTML-elementit.
+const run=document.getElementById(&quot;run&quot;);
+const watch=document.getElementById(&quot;watch&quot;);
+const stop=document.getElementById(&quot;stop&quot;);
+const perm=document.getElementById(&quot;perm&quot;);
+const result=document.querySelector(&quot;#result&quot;);
+// Näytä tulos sivulla, ei vain konsolissa.
+function show(value){result.textContent=String(value);}
+function log(value){result.textContent+= &quot;\n&quot;+value;}
+let id;function success(p){show(`Leveys ${p.coords.latitude}, pituus ${p.coords.longitude}, tarkkuus ${p.coords.accuracy} m`);}function fail(e){show(e.message);}
+run.onclick=()=&gt;navigator.geolocation?navigator.geolocation.getCurrentPosition(success,fail,{timeout:10000}):show(&#x27;Ei tukea&#x27;);
+function end(){if(id!==undefined){navigator.geolocation.clearWatch(id);id=undefined;}}
+watch.onclick=()=&gt;{end();if(navigator.geolocation)id=navigator.geolocation.watchPosition(success,fail,{timeout:10000});else show(&#x27;Ei tukea&#x27;);};stop.onclick=()=&gt;{end();show(&#x27;Seuranta lopetettu&#x27;);};window.addEventListener(&#x27;pagehide&#x27;,end);
+perm.onclick=async()=&gt;{try{show((await navigator.permissions.query({name:&#x27;geolocation&#x27;})).state);}catch(e){show(e.message);}};
+</pre></details><details><summary>Demon HTML</summary><pre>&lt;button id=&quot;run&quot;&gt;Pyydä sijainti&lt;/button&gt;&lt;button id=&quot;watch&quot;&gt;Seuraa sijaintia&lt;/button&gt;&lt;button id=&quot;stop&quot;&gt;Lopeta seuranta&lt;/button&gt;&lt;button id=&quot;perm&quot;&gt;Tarkista lupa&lt;/button&gt;</pre></details><p class="note">Muista: tarkista Console, jos toiminto ei käynnisty. Varmista elementin id, API:n tuki ja tarvittaessa käyttöoikeus. Älä rekisteröi kuuntelijaa toistuvasti.</p><nav><a href="index.html">Sisällysluettelo</a><a href="12.html">← Edellinen</a><a href="14.html">Seuraava →</a></nav></main><footer>JavaScript · Selainrajapinnat</footer></body></html>

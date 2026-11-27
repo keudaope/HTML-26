@@ -1,0 +1,11 @@
+<!doctype html><html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>setTimeout ja clearTimeout</title><link rel="stylesheet" href="style.css"><script src="02.js" defer></script></head><body><header><a href="index.html">Osa 19 · Sisällysluettelo</a></header><main><h1>setTimeout ja clearTimeout</h1><article><h2>Mistä on kyse?</h2><p>Ajastin tilaa yhden callbackin myöhemmäksi. 1000 ms on sekunti. Muu koodi jatkuu heti. Tunnisteella voi perua vielä odottavan tehtävän. Uusi ilmoitus kannattaa aloittaa peruuttamalla vanha ajastus.</p></article><section class="demo"><h2>Kokeile itse</h2><button id="run">Näytä ilmoitus 3 sekunniksi</button><button id="stop">Sulje heti</button><output id="result" aria-live="polite">Tulos näkyy tässä.</output></section><h2>Harjoitus</h2><p>Muuta viive viideksi sekunniksi.</p><details><summary>Avaa toimiva mallikoodi (JavaScript)</summary><pre>// Haetaan demon HTML-elementit.
+const run=document.getElementById(&quot;run&quot;);
+const stop=document.getElementById(&quot;stop&quot;);
+const result=document.querySelector(&quot;#result&quot;);
+// Näytä tulos sivulla, ei vain konsolissa.
+function show(value){result.textContent=String(value);}
+function log(value){result.textContent+= &quot;\n&quot;+value;}
+let timer;
+run.onclick=()=&gt;{clearTimeout(timer);show(&#x27;Ilmoitus näkyy&#x27;);timer=setTimeout(()=&gt;show(&#x27;Ilmoitus poistui&#x27;),3000);};
+stop.onclick=()=&gt;{clearTimeout(timer);show(&#x27;Suljettu&#x27;);};
+</pre></details><details><summary>Demon HTML</summary><pre>&lt;button id=&quot;run&quot;&gt;Näytä ilmoitus 3 sekunniksi&lt;/button&gt;&lt;button id=&quot;stop&quot;&gt;Sulje heti&lt;/button&gt;</pre></details><p class="note">Muista: tarkista Console, jos toiminto ei käynnisty. Varmista elementin id, API:n tuki ja tarvittaessa käyttöoikeus. Älä rekisteröi kuuntelijaa toistuvasti.</p><nav><a href="index.html">Sisällysluettelo</a><a href="01.html">← Edellinen</a><a href="03.html">Seuraava →</a></nav></main><footer>JavaScript · Selainrajapinnat</footer></body></html>
